@@ -1,0 +1,2321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-06 08:52+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\forms.py:22 .\accounts\forms.py:140 .\accounts\forms.py:406
+msgid "Username"
+msgstr "Người dùng"
+
+#: .\accounts\forms.py:34 .\accounts\forms.py:173 .\accounts\forms.py:438
+msgid "First name"
+msgstr "Tên"
+
+#: .\accounts\forms.py:45 .\accounts\forms.py:316 .\accounts\forms.py:363
+#: .\templates\accounts\profile_single.html:91
+msgid "Last Name"
+msgstr "Họ"
+
+#: .\accounts\forms.py:55 .\accounts\forms.py:194 .\accounts\forms.py:364
+msgid "Gender"
+msgstr "Giới tính"
+
+#: .\accounts\forms.py:66 .\accounts\forms.py:151 .\accounts\forms.py:416
+msgid "Address"
+msgstr "Địa chỉ/thành phố"
+
+#: .\accounts\forms.py:77 .\accounts\forms.py:162 .\accounts\forms.py:427
+msgid "Mobile No."
+msgstr "Số điện thoại."
+
+#: .\accounts\forms.py:99 .\accounts\forms.py:241
+#: .\templates\registration\login.html:21
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: .\accounts\forms.py:111 .\accounts\forms.py:253
+msgid "Password Confirmation"
+msgstr "Xác nhận mật khẩu"
+
+#: .\accounts\forms.py:184
+msgid "Last name"
+msgstr "Họ"
+
+#: .\accounts\forms.py:204 .\course\forms.py:31
+#: .\templates\accounts\profile_single.html:99
+#: .\templates\course\program_single.html:46
+msgid "Level"
+msgstr "Chức vụ"
+
+#: .\accounts\forms.py:213
+msgid "Classes"
+msgstr "Đơn vị"
+
+#: .\accounts\forms.py:220 .\accounts\forms.py:378 .\accounts\forms.py:385
+#: .\course\forms.py:30 .\templates\accounts\profile_single.html:100
+#: .\templates\accounts\student_list.html:39
+#: .\templates\pdf\student_list.html:14 .\templates\search\search_view.html:23
+#: .\templates\search\search_view.html:54
+#: .\templates\search\search_view.html:87
+msgid "Program"
+msgstr "Môn học"
+
+#: .\accounts\forms.py:230 .\accounts\forms.py:296 .\accounts\forms.py:365
+#: .\accounts\forms.py:459
+msgid "Email Address"
+msgstr "Địa chỉ email"
+
+#: .\accounts\forms.py:306 .\accounts\forms.py:362
+#: .\templates\accounts\profile_single.html:90
+msgid "First Name"
+msgstr "Tên"
+
+#: .\accounts\forms.py:326
+msgid "gender"
+msgstr "Giới tính"
+
+#: .\accounts\forms.py:336 .\accounts\forms.py:366
+msgid "Phone No."
+msgstr "Số điện thoại."
+
+#: .\accounts\forms.py:346 .\accounts\forms.py:367
+msgid "Address / city"
+msgstr "Địa chỉ/thành phố"
+
+#: .\accounts\forms.py:368
+msgid "Profile Picture"
+msgstr "Thông tin cá nhân"
+
+#: .\accounts\forms.py:467 .\accounts\models.py:114
+#: .\templates\result\add_score_for.html:52
+msgid "Student"
+msgstr "Học viên"
+
+#: .\accounts\models.py:14
+msgid "QNCN"
+msgstr ""
+
+#: .\accounts\models.py:15
+msgid "CS"
+msgstr ""
+
+#: .\accounts\models.py:19 .\config\settings.py:260
+msgid "Quân nhân chuyên nghiệp"
+msgstr ""
+
+#: .\accounts\models.py:20 .\config\settings.py:261
+msgid "Chiến sĩ"
+msgstr ""
+
+#: .\accounts\models.py:23 .\accounts\models.py:32
+msgid "Father"
+msgstr "Cha"
+
+#: .\accounts\models.py:24 .\accounts\models.py:33
+msgid "Mother"
+msgstr "Mẹ"
+
+#: .\accounts\models.py:25 .\accounts\models.py:34
+msgid "Brother"
+msgstr "Anh/em trai"
+
+#: .\accounts\models.py:26 .\accounts\models.py:35
+msgid "Sister"
+msgstr "Chị/em gái"
+
+#: .\accounts\models.py:27 .\accounts\models.py:36
+msgid "Grand mother"
+msgstr "Ông/bà ngoại"
+
+#: .\accounts\models.py:28 .\accounts\models.py:37
+msgid "Grand father"
+msgstr "Ông/bà nội"
+
+#: .\accounts\models.py:29 .\accounts\models.py:38
+msgid "Other"
+msgstr "Khác"
+
+#: .\accounts\models.py:76
+msgid "M"
+msgstr "Nam"
+
+#: .\accounts\models.py:76
+msgid "Male"
+msgstr "Nam"
+
+#: .\accounts\models.py:76
+msgid "F"
+msgstr "Nữ"
+
+#: .\accounts\models.py:76
+msgid "Female"
+msgstr "Nữ"
+
+#: .\accounts\models.py:112
+msgid "Admin"
+msgstr "Quản trị viên"
+
+#: .\accounts\models.py:116 .\course\forms.py:69 .\course\forms.py:95
+#: .\templates\course\course_allocation_view.html:32
+msgid "Lecturer"
+msgstr "Giáo viên"
+
+#: .\accounts\models.py:118
+msgid "Parent"
+msgstr "Cha mẹ"
+
+#: .\accounts\validators.py:12
+msgid ""
+"Enter a valid username. This value may contain only English letters, "
+"numbers, and @/./+/-/_ characters."
+msgstr "Nhập tên hợp lệ (gồm các ký tự chữ, số và @/./+/-/_)"
+
+#: .\config\settings.py:148
+msgid "English"
+msgstr "Tiếng Anh"
+
+#: .\config\settings.py:149
+msgid "French"
+msgstr "Tiếng Pháp"
+
+#: .\config\settings.py:150
+msgid "Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+#: .\config\settings.py:151
+msgid "Russia"
+msgstr "Tiếng Nga"
+
+#: .\config\settings.py:152
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+#: .\config\settings.py:269 .\core\models.py:14 .\core\models.py:19
+msgid "First"
+msgstr "Kỳ 1"
+
+#: .\config\settings.py:270 .\core\models.py:15 .\core\models.py:20
+msgid "Second"
+msgstr "Kỳ 2"
+
+#: .\config\settings.py:271 .\core\models.py:16 .\core\models.py:21
+msgid "Third"
+msgstr "Kỳ 3"
+
+#: .\core\forms.py:15 .\course\forms.py:11 .\course\forms.py:26
+#: .\course\forms.py:114 .\course\forms.py:133 .\course\models.py:124
+#: .\course\models.py:197 .\quiz\models.py:51
+msgid "Title"
+msgstr "Tiêu đề"
+
+#: .\core\forms.py:16 .\course\forms.py:12 .\course\forms.py:29
+#: .\templates\course\program_list.html:33
+msgid "Summary"
+msgstr "Tóm tắt"
+
+#: .\core\forms.py:17
+msgid "Post as"
+msgstr "Phân loại"
+
+#: .\core\forms.py:34 .\core\forms.py:43 .\templates\core\session_list.html:31
+msgid "Next Session Begins"
+msgstr "Thời gian cho niên khóa sau"
+
+#: .\core\forms.py:41 .\core\forms.py:73 .\core\forms.py:93
+#: .\templates\core\semester_list.html:31 .\templates\core\session_list.html:29
+#: .\templates\setting\admin_panel.html:36
+msgid "Session"
+msgstr "Niên khóa"
+
+#: .\core\forms.py:42
+msgid "Is Current Session?"
+msgstr "Niên khóa hiện tại?"
+
+#: .\core\forms.py:54 .\core\forms.py:91 .\course\forms.py:33
+#: .\templates\accounts\profile.html:103
+#: .\templates\accounts\profile_single.html:117
+#: .\templates\core\semester_list.html:29
+#: .\templates\course\program_single.html:48
+#: .\templates\course\user_course_list.html:40
+#: .\templates\course\user_course_list.html:84
+#: .\templates\pdf\profile_single.html:67 .\templates\result\add_score.html:24
+#: .\templates\result\add_score_for.html:46
+#: .\templates\setting\admin_panel.html:41
+msgid "Semester"
+msgstr "Học kỳ"
+
+#: .\core\forms.py:63
+msgid "is current semester?"
+msgstr "Học kỳ hiện tại?"
+
+#: .\core\forms.py:84 .\core\forms.py:94 .\templates\core\semester_list.html:32
+msgid "Next Semester Begins"
+msgstr "Học kỳ tiếp theo bắt đầu"
+
+#: .\core\forms.py:92
+msgid "Is Current Semester?"
+msgstr "Học kỳ hiện tại?"
+
+#: .\core\models.py:6 .\core\models.py:10 .\templates\core\index.html:23
+#: .\templates\core\index.html:28 .\templates\setting\admin_panel.html:69
+#: .\templates\setting\admin_panel.html:70
+msgid "News"
+msgstr "Tin tức"
+
+#: .\core\models.py:7 .\core\models.py:11
+msgid "Event"
+msgstr "Sự kiện"
+
+#: .\course\forms.py:27
+msgid "Code"
+msgstr ""
+
+#: .\course\forms.py:28
+msgid "Credit"
+msgstr "Tổng số tín chỉ"
+
+#: .\course\forms.py:32 .\templates\course\course_registration.html:51
+#: .\templates\course\course_registration.html:114
+#: .\templates\course\course_registration.html:206
+#: .\templates\course\program_single.html:47
+#: .\templates\course\user_course_list.html:39
+#: .\templates\course\user_course_list.html:83
+msgid "Year"
+msgstr "Năm"
+
+#: .\course\forms.py:56 .\course\forms.py:70 .\course\forms.py:83
+#: .\course\forms.py:96 .\templates\course\course_allocation_view.html:33
+#: .\templates\setting\admin_panel.html:59
+msgid "Courses"
+msgstr "Khóa học"
+
+#: .\course\forms.py:61 .\course\forms.py:88
+msgid "lecturer"
+msgstr "Giáo viên"
+
+#: .\course\forms.py:115 .\course\models.py:131
+msgid "File"
+msgstr "Tệp đính kèm"
+
+#: .\course\forms.py:134 .\course\models.py:206
+msgid "Video"
+msgstr "Tiêu đề video"
+
+#: .\course\models.py:71
+msgid "Is Elective"
+msgstr "Tự chọn"
+
+#: .\course\models.py:125 .\course\models.py:199 .\quiz\models.py:241
+#: .\templates\quiz\sitting_list.html:34 .\templates\search\search_view.html:30
+#: .\templates\search\search_view.html:88
+msgid "Course"
+msgstr "Khóa học"
+
+#: .\course\models.py:129
+msgid "Valid Files: pdf, docx, doc, xls, xlsx, ppt, pptx, zip, rar, 7zip"
+msgstr "Tệp hợp lệ: pdf, docx, doc, xls, xlsx, ppt, pptx, zip, rar, 7zip"
+
+#: .\course\models.py:202
+msgid "Valid video formats: mp4, mkv, wmv, 3gp, f4v, avi, mp3"
+msgstr "Dạng video hợp lệ: mp4, mkv, wmv, 3gp, f4v, avi, mp3"
+
+#: .\quiz\admin.py:27 .\quiz\admin.py:28 .\quiz\forms.py:34 .\quiz\forms.py:35
+#: .\quiz\models.py:396 .\templates\quiz\quiz_list.html:44
+msgid "Questions"
+msgstr "Câu hỏi"
+
+#: .\quiz\models.py:23 .\quiz\models.py:452
+msgid "Content"
+msgstr "Nội dung"
+
+#: .\quiz\models.py:24
+msgid "Random"
+msgstr "Ngẫu nhiên"
+
+#: .\quiz\models.py:25
+msgid "None"
+msgstr "Không"
+
+#: .\quiz\models.py:29 .\templates\result\add_score_for.html:53
+#: .\templates\result\assessment_results.html:28
+#: .\templates\result\assessment_results.html:70
+msgid "Assignment"
+msgstr "Bài tập"
+
+#: .\quiz\models.py:30
+msgid "Exam"
+msgstr "Bài kiểm tra"
+
+#: .\quiz\models.py:31
+msgid "Practice Quiz"
+msgstr "Bài tập trắc nghiệm"
+
+#: .\quiz\models.py:54
+msgid "Description"
+msgstr "Mô tả"
+
+#: .\quiz\models.py:56
+msgid "A detailed description of the quiz"
+msgstr "mô tả chi tiết về bài kiểm tra"
+
+#: .\quiz\models.py:58 .\templates\quiz\progress.html:27
+#: .\templates\quiz\quiz_marking_detail.html:19
+msgid "Category"
+msgstr "Phân Loại"
+
+#: .\quiz\models.py:61
+msgid "Random Order"
+msgstr "Thứ tự ngẫu nhiên"
+
+#: .\quiz\models.py:62
+msgid "Display the questions in a random order or as they are set?"
+msgstr "Hiển thị câu hỏi theo thứ tự ngẫu nhiên hay theo vị trí đã sắp xếp"
+
+#: .\quiz\models.py:66
+msgid "Answers at end"
+msgstr "Câu trả lời ở cuối"
+
+#: .\quiz\models.py:68
+msgid ""
+"Correct answer is NOT shown after question. Answers displayed at the end."
+msgstr ""
+"Câu trả lời đúng không được hiển thị sau câu hỏi. Câu trả lời hiển thị cuối "
+"cùng"
+
+#: .\quiz\models.py:73
+msgid "Exam Paper"
+msgstr "Đề thi"
+
+#: .\quiz\models.py:75
+msgid ""
+"If yes, the result of each attempt by a user will be stored. Necessary for "
+"marking."
+msgstr ""
+"Nếu có, kết quả của mỗi lần thử bởi người làm sẽ được lưu lại.Cần thiết cho "
+"chấp điểm"
+
+#: .\quiz\models.py:80
+msgid "Single Attempt"
+msgstr "Một lần thử"
+
+#: .\quiz\models.py:81
+msgid "If yes, only one attempt by a user will be permitted."
+msgstr "Nếu có, người làm chỉ được thử duy nhất 1 lần"
+
+#: .\quiz\models.py:85
+msgid "Pass Mark"
+msgstr "Điểm trung bình"
+
+#: .\quiz\models.py:87
+msgid "Percentage required to pass exam."
+msgstr "Tỷ lệ phần trăm cần thiết để vượt qua kỳ thi."
+
+#: .\quiz\models.py:91
+msgid "Draft"
+msgstr "Bản nháp"
+
+#: .\quiz\models.py:93
+msgid ""
+"If yes, the quiz is not displayed in the quiz list and can only be taken by "
+"users who can edit quizzes."
+msgstr ""
+"Nếu chọn, bài trắc nghiệm sẽ không được hiển thị trong danh sách bài trắc "
+"nghiệm và có thể chỉ được làm bởingười chỉnh sửa câu trắc nghiệm"
+
+#: .\quiz\models.py:101 .\quiz\models.py:239 .\quiz\models.py:373
+#: .\templates\quiz\quiz_list.html:42 .\templates\quiz\sitting_list.html:21
+#: .\templates\quiz\sitting_list.html:35
+#: .\templates\result\add_score_for.html:55
+#: .\templates\result\assessment_results.html:30
+#: .\templates\result\assessment_results.html:72
+#: .\templates\search\search_view.html:46
+#: .\templates\search\search_view.html:90
+msgid "Quiz"
+msgstr "Câu trắc nghiệm"
+
+#: .\quiz\models.py:102 .\templates\quiz\mcquestion_form.html:13
+#: .\templates\quiz\question.html:16 .\templates\quiz\quiz_form.html:13
+#: .\templates\quiz\quiz_list.html:19 .\templates\quiz\quiz_list.html:29
+#: .\templates\quiz\result.html:18
+msgid "Quizzes"
+msgstr "Những câu trắc nghiệm"
+
+#: .\quiz\models.py:112
+msgid "Pass mark must be between 0 and 100."
+msgstr "Điểm đỗ phải nằm trong khoảng từ 0 đến 100."
+
+#: .\quiz\models.py:141 .\quiz\models.py:237
+#: .\templates\quiz\quiz_marking_detail.html:24
+#: .\templates\quiz\sitting_list.html:20 .\templates\quiz\sitting_list.html:33
+msgid "User"
+msgstr "Người dùng"
+
+#: .\quiz\models.py:145 .\templates\quiz\progress.html:72
+#: .\templates\quiz\quiz_marking_detail.html:26
+#: .\templates\quiz\sitting_list.html:37
+msgid "Score"
+msgstr "Điểm"
+
+#: .\quiz\models.py:152
+msgid "User Progress"
+msgstr "Tiến trình của người dùng"
+
+#: .\quiz\models.py:153
+msgid "User progress records"
+msgstr "Hồ sơ tiến trình của người dùng"
+
+#: .\quiz\models.py:160
+msgid "Error"
+msgstr "Lỗi"
+
+#: .\quiz\models.py:160
+msgid "Invalid score values."
+msgstr "Giá trị điểm không hợp lệ."
+
+#: .\quiz\models.py:199
+msgid "Question set of the quiz is empty. Please configure questions properly."
+msgstr ""
+"Bộ câu hỏi của bài kiểm tra đang trống. Vui lòng cấu hình câu hỏi đúng cách."
+
+#: .\quiz\models.py:245
+msgid "Question Order"
+msgstr "Thứ tự câu hỏi"
+
+#: .\quiz\models.py:250
+msgid "Question List"
+msgstr "Danh sách câu hỏi"
+
+#: .\quiz\models.py:256
+msgid "Incorrect questions"
+msgstr "Câu hỏi sai"
+
+#: .\quiz\models.py:259
+msgid "Current Score"
+msgstr "Điểm hiện tại"
+
+#: .\quiz\models.py:260
+msgid "Complete"
+msgstr "Hoàn thành"
+
+#: .\quiz\models.py:262
+msgid "User Answers"
+msgstr "Câu trả lời của người làm"
+
+#: .\quiz\models.py:264 .\templates\quiz\quiz_marking_detail.html:27
+msgid "Start"
+msgstr "Bắt đầu"
+
+#: .\quiz\models.py:265 .\templates\quiz\quiz_marking_detail.html:28
+msgid "End"
+msgstr "Kết thúc"
+
+#: .\quiz\models.py:270
+msgid "Can see completed exams."
+msgstr "Có thể xem các bài thi đã hoàn thành."
+
+#: .\quiz\models.py:336
+msgid "You have passed this quiz, congratulations!"
+msgstr "Bạn đã vượt qua bài kiểm tra này, xin chúc mừng!"
+
+#: .\quiz\models.py:338
+msgid "You failed this quiz, try again."
+msgstr "Bạn đã trượt bài kiểm tra này, hãy thử lại."
+
+#: .\quiz\models.py:377
+msgid "Figure"
+msgstr "Tệp ảnh"
+
+#: .\quiz\models.py:378
+msgid "Add an image for the question if necessary."
+msgstr "Thêm bức ảnh mô tả cho câu hỏi nếu cần thiết."
+
+#: .\quiz\models.py:382
+msgid "Enter the question text that you want displayed"
+msgstr "Nhập văn bản câu hỏi mà bạn muốn hiển thị"
+
+#: .\quiz\models.py:383 .\quiz\models.py:395 .\quiz\models.py:447
+#: .\templates\quiz\question.html:127
+#: .\templates\quiz\quiz_marking_detail.html:34
+msgid "Question"
+msgstr "Câu hỏi"
+
+#: .\quiz\models.py:388
+msgid "Explanation to be shown after the question has been answered."
+msgstr "Giải thích sẽ được đưa ra sau khi câu hỏi được trả lời."
+
+#: .\quiz\models.py:389 .\templates\quiz\question.html:80
+#: .\templates\quiz\question.html:89 .\templates\quiz\result.html:78
+#: .\templates\quiz\result.html:148
+msgid "Explanation"
+msgstr "Giả thích"
+
+#: .\quiz\models.py:408
+msgid "The order in which multiple-choice options are displayed to the user"
+msgstr "Thứ tự các tùy chọn trắc nghiệm được hiển thị cho người dùng"
+
+#: .\quiz\models.py:410
+msgid "Choice Order"
+msgstr "Thứ tự lựa chọn"
+
+#: .\quiz\models.py:414
+msgid "Multiple Choice Question"
+msgstr "Câu hỏi trắc nghiệm"
+
+#: .\quiz\models.py:415
+msgid "Multiple Choice Questions"
+msgstr "Câu hỏi trắc nghiệm"
+
+#: .\quiz\models.py:451
+msgid "Enter the choice text that you want displayed"
+msgstr "Nhập văn bản lựa chọn mà bạn muốn hiển thị"
+
+#: .\quiz\models.py:456
+msgid "Is this a correct answer?"
+msgstr "Đây có phải là câu trả lời đúng"
+
+#: .\quiz\models.py:457 .\templates\quiz\mcquestion_form.html:53
+#: .\templates\quiz\quiz_marking_detail.html:56
+msgid "Correct"
+msgstr "Đúng"
+
+#: .\quiz\models.py:461
+msgid "Choice"
+msgstr "Chọn"
+
+#: .\quiz\models.py:462 .\templates\quiz\mcquestion_form.html:47
+msgid "Choices"
+msgstr "Chọn câu trả lời đúng"
+
+#: .\quiz\models.py:470
+msgid "Essay Style Question"
+msgstr "Câu hỏi về phong cách bài luận"
+
+#: .\quiz\models.py:471
+msgid "Essay Style Questions"
+msgstr "Câu hỏi về phong cách bài luận"
+
+#: .\templates\400.html:5
+msgid "Bad request"
+msgstr "Yêu cầu không thành"
+
+#: .\templates\400.html:6
+msgid "Please make sure the form is correctly filled."
+msgstr "Hãy chắc chắn rằng biểu mẫu được điền đúng cách"
+
+#: .\templates\400.html:7 .\templates\403.html:7 .\templates\404.html:7
+#: .\templates\500.html:7
+msgid "Return to the app"
+msgstr "Quay lại app"
+
+#: .\templates\403.html:5
+msgid "forbidden"
+msgstr "cấm"
+
+#: .\templates\403.html:6
+msgid "You need the proper permission to make that request."
+msgstr "Bạn cần có sự cho phép để thực hiện yêu cầu đó."
+
+#: .\templates\404.html:6
+msgid "Looks like the page you"
+msgstr "có vể như trang bạn"
+
+#: .\templates\500.html:5
+msgid "Server error"
+msgstr "Lỗi server"
+
+#: .\templates\500.html:6
+msgid "Please try again later."
+msgstr "Hãy thử lại sau"
+
+#: .\templates\accounts\add_staff.html:3
+#: .\templates\accounts\add_student.html:3
+#: .\templates\accounts\edit_lecturer.html:3
+#: .\templates\accounts\edit_student.html:3
+#: .\templates\accounts\lecturer_list.html:3
+#: .\templates\accounts\parent_form.html:3 .\templates\accounts\profile.html:3
+#: .\templates\accounts\profile_single.html:3
+#: .\templates\accounts\student_list.html:3 .\templates\core\dashboard.html:3
+#: .\templates\core\index.html:3 .\templates\core\post_add.html:3
+#: .\templates\core\semester_list.html:3
+#: .\templates\core\semester_update.html:3 .\templates\core\session_list.html:3
+#: .\templates\core\session_update.html:3 .\templates\course\course_add.html:3
+#: .\templates\course\course_allocation_form.html:3
+#: .\templates\course\course_allocation_view.html:3
+#: .\templates\course\course_registration.html:3
+#: .\templates\course\course_single.html:3
+#: .\templates\course\program_add.html:3 .\templates\course\program_list.html:3
+#: .\templates\course\program_single.html:3
+#: .\templates\course\user_course_list.html:3 .\templates\quiz\progress.html:4
+#: .\templates\quiz\question.html:5 .\templates\quiz\quiz_marking_detail.html:4
+#: .\templates\quiz\result.html:7 .\templates\quiz\sitting_list.html:3
+#: .\templates\result\add_score.html:3 .\templates\result\add_score_for.html:3
+#: .\templates\result\assessment_results.html:3
+#: .\templates\result\grade_results.html:3
+#: .\templates\search\search_view.html:3 .\templates\setting\admin_panel.html:3
+#: .\templates\setting\password_change.html:3
+#: .\templates\setting\profile_info_change.html:3
+#: .\templates\upload\upload_file_form.html:3
+#: .\templates\upload\upload_video_form.html:3
+#: .\templates\upload\video_single.html:3
+msgid "Learning management system"
+msgstr "Phần mềm quản lý học tập"
+
+#: .\templates\accounts\add_staff.html:11
+#: .\templates\accounts\add_student.html:12
+#: .\templates\accounts\edit_lecturer.html:11
+#: .\templates\accounts\edit_student.html:11
+#: .\templates\accounts\lecturer_list.html:9
+#: .\templates\accounts\profile.html:14
+#: .\templates\accounts\profile_single.html:14
+#: .\templates\accounts\student_list.html:10 .\templates\core\dashboard.html:13
+#: .\templates\core\index.html:10 .\templates\core\post_add.html:11
+#: .\templates\core\semester_list.html:9
+#: .\templates\core\semester_update.html:11
+#: .\templates\core\session_list.html:9 .\templates\core\session_update.html:11
+#: .\templates\course\course_add.html:11
+#: .\templates\course\course_allocation_form.html:11
+#: .\templates\course\course_allocation_view.html:9
+#: .\templates\course\course_registration.html:12
+#: .\templates\course\course_single.html:10
+#: .\templates\course\program_add.html:11
+#: .\templates\course\program_list.html:9
+#: .\templates\course\program_single.html:10
+#: .\templates\course\user_course_list.html:10
+#: .\templates\quiz\mcquestion_form.html:9 .\templates\quiz\progress.html:11
+#: .\templates\quiz\question.html:12 .\templates\quiz\quiz_form.html:9
+#: .\templates\quiz\quiz_list.html:11
+#: .\templates\quiz\quiz_marking_detail.html:11 .\templates\quiz\result.html:14
+#: .\templates\quiz\sitting_list.html:9 .\templates\result\add_score.html:10
+#: .\templates\result\add_score_for.html:10
+#: .\templates\result\assessment_results.html:9
+#: .\templates\result\grade_results.html:9
+#: .\templates\search\search_view.html:11
+#: .\templates\setting\admin_panel.html:11
+#: .\templates\setting\password_change.html:11
+#: .\templates\setting\profile_info_change.html:11 .\templates\sidebar.html:41
+#: .\templates\upload\upload_file_form.html:10
+#: .\templates\upload\upload_video_form.html:10
+#: .\templates\upload\video_single.html:10
+msgid "Home"
+msgstr "Trang chủ"
+
+#: .\templates\accounts\add_staff.html:12
+#: .\templates\accounts\edit_lecturer.html:12
+#: .\templates\accounts\lecturer_list.html:10
+#: .\templates\accounts\lecturer_list.html:21
+#: .\templates\core\dashboard.html:51 .\templates\pdf\lecturer_list.html:4
+#: .\templates\setting\admin_panel.html:26 .\templates\sidebar.html:52
+msgid "Lecturers"
+msgstr "Danh sách giáo viên"
+
+#: .\templates\accounts\add_staff.html:13
+#: .\templates\accounts\add_student.html:14 .\templates\sidebar.html:109
+msgid "Add"
+msgstr "Thêm"
+
+#: .\templates\accounts\add_staff.html:17
+msgid "Lecturer Add Form"
+msgstr "Mẫu thêm giáo viên"
+
+#: .\templates\accounts\add_staff.html:26
+#: .\templates\accounts\add_student.html:27
+#: .\templates\accounts\edit_lecturer.html:29
+#: .\templates\accounts\edit_student.html:25
+#: .\templates\accounts\profile.html:75
+#: .\templates\accounts\profile_single.html:88
+#: .\templates\pdf\profile_single.html:38
+#: .\templates\registration\register.html:40
+#: .\templates\setting\profile_info_change.html:24
+msgid "Personal Info"
+msgstr "Thông tin cá nhân"
+
+#: .\templates\accounts\add_staff.html:38
+#: .\templates\accounts\add_student.html:50
+#: .\templates\accounts\edit_lecturer.html:49
+#: .\templates\accounts\edit_student.html:46
+#: .\templates\accounts\parent_form.html:11 .\templates\core\post_add.html:25
+#: .\templates\core\semester_update.html:26
+#: .\templates\core\session_update.html:26
+#: .\templates\course\course_add.html:49
+#: .\templates\course\course_allocation_form.html:30
+#: .\templates\course\program_add.html:27
+#: .\templates\quiz\mcquestion_form.html:67 .\templates\quiz\quiz_form.html:66
+#: .\templates\result\add_score_for.html:38
+msgid "Save"
+msgstr "Lưu lại"
+
+#: .\templates\accounts\add_student.html:13
+#: .\templates\accounts\edit_student.html:12
+#: .\templates\accounts\student_list.html:11
+#: .\templates\accounts\student_list.html:24 .\templates\core\dashboard.html:42
+#: .\templates\pdf\student_list.html:4 .\templates\setting\admin_panel.html:31
+#: .\templates\sidebar.html:55
+msgid "Students"
+msgstr "Danh sách học viên"
+
+#: .\templates\accounts\add_student.html:18
+msgid "Student Add Form"
+msgstr "Biểu mẫu thêm học viên"
+
+#: .\templates\accounts\add_student.html:40
+#: .\templates\accounts\edit_lecturer.html:42
+#: .\templates\accounts\edit_student.html:39
+#: .\templates\core\dashboard.html:105
+#: .\templates\setting\profile_info_change.html:37 .\templates\sidebar.html:113
+msgid "Others"
+msgstr "Khác"
+
+#: .\templates\accounts\edit_lecturer.html:13
+#: .\templates\accounts\edit_student.html:13
+#: .\templates\accounts\lecturer_list.html:59
+#: .\templates\accounts\student_list.html:61
+#: .\templates\course\program_list.html:56
+msgid "Update"
+msgstr "Cập nhật"
+
+#: .\templates\accounts\edit_lecturer.html:17
+msgid "Lecturer Update Form"
+msgstr "Mẫu cập nhật giáo viên"
+
+#: .\templates\accounts\edit_lecturer.html:29
+#: .\templates\accounts\edit_student.html:25
+#: .\templates\accounts\lecturer_list.html:33
+#: .\templates\accounts\profile_single.html:107
+#: .\templates\accounts\student_list.html:38
+#: .\templates\pdf\lecturer_list.html:13 .\templates\pdf\student_list.html:12
+#: .\templates\registration\password_reset.html:13
+#: .\templates\setting\profile_info_change.html:24
+msgid "Email"
+msgstr ""
+
+#: .\templates\accounts\edit_student.html:17
+msgid "Student Update Form"
+msgstr "Mẫu cập nhật học viên"
+
+#: .\templates\accounts\lecturer_list.html:16
+msgid "Add Lecturer"
+msgstr "Thêm giáo viên"
+
+#: .\templates\accounts\lecturer_list.html:17
+#: .\templates\accounts\student_list.html:20
+msgid "Download pdf"
+msgstr "Tải file pdf"
+
+#: .\templates\accounts\lecturer_list.html:31
+#: .\templates\accounts\profile_single.html:92
+#: .\templates\accounts\student_list.html:36
+#: .\templates\pdf\lecturer_list.html:11 .\templates\pdf\student_list.html:10
+msgid "ID No."
+msgstr "Số ID."
+
+#: .\templates\accounts\lecturer_list.html:32
+#: .\templates\accounts\student_list.html:37
+#: .\templates\pdf\lecturer_list.html:12 .\templates\pdf\student_list.html:11
+msgid "Full Name"
+msgstr "Họ tên"
+
+#: .\templates\accounts\lecturer_list.html:34
+#: .\templates\pdf\lecturer_list.html:14 .\templates\pdf\student_list.html:13
+msgid "Mob No."
+msgstr "Số điện thoại."
+
+#: .\templates\accounts\lecturer_list.html:35
+#: .\templates\accounts\profile_single.html:109
+msgid "Address/city"
+msgstr "Địa chỉ/thành phố"
+
+#: .\templates\accounts\lecturer_list.html:36
+#: .\templates\accounts\profile_single.html:29
+#: .\templates\accounts\profile_single.html:115
+msgid "Last login"
+msgstr "Lần đăng nhập gần nhất"
+
+#: .\templates\accounts\lecturer_list.html:38
+#: .\templates\accounts\student_list.html:41
+#: .\templates\course\course_allocation_view.html:35
+#: .\templates\course\program_list.html:35
+#: .\templates\course\program_single.html:51
+msgid "Action"
+msgstr "Hành động"
+
+#: .\templates\accounts\lecturer_list.html:60
+#: .\templates\accounts\student_list.html:62
+msgid "Download PDF"
+msgstr "Tải file PDF"
+
+#: .\templates\accounts\lecturer_list.html:61
+#: .\templates\accounts\student_list.html:63 .\templates\core\index.html:54
+#: .\templates\core\semester_list.html:59 .\templates\core\session_list.html:54
+#: .\templates\course\course_single.html:95
+#: .\templates\course\course_single.html:172
+#: .\templates\course\program_list.html:57
+#: .\templates\course\program_single.html:85
+#: .\templates\quiz\mcquestion_form.html:57 .\templates\quiz\quiz_list.html:71
+msgid "Delete"
+msgstr "Xóa"
+
+#: .\templates\accounts\lecturer_list.html:71
+#: .\templates\pdf\lecturer_list.html:32 .\templates\pdf\student_list.html:30
+msgid "No Lecturer(s)."
+msgstr "ID Giảng viên"
+
+#: .\templates\accounts\lecturer_list.html:75
+msgid "Add Lecturer Now."
+msgstr "Thêm giảng viên"
+
+#: .\templates\accounts\profile.html:29 .\templates\accounts\profile.html:101
+#: .\templates\navbar.html:29 .\templates\pdf\profile_single.html:14
+#: .\templates\pdf\profile_single.html:65
+msgid "Last login:"
+msgstr "Lần đăng nhập gần nhất"
+
+#: .\templates\accounts\profile.html:30 .\templates\pdf\profile_single.html:15
+msgid "Role:"
+msgstr "Chức vụ:"
+
+#: .\templates\accounts\profile.html:37
+#: .\templates\accounts\profile_single.html:40
+#: .\templates\accounts\profile_single.html:48
+msgid "Edit Profile"
+msgstr "Chỉnh sửa thông tin cá nhân"
+
+#: .\templates\accounts\profile.html:39
+msgid "Change password"
+msgstr "Thay đổi mật khẩu"
+
+#: .\templates\accounts\profile.html:62
+#: .\templates\accounts\profile_single.html:75
+#: .\templates\course\user_course_list.html:3
+#: .\templates\course\user_course_list.html:11
+#: .\templates\course\user_course_list.html:23 .\templates\navbar.html:34
+#: .\templates\pdf\profile_single.html:25 .\templates\sidebar.html:61
+msgid "My Courses"
+msgstr "Khóa học của tôi"
+
+#: .\templates\accounts\profile.html:70
+#: .\templates\accounts\profile_single.html:83
+#: .\templates\pdf\profile_single.html:33
+msgid "No courses assigned!"
+msgstr "Không có khóa học nào được đăng kỹ!!"
+
+#: .\templates\accounts\profile.html:77 .\templates\pdf\profile_single.html:40
+msgid "First Name:"
+msgstr "Tên và tên đệm:"
+
+#: .\templates\accounts\profile.html:78 .\templates\pdf\profile_single.html:41
+msgid "Last Name:"
+msgstr "Họ:"
+
+#: .\templates\accounts\profile.html:79 .\templates\pdf\profile_single.html:42
+msgid "ID No.:"
+msgstr "Số ID:"
+
+#: .\templates\accounts\profile.html:83
+#: .\templates\accounts\profile_single.html:96
+#: .\templates\pdf\profile_single.html:47
+msgid "Applicant Info"
+msgstr "Thông tin người làm"
+
+#: .\templates\accounts\profile.html:85 .\templates\pdf\profile_single.html:49
+msgid "School:"
+msgstr "Trường"
+
+#: .\templates\accounts\profile.html:85 .\templates\pdf\profile_single.html:49
+msgid "Hawas Preparatory School"
+msgstr ""
+
+#: .\templates\accounts\profile.html:86 .\templates\pdf\profile_single.html:50
+msgid "Level:"
+msgstr "Chức vụ"
+
+#: .\templates\accounts\profile.html:91
+#: .\templates\accounts\profile_single.html:105
+#: .\templates\pdf\profile_single.html:55
+msgid "Contact Info"
+msgstr "Thông tin liên hệ"
+
+#: .\templates\accounts\profile.html:93 .\templates\pdf\profile_single.html:57
+msgid "Email:"
+msgstr ""
+
+#: .\templates\accounts\profile.html:94 .\templates\pdf\profile_single.html:58
+msgid "Tel No.:"
+msgstr "Số điện thoại:"
+
+#: .\templates\accounts\profile.html:95 .\templates\pdf\profile_single.html:59
+msgid "Address/city:"
+msgstr "Địa chỉ:"
+
+#: .\templates\accounts\profile.html:99
+#: .\templates\accounts\profile_single.html:113
+#: .\templates\pdf\profile_single.html:63
+msgid "Important Dates"
+msgstr "Ngày quan trọng"
+
+#: .\templates\accounts\profile.html:103 .\templates\pdf\profile_single.html:67
+msgid "Academic Year:"
+msgstr "Niên khóa"
+
+#: .\templates\accounts\profile.html:105 .\templates\pdf\profile_single.html:69
+msgid "Registered Date:"
+msgstr "Ngày đăng ký"
+
+#: .\templates\accounts\profile_single.html:30
+msgid "Role"
+msgstr "Chức vụ"
+
+#: .\templates\accounts\profile_single.html:43
+msgid "Change Program"
+msgstr "Thay đổi chương trình"
+
+#: .\templates\accounts\profile_single.html:98
+msgid "School"
+msgstr "Trường"
+
+#: .\templates\accounts\profile_single.html:108
+msgid "Tel No."
+msgstr "Số điện thoại"
+
+#: .\templates\accounts\profile_single.html:117
+msgid "Academic Year"
+msgstr "Niên khóa"
+
+#: .\templates\accounts\profile_single.html:119
+msgid "Registered Date"
+msgstr "Ngày đăng ký"
+
+#: .\templates\accounts\student_list.html:19
+msgid "Add Student"
+msgstr "Thêm học viên"
+
+#: .\templates\accounts\student_list.html:73
+#: .\templates\result\add_score_for.html:105
+msgid "No Student."
+msgstr "Số thứ tự học viên"
+
+#: .\templates\accounts\student_list.html:77
+msgid "Add Student Now."
+msgstr "Thêm học viên"
+
+#: .\templates\core\dashboard.html:3 .\templates\core\dashboard.html:14
+#: .\templates\core\dashboard.html:21 .\templates\sidebar.html:37
+msgid "Dashboard"
+msgstr "Bảng biểu"
+
+#: .\templates\core\dashboard.html:28
+msgid "Dashboard settings"
+msgstr "Cài đặt bảng biểu"
+
+#: .\templates\core\dashboard.html:29
+msgid "Display grid"
+msgstr ""
+
+#: .\templates\core\dashboard.html:30
+msgid "Display table"
+msgstr "Hiển thị bảng"
+
+#: .\templates\core\dashboard.html:32
+msgid "Manage dashboard"
+msgstr "Quản lý bảng biểu"
+
+#: .\templates\core\dashboard.html:60
+msgid "Administrators"
+msgstr "Quản trị viên"
+
+#: .\templates\core\dashboard.html:69
+msgid "Lab Assistance"
+msgstr "Nghiên cứu sinh"
+
+#: .\templates\core\dashboard.html:78
+msgid "Librarians"
+msgstr "Thủ thư"
+
+#: .\templates\core\dashboard.html:87
+msgid "Supervisors"
+msgstr "Giám sát viên"
+
+#: .\templates\core\dashboard.html:96
+msgid "Office Assistance"
+msgstr "Hỗ trợ văn phòng"
+
+#: .\templates\core\dashboard.html:133
+msgid "Latest activities"
+msgstr "Lần hoạt động cuối"
+
+#: .\templates\core\dashboard.html:138
+msgid "No recent activity"
+msgstr "Không có hoạt động nào gần nhất"
+
+#: .\templates\core\dashboard.html:146
+msgid "School Demographics"
+msgstr ""
+
+#: .\templates\core\index.html:16
+msgid "Add New Post"
+msgstr "Thêm tin mới"
+
+#: .\templates\core\index.html:23 .\templates\core\index.html:31
+#: .\templates\setting\admin_panel.html:69
+#: .\templates\setting\admin_panel.html:70
+msgid "Events"
+msgstr "Sự kiện"
+
+#: .\templates\core\index.html:41
+msgid "news"
+msgstr "Tin tức"
+
+#: .\templates\core\index.html:41
+msgid "events"
+msgstr "sự kiện"
+
+#: .\templates\core\index.html:52 .\templates\core\semester_list.html:57
+#: .\templates\core\session_list.html:53
+#: .\templates\course\course_single.html:91
+#: .\templates\course\course_single.html:168
+#: .\templates\course\program_single.html:82 .\templates\quiz\quiz_list.html:68
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#: .\templates\core\index.html:64 .\templates\upload\video_single.html:23
+msgid "ago"
+msgstr ""
+
+#: .\templates\core\index.html:74
+msgid "School news and events will appear here."
+msgstr "Tin tức và sự kiện hiển thị tại đây"
+
+#: .\templates\core\post_add.html:12
+msgid "Post form"
+msgstr "Biểu mẫu"
+
+#: .\templates\core\post_add.html:21
+msgid "Post Form"
+msgstr "Bài đăng"
+
+#: .\templates\core\post_add.html:26
+#: .\templates\upload\upload_file_form.html:34
+#: .\templates\upload\upload_video_form.html:33
+msgid "Cancel"
+msgstr "Hủy"
+
+#: .\templates\core\semester_list.html:10
+msgid "Semester list"
+msgstr "Danh sách học kỳ"
+
+#: .\templates\core\semester_list.html:16
+msgid "Add New Semester"
+msgstr "Thêm học kỳ mới"
+
+#: .\templates\core\semester_list.html:20
+#: .\templates\core\semester_update.html:12
+msgid "Semester List"
+msgstr "Danh sách học kỳ"
+
+#: .\templates\core\semester_list.html:30
+msgid "Is Current semester"
+msgstr "Học kỳ hiện tại"
+
+#: .\templates\core\semester_list.html:34 .\templates\core\session_list.html:33
+#: .\templates\course\course_single.html:65
+#: .\templates\course\course_single.html:142
+msgid "Actions"
+msgstr "Hành động"
+
+#: .\templates\core\semester_list.html:71
+msgid "No Semester."
+msgstr "Không học kỳ nào"
+
+#: .\templates\core\semester_list.html:75
+msgid "Add Semester Now."
+msgstr "Thêm học kỳ bây giờ"
+
+#: .\templates\core\semester_update.html:13
+msgid "Semester Form"
+msgstr "Biểu mẫu cho học kỳ"
+
+#: .\templates\core\semester_update.html:22
+msgid "Semester Add & update Form"
+msgstr "Thêm học kỳ và cập nhật biểu mẫu"
+
+#: .\templates\core\session_list.html:10 .\templates\core\session_list.html:20
+#: .\templates\core\session_update.html:12
+msgid "Session List"
+msgstr "Danh sánh niên khóa"
+
+#: .\templates\core\session_list.html:16
+msgid "Add New Session"
+msgstr "Thêm niên khóa mới"
+
+#: .\templates\core\session_list.html:30
+msgid "Is Current Session"
+msgstr "Niên khóa hiện tại"
+
+#: .\templates\core\session_list.html:65
+msgid "No Session."
+msgstr "Không có niên khóa nào"
+
+#: .\templates\core\session_list.html:69
+msgid "Add Session Now."
+msgstr "Thêm niên khóa ngay bây giờ"
+
+#: .\templates\core\session_update.html:13
+msgid "Session Form"
+msgstr "Mẫu Niên khóa"
+
+#: .\templates\core\session_update.html:22
+msgid "Session Add & update Form"
+msgstr "Thêm niên khóa và cập nhật biểu mẫu"
+
+#: .\templates\course\course_add.html:12
+#: .\templates\course\course_single.html:14
+#: .\templates\course\program_add.html:12
+#: .\templates\course\program_list.html:10
+#: .\templates\course\program_single.html:14
+#: .\templates\quiz\mcquestion_form.html:10 .\templates\quiz\quiz_form.html:10
+#: .\templates\quiz\quiz_list.html:15 .\templates\quiz\result.html:15
+#: .\templates\setting\admin_panel.html:59
+#: .\templates\upload\upload_file_form.html:11
+#: .\templates\upload\upload_video_form.html:11
+#: .\templates\upload\video_single.html:11
+msgid "Programs"
+msgstr "Chương trình"
+
+#: .\templates\course\course_add.html:13 .\templates\course\course_add.html:17
+msgid "Course Form"
+msgstr "Mẫu khóa học"
+
+#: .\templates\course\course_add.html:27
+msgid "Course Detail"
+msgstr "Thông tin khóa học"
+
+#: .\templates\course\course_add.html:37
+msgid "Other Info"
+msgstr "Thông tin khác"
+
+#: .\templates\course\course_allocation_form.html:12
+#: .\templates\course\course_allocation_view.html:20
+#: .\templates\setting\admin_panel.html:64
+msgid "Course Allocations"
+msgstr "phân bổ khóa học"
+
+#: .\templates\course\course_allocation_form.html:13
+msgid "Allocation Form"
+msgstr "Biểu mẫu phân bổ"
+
+#: .\templates\course\course_allocation_form.html:22
+msgid "Course Allocation Form"
+msgstr "Mẫu phân bổ khóa học"
+
+#: .\templates\course\course_allocation_view.html:10
+msgid "Allocation list"
+msgstr "Danh sách phân bổ"
+
+#: .\templates\course\course_allocation_view.html:16
+msgid "Allocate Now"
+msgstr "Phân bổ bây giờ"
+
+#: .\templates\course\course_allocation_view.html:50
+msgid "Edit or Update"
+msgstr "Chỉnh sửa hoặc cập nhật"
+
+#: .\templates\course\course_allocation_view.html:53
+msgid "Deallocate"
+msgstr "Bỏ phân công"
+
+#: .\templates\course\course_allocation_view.html:65
+msgid "No Course Allocated."
+msgstr "Không có khóa học nào được phân bổ"
+
+#: .\templates\course\course_allocation_view.html:69
+msgid "Allocate now"
+msgstr "Phân bổ bây giờ"
+
+#: .\templates\course\course_registration.html:13
+msgid "Course Registration"
+msgstr "Đăng ký khóa học"
+
+#: .\templates\course\course_registration.html:17
+#: .\templates\course\course_registration.html:35
+#: .\templates\setting\admin_panel.html:47
+msgid "Course Add"
+msgstr "Thêm khóa học"
+
+#: .\templates\course\course_registration.html:17
+#: .\templates\setting\admin_panel.html:47
+msgid "Drop"
+msgstr "Bỏ"
+
+#: .\templates\course\course_registration.html:25
+msgid "Calender is off"
+msgstr "Lịch đã tắt"
+
+#: .\templates\course\course_registration.html:26
+msgid "Check the university calender"
+msgstr "Kiểm tra lịch học"
+
+#: .\templates\course\course_registration.html:38
+msgid "Save Score"
+msgstr "Lưu điểm"
+
+#: .\templates\course\course_registration.html:38
+msgid "Add Selected"
+msgstr "Thêm mục đã chọn"
+
+#: .\templates\course\course_registration.html:42
+#: .\templates\result\assessment_results.html:20
+#: .\templates\result\grade_results.html:20
+msgid "First Semester:"
+msgstr "Học kỳ đầu"
+
+#: .\templates\course\course_registration.html:47
+#: .\templates\course\course_registration.html:110
+#: .\templates\course\course_registration.html:202
+msgid "Mark"
+msgstr "Đánh dấu"
+
+#: .\templates\course\course_registration.html:48
+#: .\templates\course\course_registration.html:111
+#: .\templates\course\course_registration.html:203
+#: .\templates\course\program_single.html:44
+#: .\templates\course\user_course_list.html:37
+#: .\templates\course\user_course_list.html:81
+#: .\templates\result\assessment_results.html:26
+#: .\templates\result\assessment_results.html:68
+#: .\templates\result\grade_results.html:26
+#: .\templates\result\grade_results.html:91
+msgid "Course Code"
+msgstr "Mã khóa học"
+
+#: .\templates\course\course_registration.html:49
+#: .\templates\course\course_registration.html:112
+#: .\templates\course\course_registration.html:204
+#: .\templates\result\assessment_results.html:25
+#: .\templates\result\assessment_results.html:67
+#: .\templates\result\grade_results.html:25
+#: .\templates\result\grade_results.html:90
+msgid "Course Title"
+msgstr "Tiêu đề khóa học"
+
+#: .\templates\course\course_registration.html:50
+#: .\templates\course\course_registration.html:113
+#: .\templates\course\course_registration.html:205
+#: .\templates\result\assessment_results.html:27
+#: .\templates\result\assessment_results.html:69
+msgid "Cr.Hr(s)"
+msgstr ""
+
+#: .\templates\course\course_registration.html:52
+#: .\templates\course\course_registration.html:115
+#: .\templates\course\course_registration.html:207
+msgid "Classification"
+msgstr "Phân loại"
+
+#: .\templates\course\course_registration.html:53
+#: .\templates\course\course_registration.html:116
+#: .\templates\course\course_registration.html:208
+msgid "Elective Group"
+msgstr "Nhóm tự chọn"
+
+#: .\templates\course\course_registration.html:68
+#: .\templates\course\course_registration.html:131
+#: .\templates\course\course_registration.html:222
+msgid "Elective"
+msgstr "Tự chọn"
+
+#: .\templates\course\course_registration.html:70
+#: .\templates\course\course_registration.html:133
+#: .\templates\course\course_registration.html:224
+msgid "Core"
+msgstr "Chính"
+
+#: .\templates\course\course_registration.html:82
+#: .\templates\course\course_registration.html:145
+#: .\templates\course\course_registration.html:235
+msgid "No Course."
+msgstr "Số khóa học."
+
+#: .\templates\course\course_registration.html:96
+msgid "First semester Credit(s):"
+msgstr "Tín chỉ học kỳ đầu:"
+
+#: .\templates\course\course_registration.html:105
+#: .\templates\result\assessment_results.html:62
+#: .\templates\result\grade_results.html:85
+msgid "Second Semester:"
+msgstr "Học kỳ hai:"
+
+#: .\templates\course\course_registration.html:159
+msgid "Second semester credit(s):"
+msgstr "Tín chỉ học kỳ hai:"
+
+#: .\templates\course\course_registration.html:164
+msgid "Registerd course credit(s):"
+msgstr "Đăng ký tín chỉ khóa học:"
+
+#: .\templates\course\course_registration.html:169
+#: .\templates\course\course_registration.html:249
+msgid "Total credit(s):"
+msgstr "Tổng số tín chỉ:"
+
+#: .\templates\course\course_registration.html:186
+msgid "Course Drop"
+msgstr "Bỏ khóa học"
+
+#: .\templates\course\course_registration.html:193
+msgid "Drop Selected"
+msgstr "Bỏ mục đã chọn"
+
+#: .\templates\course\course_registration.html:260
+msgid "Print Registration Form"
+msgstr "In mẫu đã đăng ký"
+
+#: .\templates\course\course_registration.html:261
+msgid "Print Registerd Courses"
+msgstr "In khóa học đã đăng ký"
+
+#: .\templates\course\course_single.html:12
+#: .\templates\course\program_single.html:12 .\templates\quiz\quiz_list.html:13
+msgid "My courses"
+msgstr "Khóa học của tôi"
+
+#: .\templates\course\course_single.html:26
+msgid "Edit course"
+msgstr "Chỉnh sửa khóa học"
+
+#: .\templates\course\course_single.html:31
+msgid "Upload new file"
+msgstr "Tải tệp mới lên"
+
+#: .\templates\course\course_single.html:34
+msgid "Upload new video"
+msgstr "Tải video mới lên"
+
+#: .\templates\course\course_single.html:40
+msgid "Take a Quiz"
+msgstr "Tạo bài trắc nghiệm"
+
+#: .\templates\course\course_single.html:55
+msgid "Video Tutorials"
+msgstr "Video hướng dẫn"
+
+#: .\templates\course\course_single.html:61
+msgid "Video Title"
+msgstr "Tiêu đề video"
+
+#: .\templates\course\course_single.html:62
+#: .\templates\course\course_single.html:138
+msgid "Uploaded Date"
+msgstr "Ngày tải lên"
+
+#: .\templates\course\course_single.html:63
+msgid "Get Started"
+msgstr "Bắt đầu"
+
+#: .\templates\course\course_single.html:83
+msgid "Play now"
+msgstr "Chơi ngay bây giờ"
+
+#: .\templates\course\course_single.html:108
+msgid "No video Uploaded."
+msgstr "Không có video nào được tải lên."
+
+#: .\templates\course\course_single.html:112
+#: .\templates\course\course_single.html:189
+msgid "Upload now."
+msgstr "Tải lên bây giờ."
+
+#: .\templates\course\course_single.html:131
+msgid "Documentations"
+msgstr "Tài liệu"
+
+#: .\templates\course\course_single.html:137
+msgid "File name"
+msgstr "Tên tệp"
+
+#: .\templates\course\course_single.html:139
+msgid "Updated Date"
+msgstr "Ngày đăng tải"
+
+#: .\templates\course\course_single.html:140
+msgid "Downloads"
+msgstr "Tải xuống"
+
+#: .\templates\course\course_single.html:160
+msgid "Download"
+msgstr "Tải xuống"
+
+#: .\templates\course\course_single.html:185
+msgid "No File Uploaded."
+msgstr "Không có tệp nào được tải lên."
+
+#: .\templates\course\course_single.html:209
+msgid "Lecturer(s)"
+msgstr "Giáo viên"
+
+#: .\templates\course\course_single.html:236
+msgid "No lecturer assigned for this course"
+msgstr "Không có giáo viên nào được đăng ký cho khóa học"
+
+#: .\templates\course\program_add.html:13
+msgid "Program Form"
+msgstr "Biểu mẫu chương trình"
+
+#: .\templates\course\program_add.html:22
+msgid "Program Add Form"
+msgstr "Mẫu thêm chương trình"
+
+#: .\templates\course\program_list.html:16
+msgid "Add Program"
+msgstr "Thêm chương trình"
+
+#: .\templates\course\program_list.html:20
+msgid "Program List"
+msgstr "Danh sách chương trình"
+
+#: .\templates\course\program_list.html:32
+msgid "Program Name"
+msgstr "Tên chương trình"
+
+#: .\templates\course\program_list.html:69
+msgid "No program."
+msgstr "Chương trinh số."
+
+#: .\templates\course\program_list.html:73
+msgid "Add program now."
+msgstr "Thêm chương trình bây giờ."
+
+#: .\templates\course\program_single.html:22
+msgid "Add Course"
+msgstr "Thêm khóa học"
+
+#: .\templates\course\program_single.html:43
+#: .\templates\course\user_course_list.html:36
+#: .\templates\course\user_course_list.html:80
+msgid "Course Name"
+msgstr "Tên khóa học"
+
+#: .\templates\course\program_single.html:45
+#: .\templates\course\user_course_list.html:38
+#: .\templates\course\user_course_list.html:82
+#: .\templates\result\grade_results.html:27
+#: .\templates\result\grade_results.html:92
+msgid "Cr.Hr"
+msgstr ""
+
+#: .\templates\course\program_single.html:49
+#: .\templates\course\user_course_list.html:41
+#: .\templates\course\user_course_list.html:85
+msgid "Current Semester"
+msgstr "Học kỳ hiện tại"
+
+#: .\templates\course\program_single.html:96
+msgid "No course for this progrm."
+msgstr "Không có khóa học nào cho chương trình này."
+
+#: .\templates\course\program_single.html:100
+msgid "Add one now."
+msgstr "Thêm một ngay lập tức."
+
+#: .\templates\course\user_course_list.html:30
+msgid "Taken Courses:"
+msgstr "Khóa học đã tham gia:"
+
+#: .\templates\course\user_course_list.html:42
+#: .\templates\course\user_course_list.html:63
+msgid "Taken"
+msgstr "Đã tham gia"
+
+#: .\templates\course\user_course_list.html:74
+msgid "All Courses:"
+msgstr "Tất cả khóa học:"
+
+#: .\templates\invoice_detail.html:2 .\templates\invoices.html:1
+msgid "Invoices"
+msgstr ""
+
+#: .\templates\invoices.html:5
+msgid "Pay now"
+msgstr ""
+
+#: .\templates\navbar.html:12
+msgid "Search All... #course, #program, #Quiz, #News, #Events"
+msgstr "Tìm kiếm tất cả... #Khóa học, #Chương trình, #Quiz, #Tin tức, #Sự kiện"
+
+#: .\templates\navbar.html:38 .\templates\setting\admin_panel.html:12
+#: .\templates\setting\admin_panel.html:16 .\templates\sidebar.html:49
+msgid "Admin Panel"
+msgstr "Bảng quản trị"
+
+#: .\templates\navbar.html:41 .\templates\sidebar.html:44
+msgid "Profile"
+msgstr "Thông tin cá nhân"
+
+#: .\templates\navbar.html:42
+msgid "Setting"
+msgstr "Cài đặt"
+
+#: .\templates\navbar.html:46
+msgid "Signout"
+msgstr "Đăng xuất"
+
+#: .\templates\payments\charge.html:24
+msgid "Payment Succeed, You has been make payment successfuly."
+msgstr ""
+
+#: .\templates\payments\charge.html:25
+msgid "Redirect to your dashboard in"
+msgstr ""
+
+#: .\templates\payments\coinbase.html:3 .\templates\payments\coinbase.html:8
+msgid "Coinbase"
+msgstr ""
+
+#: .\templates\pdf\lecturer_list.html:15
+msgid "Address/City"
+msgstr "Địa chỉ/Thành phố"
+
+#: .\templates\quiz\correct_answer.html:9 .\templates\quiz\question.html:53
+#: .\templates\quiz\result.html:52
+msgid "This is the correct answer"
+msgstr "Đây là câu trả lời đúng"
+
+#: .\templates\quiz\correct_answer.html:17 .\templates\quiz\question.html:61
+#: .\templates\quiz\result.html:60
+msgid "This was your answer."
+msgstr "Đây là câu trả lời của bạn"
+
+#: .\templates\quiz\correct_answer.html:29 .\templates\quiz\question.html:73
+#: .\templates\quiz\result.html:72
+msgid "You answered the above question incorrectly"
+msgstr "Câu trả lời của bạn không chính xác"
+
+#: .\templates\quiz\mcquestion_form.html:14
+msgid "MC Question Form"
+msgstr "Bảng quản lý câu hỏi"
+
+#: .\templates\quiz\mcquestion_form.html:18
+msgid "Add questions"
+msgstr "Thêm câu hỏi"
+
+#: .\templates\quiz\mcquestion_form.html:31
+msgid "question added"
+msgstr "Câu hỏi đã được thêm"
+
+#: .\templates\quiz\mcquestion_form.html:34
+msgid "Correct the error(s) below."
+msgstr "Câu trả lời đúng phía dưới"
+
+#: .\templates\quiz\progress.html:4 .\templates\quiz\progress.html:12
+msgid "Progress Page"
+msgstr "Trang tiến trình"
+
+#: .\templates\quiz\progress.html:5
+msgid "User Progress Page"
+msgstr "Trang tiến trình của người dùng"
+
+#: .\templates\quiz\progress.html:16 .\templates\sidebar.html:79
+#: .\templates\sidebar.html:100
+msgid "Quiz Progress Rec"
+msgstr "Lịch sử làm bài trắc nghiệm"
+
+#: .\templates\quiz\progress.html:20
+msgid "Question Category Scores"
+msgstr "Câu hỏi phân loại điểm số"
+
+#: .\templates\quiz\progress.html:28
+msgid "Correctly answererd"
+msgstr "Đáp án đúng"
+
+#: .\templates\quiz\progress.html:29
+msgid "Incorrect"
+msgstr "Đáp án sai"
+
+#: .\templates\quiz\progress.html:56
+msgid "Previous exam papers"
+msgstr "Đề thi trước đó"
+
+#: .\templates\quiz\progress.html:59
+msgid "Student exam results"
+msgstr "Kết quả bài kiểm tra"
+
+#: .\templates\quiz\progress.html:61
+msgid "Below are the results of exams that you have sat"
+msgstr "Kết quả bài kiểm tra của bạn phía dưới"
+
+#: .\templates\quiz\progress.html:64
+msgid "Total complete exams:"
+msgstr "Số bài thi đã hoàn thành"
+
+#: .\templates\quiz\progress.html:71
+msgid "Quiz Title"
+msgstr "Tiêu đề bài trắc nghiệm"
+
+#: .\templates\quiz\progress.html:73
+msgid "Possible Score"
+msgstr "Điểm có thể đạt được"
+
+#: .\templates\quiz\progress.html:74
+#, python-format
+msgid "Out of 100%%"
+msgstr "Trên 100%%"
+
+#: .\templates\quiz\progress.html:99
+msgid "Progress records will appear here"
+msgstr "Quá trình ghi lại được hiện ở đây"
+
+#: .\templates\quiz\question.html:28 .\templates\quiz\result.html:36
+msgid "The previous question"
+msgstr "Câu hỏi trước đó"
+
+#: .\templates\quiz\question.html:37
+msgid "Your answer was"
+msgstr "Đáp án của bạn là"
+
+#: .\templates\quiz\question.html:85 .\templates\quiz\result.html:83
+msgid "No explanation set to this question."
+msgstr "Không có sự giải thích nào được cài đặt cho câu hỏi này."
+
+#: .\templates\quiz\question.html:108
+msgid "Quiz instractions"
+msgstr "Hướng dẫn cho bài trắc nghiệm"
+
+#: .\templates\quiz\question.html:112
+msgid ""
+" \n"
+"\t\t\t\tYou can't go back to the previous question after you submit it, \n"
+"\t\t\t\tso double check your answer before proceeding to the next one!\n"
+"\t\t\t\t"
+msgstr ""
+" \n"
+"\t\t\t\tBạn không thể quay lại câu hỏi trước đó sau khi đã hoàn thành\n"
+"\t\t\t\tVì thế hãy kiểm tra câu trả lời thật kỹ trước khi đi tới câu hỏi "
+"tiếp\n"
+"\t\t\t\t"
+
+#: .\templates\quiz\question.html:118
+msgid "Understood"
+msgstr "Đã hiểu"
+
+#: .\templates\quiz\question.html:127
+msgid "of"
+msgstr "của"
+
+#: .\templates\quiz\question.html:132
+msgid "Quiz category"
+msgstr "Phân loại bài trắc nghiệm"
+
+#: .\templates\quiz\question.html:159
+msgid "Previous"
+msgstr "Trước đó"
+
+#: .\templates\quiz\quiz_form.html:14
+msgid "Quiz Form"
+msgstr "Mẫu bài trắc nghiệm"
+
+#: .\templates\quiz\quiz_form.html:18
+msgid "Quiz form for"
+msgstr "Mẫu bài trắc nghiệm cho"
+
+#: .\templates\quiz\quiz_form.html:55
+msgid "Hold down"
+msgstr "Giữ chặt"
+
+#: .\templates\quiz\quiz_form.html:55
+msgid "or"
+msgstr "hoặc"
+
+#: .\templates\quiz\quiz_form.html:55
+msgid "on a Mac, to select more than one."
+msgstr ""
+
+#: .\templates\quiz\quiz_form.html:66
+msgid "Continue"
+msgstr "Tiếp theo"
+
+#: .\templates\quiz\quiz_list.html:25
+msgid "Add Quiz"
+msgstr "Thêm bài trắc nghiệm"
+
+#: .\templates\quiz\quiz_list.html:57
+msgid "You will only get one attempt at this quiz"
+msgstr "Bạn chỉ được làm bài trắc nghiệm thử 1 lần"
+
+#: .\templates\quiz\quiz_list.html:61
+msgid "Start quiz"
+msgstr "Bắt đầu bài trắc nghiệm"
+
+#: .\templates\quiz\quiz_list.html:82
+msgid "Course quizzes will appear here."
+msgstr "Bài trắc nghiệm được hiện ở đây."
+
+#: .\templates\quiz\quiz_marking_detail.html:4
+msgid "Result of"
+msgstr "Kết quả của"
+
+#: .\templates\quiz\quiz_marking_detail.html:4
+#: .\templates\search\search_view.html:17
+msgid "for"
+msgstr "cho"
+
+#: .\templates\quiz\quiz_marking_detail.html:12
+msgid "Completed Exams"
+msgstr "Hoàn thành bài kiểm tra"
+
+#: .\templates\quiz\quiz_marking_detail.html:13
+msgid "Marking"
+msgstr "Đánh dấu"
+
+#: .\templates\quiz\quiz_marking_detail.html:18 .\templates\quiz\result.html:97
+msgid "Quiz title"
+msgstr "Tiêu đề bài trắc nghiệm"
+
+#: .\templates\quiz\quiz_marking_detail.html:25
+#: .\templates\quiz\sitting_list.html:36
+msgid "Completed"
+msgstr "Đã hoàn thành"
+
+#: .\templates\quiz\quiz_marking_detail.html:35
+msgid "User answer"
+msgstr "Câu trả lời của người làm"
+
+#: .\templates\quiz\quiz_marking_detail.html:54
+msgid "incorrect"
+msgstr "không chính xác"
+
+#: .\templates\quiz\quiz_marking_detail.html:62
+msgid "Toggle whether correct"
+msgstr "Bật/tắt trạng thái đúng hay không"
+
+#: .\templates\quiz\result.html:8
+msgid "Quiz Results for"
+msgstr "Kết quả bài trắc nghiệm cho"
+
+#: .\templates\quiz\result.html:20
+#: .\templates\result\assessment_results.html:17
+#: .\templates\result\grade_results.html:17
+msgid "Result"
+msgstr "Kết quả"
+
+#: .\templates\quiz\result.html:26
+msgid "Calculating your result..."
+msgstr "Đang tính điểm của bạn"
+
+#: .\templates\quiz\result.html:94
+msgid "Quiz result"
+msgstr "Kết quả bài trắc nghiệm"
+
+#: .\templates\quiz\result.html:101
+msgid "You answered"
+msgstr "Bạn đã trả lời"
+
+#: .\templates\quiz\result.html:101
+msgid "questions correctly out of"
+msgstr "số câu hỏi trả lời đúng trên tổng số"
+
+#: .\templates\quiz\result.html:101
+msgid "giving you"
+msgstr "cho bạn"
+
+#: .\templates\quiz\result.html:101
+#, python-format
+msgid "%% correct"
+msgstr "%% đúng"
+
+#: .\templates\quiz\result.html:115
+msgid "Review the questions below and try the quiz again in the future"
+msgstr ""
+"Ôn lại những câu hỏi ở dưới và thử làm bài trắc nghiệm lại lần nữa trong "
+"tương lai"
+
+#: .\templates\quiz\result.html:117
+msgid "The result of this quiz will be stored in your progress section"
+msgstr "Kết quả của bài trắc nghiệm sẽ được lưu trong mục quá trình của bạn"
+
+#: .\templates\quiz\result.html:119
+msgid "so you can review and monitor your progression"
+msgstr "vì vậy bạn có thể theo dõi tiến trình của mình"
+
+#: .\templates\quiz\result.html:132
+msgid "Your session score is"
+msgstr "Điểm tổng kết năm học của bạn là"
+
+#: .\templates\quiz\result.html:132
+msgid "out of a possible"
+msgstr "trên tổng số"
+
+#: .\templates\quiz\result.html:155
+msgid "No explanation set for this question."
+msgstr "Chưa có lời giải thích nào được thiết lập cho câu hỏi này."
+
+#: .\templates\quiz\result.html:162
+msgid "Your answer"
+msgstr "câu trả lời của bạn"
+
+#: .\templates\quiz\sitting_list.html:3
+msgid "All Quizzes"
+msgstr "Tất cả các bài trắc nghiệm"
+
+#: .\templates\quiz\sitting_list.html:10 .\templates\sidebar.html:73
+msgid "Complete Exams"
+msgstr "Bài kiểm tra đã hoàn thành"
+
+#: .\templates\quiz\sitting_list.html:14
+msgid "List of complete exams"
+msgstr "Danh sách các bài kiểm tra đã hoàn thành"
+
+#: .\templates\quiz\sitting_list.html:22
+#: .\templates\snippets\filter_form.html:12
+msgid "Filter"
+msgstr "Lọc"
+
+#: .\templates\quiz\sitting_list.html:27
+msgid "Total complete exams"
+msgstr "Tổng bài kiểm tra đã hoàn thành"
+
+#: .\templates\quiz\sitting_list.html:52
+msgid "View details"
+msgstr "Xem chi tiết"
+
+#: .\templates\quiz\sitting_list.html:61
+msgid "No completed exams for you"
+msgstr "Chưa có bài kiểm tra nào đã hoàn thành"
+
+#: .\templates\registration\login.html:3
+msgid "Dj Learning Management System - Login"
+msgstr "Phần mềm quản lý học tập - Đăng nhập"
+
+#: .\templates\registration\login.html:11
+msgid "Sign in"
+msgstr "Đăng nhập"
+
+#: .\templates\registration\login.html:16
+msgid "ID Number"
+msgstr "Số ID"
+
+#: .\templates\registration\login.html:25
+#: .\templates\registration\register.html:73
+msgid "Invalid ID & Password."
+msgstr "ID và mật khẩu khả dụng"
+
+#: .\templates\registration\login.html:28
+msgid "SIGN IN"
+msgstr "ĐĂNG NHẬP"
+
+#: .\templates\registration\login.html:32
+msgid "Forgot password ?"
+msgstr "Quân mật khẩu ?"
+
+#: .\templates\registration\password_reset.html:3
+msgid "Password Reset | Learning management system"
+msgstr "Cài lại mật khẩu | Phần mềm quản lý học tập"
+
+#: .\templates\registration\password_reset.html:7
+msgid "Password Reset"
+msgstr "Cài lại mật khẩu"
+
+#: .\templates\registration\password_reset.html:17
+msgid "Request Password Reset"
+msgstr "Yêu cầu cài đặt lại mật khẩu"
+
+#: .\templates\registration\password_reset_complete.html:3
+msgid "Password Reset Complete | Learning management system"
+msgstr "Mật khẩu đã được cài đặt lại | Phần mềm quản lý học tập"
+
+#: .\templates\registration\password_reset_complete.html:8
+msgid "Password Reset Complete"
+msgstr "Mật khẩu đã được cài đặt lại"
+
+#: .\templates\registration\password_reset_complete.html:11
+msgid "Your password has been set, you are now able to Log In!"
+msgstr "Mật khẩu của bạn đã được cài đặt, bây giờ bạn đã có thể đăng nhập lại"
+
+#: .\templates\registration\password_reset_complete.html:13
+msgid "Sign In Here"
+msgstr "Đăng nhập tại đây"
+
+#: .\templates\registration\password_reset_confirm.html:3
+msgid "New Password | Learning management system"
+msgstr "Mật khẩu mới | Phần mềm quản lý học tập"
+
+#: .\templates\registration\password_reset_confirm.html:10
+msgid "Confirm New Password"
+msgstr "Xác nhận mật khẩu"
+
+#: .\templates\registration\password_reset_confirm.html:19
+msgid "Reset Password"
+msgstr "Cài lại mật khẩu"
+
+#: .\templates\registration\password_reset_done.html:3
+msgid "Email Sent | Learning management system"
+msgstr "Email đã gửi | Phần mềm quản lý học tập"
+
+#: .\templates\registration\password_reset_done.html:8
+msgid "Email sent"
+msgstr "Email đã gửi"
+
+#: .\templates\registration\password_reset_done.html:14
+msgid "Back To Login"
+msgstr "Quay lại để đăng nhập"
+
+#: .\templates\registration\register.html:3
+msgid "Register | Learning management system"
+msgstr "Đăng ký | Phần mềm quản lý học tập"
+
+#: .\templates\registration\register.html:12
+msgid "Create Your Account"
+msgstr "Tạo tài khoản của bạn"
+
+#: .\templates\registration\register.html:20
+msgid "Login Form"
+msgstr "Đơn đăng nhập"
+
+#: .\templates\registration\register.html:76
+msgid "SIGN UP"
+msgstr "Đăng nhập"
+
+#: .\templates\registration\register.html:79
+msgid "Already Registered ?"
+msgstr "Đã đăng ký ?"
+
+#: .\templates\registration\register.html:79
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: .\templates\result\add_score.html:11 .\templates\result\add_score.html:17
+#: .\templates\result\add_score_for.html:12 .\templates\sidebar.html:94
+msgid "Manage Score"
+msgstr "Quản lý điểm số"
+
+#: .\templates\result\add_score.html:29
+msgid "Select Your Course Here"
+msgstr "Chọn khóa học của bạn tại đây"
+
+#: .\templates\result\add_score.html:35
+#: .\templates\result\add_score_for.html:24
+msgid "No course."
+msgstr "Không có khóa học nào."
+
+#: .\templates\result\add_score.html:39
+msgid "To manage scores, please select the course using the button above."
+msgstr "Để quản lý các điểm số, hãy chọn khóa học bằng nút ở trên"
+
+#: .\templates\result\add_score_for.html:30
+msgid "Students result form"
+msgstr "Mẫu kết quả học viên"
+
+#: .\templates\result\add_score_for.html:41
+msgid "Grade report"
+msgstr "Báo cáo điểm số"
+
+#: .\templates\result\add_score_for.html:54
+#: .\templates\result\assessment_results.html:29
+#: .\templates\result\assessment_results.html:71
+msgid "Mid exam"
+msgstr "Kiểm tra giữa kỳ"
+
+#: .\templates\result\add_score_for.html:56
+#: .\templates\result\assessment_results.html:31
+#: .\templates\result\assessment_results.html:73
+msgid "Attendance"
+msgstr "Điểm danh"
+
+#: .\templates\result\add_score_for.html:57
+#: .\templates\result\assessment_results.html:32
+#: .\templates\result\assessment_results.html:74
+msgid "Final exam"
+msgstr "Kiểm tra cuối kỳ"
+
+#: .\templates\result\add_score_for.html:58
+#: .\templates\result\assessment_results.html:33
+#: .\templates\result\assessment_results.html:75
+msgid "Total"
+msgstr "Tổng cộng"
+
+#: .\templates\result\add_score_for.html:59
+msgid "Point"
+msgstr "Điểm"
+
+#: .\templates\result\add_score_for.html:60
+#: .\templates\result\grade_results.html:28
+msgid "Grade"
+msgstr "Lớp"
+
+#: .\templates\result\add_score_for.html:61
+#: .\templates\result\grade_results.html:30
+#: .\templates\result\grade_results.html:95
+msgid "Comment"
+msgstr "Bình luận"
+
+#: .\templates\result\assessment_results.html:10
+#: .\templates\result\assessment_results.html:16 .\templates\sidebar.html:106
+msgid "Assesment Results"
+msgstr "Kết quả đánh giá"
+
+#: .\templates\result\grade_results.html:10
+#: .\templates\result\grade_results.html:16 .\templates\sidebar.html:103
+msgid "Grade Results"
+msgstr "Kết quả lớp"
+
+#: .\templates\result\grade_results.html:29
+#: .\templates\result\grade_results.html:94
+msgid "Points"
+msgstr "Điểm số"
+
+#: .\templates\result\grade_results.html:46
+#: .\templates\result\grade_results.html:111
+msgid "PASS"
+msgstr "ĐÃ ĐẬU"
+
+#: .\templates\result\grade_results.html:48
+#: .\templates\result\grade_results.html:113
+msgid "FAIL"
+msgstr "ĐÃ RỚT"
+
+#: .\templates\result\grade_results.html:67
+msgid "Total first semester credit:"
+msgstr "Tổng số tín chỉ học kỳ một"
+
+#: .\templates\result\grade_results.html:76
+#: .\templates\result\grade_results.html:165
+msgid "First Semester GPA:"
+msgstr "Điểm số trung bình học kỳ đầu"
+
+#: .\templates\result\grade_results.html:93
+msgid "GRADE"
+msgstr "LỚP"
+
+#: .\templates\result\grade_results.html:127
+msgid "Total second semester credit:"
+msgstr "Tổng số tín chỉ học kỳ hai"
+
+#: .\templates\result\grade_results.html:132
+msgid "Total Credit:"
+msgstr "Tổng số tín chỉ"
+
+#: .\templates\result\grade_results.html:141
+#: .\templates\result\grade_results.html:172
+msgid "Second Semester GPA:"
+msgstr "Điểm số trung bình học kỳ hai"
+
+#: .\templates\result\grade_results.html:150
+#: .\templates\result\grade_results.html:180
+msgid "Previous CGPA:"
+msgstr "Điểm số trung bình trước đó"
+
+#: .\templates\search\search_view.html:3
+msgid "Search result for"
+msgstr "Tìm kiếm kết quả cho"
+
+#: .\templates\search\search_view.html:12
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: .\templates\search\search_view.html:17
+msgid "result"
+msgstr "kết quả"
+
+#: .\templates\search\search_view.html:31
+msgid "Program of"
+msgstr "Chương trình của"
+
+#: .\templates\search\search_view.html:38
+#: .\templates\search\search_view.html:89
+msgid "News And Events"
+msgstr "Tin tức và sự kiện"
+
+#: .\templates\search\search_view.html:39
+msgid "Date:"
+msgstr "Ngày/tháng/năm:"
+
+#: .\templates\search\search_view.html:47
+msgid "quiz"
+msgstr "bài trắc nhiệm"
+
+#: .\templates\search\search_view.html:47
+msgid "Course:"
+msgstr "Khóa học:"
+
+#: .\templates\search\search_view.html:85
+msgid "Search by:"
+msgstr "Tìm kiếm bởi:"
+
+#: .\templates\search\search_view.html:87
+msgid "Title or Description"
+msgstr "Tiêu đề hoặc mô tả"
+
+#: .\templates\search\search_view.html:88
+msgid "Title, Code or Description"
+msgstr "Tiêu đề, mã hoặc mô tả"
+
+#: .\templates\search\search_view.html:89
+msgid "Title, Description or just by typing news or event"
+msgstr "Tiêu đề, mô tả hoặc chỉ nhập tin tức hoặc sự kiện"
+
+#: .\templates\search\search_view.html:90
+msgid "Title, Description or Category(practice, assignment and exam)"
+msgstr "Tiêu đề, mô tả hoặc phân loại(luyện tập, bài tập vè kiểm tra)"
+
+#: .\templates\setting\admin_panel.html:26
+#: .\templates\setting\admin_panel.html:31
+#: .\templates\setting\admin_panel.html:36
+#: .\templates\setting\admin_panel.html:41
+#: .\templates\setting\admin_panel.html:59
+#: .\templates\setting\admin_panel.html:64
+#: .\templates\setting\admin_panel.html:69
+msgid "Manage"
+msgstr "Quản lý"
+
+#: .\templates\setting\admin_panel.html:32
+msgid "students"
+msgstr "học viên"
+
+#: .\templates\setting\admin_panel.html:37
+msgid "sessions"
+msgstr "Niên khóa"
+
+#: .\templates\setting\admin_panel.html:42
+msgid "semesters"
+msgstr "học kỳ"
+
+#: .\templates\setting\admin_panel.html:53
+msgid "Switch"
+msgstr "Chuyển đổi"
+
+#: .\templates\setting\admin_panel.html:60
+msgid "programs"
+msgstr "chương trình"
+
+#: .\templates\setting\admin_panel.html:65
+msgid "course allocations"
+msgstr "phân bổ khóa học"
+
+#: .\templates\setting\password_change.html:12
+msgid "Password Change"
+msgstr "Thay đổi mật khẩu"
+
+#: .\templates\setting\password_change.html:21
+#: .\templates\setting\password_change.html:25 .\templates\sidebar.html:118
+msgid "Change Password"
+msgstr "Thay đổi mật khẩu"
+
+#: .\templates\setting\profile_info_change.html:12
+msgid "Account setting"
+msgstr ""
+
+#: .\templates\setting\profile_info_change.html:16
+msgid "Account Settings"
+msgstr "Cài đặt tài khoản"
+
+#: .\templates\setting\profile_info_change.html:44
+msgid "Update Profile"
+msgstr "Cập nhật thông tin cá nhân"
+
+#: .\templates\sidebar.html:67
+msgid "Programs & Courses"
+msgstr "Chương trình và khóa học"
+
+#: .\templates\sidebar.html:82
+msgid "Course Allocation"
+msgstr "Phân bổ khóa học"
+
+#: .\templates\sidebar.html:85
+msgid "Manage Session"
+msgstr "Quản lý năm học"
+
+#: .\templates\sidebar.html:88
+msgid "Manage Semester"
+msgstr "Quản lý học kỳ"
+
+#: .\templates\sidebar.html:109
+msgid "Drop Course"
+msgstr "Bỏ khóa học"
+
+#: .\templates\sidebar.html:115
+msgid "Account Setting"
+msgstr "Cài đặt tài khoản"
+
+#: .\templates\sidebar.html:141
+msgid "Read our"
+msgstr ""
+
+#: .\templates\sidebar.html:141
+msgid "Privacy"
+msgstr ""
+
+#: .\templates\sidebar.html:141
+msgid "and"
+msgstr ""
+
+#: .\templates\sidebar.html:141
+msgid "Terms of use."
+msgstr ""
+
+#: .\templates\sidebar.html:146
+msgid "⭐️ Star This Project"
+msgstr ""
+
+#: .\templates\upload\upload_file_form.html:14
+msgid "File upload"
+msgstr "Tải tệp lên"
+
+#: .\templates\upload\upload_file_form.html:18
+msgid "File upload for"
+msgstr "Tải tệp lên cho"
+
+#: .\templates\upload\upload_file_form.html:26
+msgid "File Upload Form"
+msgstr "Mẫu tệp tải lên"
+
+#: .\templates\upload\upload_file_form.html:33
+#: .\templates\upload\upload_video_form.html:32
+msgid "Upload"
+msgstr "Tải lên"
+
+#: .\templates\upload\upload_video_form.html:14
+msgid "Video upload"
+msgstr "Tải video lên"
+
+#: .\templates\upload\upload_video_form.html:18
+msgid "Video upload for"
+msgstr "Video được tải lên cho"
+
+#: .\templates\upload\upload_video_form.html:26
+msgid "Video Upload Form"
+msgstr "Mẫu tải video lên"
+
+#: .\templates\upload\video_single.html:27
+msgid "No video description set."
+msgstr "Không có mô tả video nào được thiết lập"
+
+#~ msgid "Bachelor"
+#~ msgstr "Cử nhân"
+
+#~ msgid "Master"
+#~ msgstr "Thạc sĩ"
+
+#~ msgid "Bachelor Degree"
+#~ msgstr "Bằng cử nhân"
+
+#~ msgid "Master Degree"
+#~ msgstr "Bằng thạc sĩ"
+
+#~ msgid "Next semester begins"
+#~ msgstr "Học kỳ tiếp theo bắt đầu"
+
+#~ msgid "Save and add another"
+#~ msgstr "Lưu và thêm câu khác"
