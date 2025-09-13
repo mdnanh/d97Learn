@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from decouple import config
 from django.utils.translation import gettext_lazy as _
-
+import dj_database_url 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -113,10 +113,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+    'default': dj_database_url.config(
+        # Lấy URL từ biến môi trường 'DATABASE_URL' do Render cung cấp.
+        # Nếu không tìm thấy biến này (khi chạy ở máy local),
+        # nó sẽ dùng giá trị mặc định (default) ở dưới.
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",
+        
+        # Luôn giữ kết nối mở trong 600 giây để tăng hiệu năng.
+        conn_max_age=600,
+        
+        # Bắt buộc kết nối đến database của Render phải dùng mã hóa SSL.
+        # Dòng này sẽ được bỏ qua khi dùng SQLite.
+        ssl_require=True
+    )
 }
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
