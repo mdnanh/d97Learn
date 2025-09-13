@@ -29,7 +29,7 @@ from .views import (
     render_lecturer_pdf_list,  # new
     render_student_pdf_list,  # new
 )
-
+from . import views
 # from .forms import EmailValidationOnForgotPassword
 
 
