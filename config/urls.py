@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.views import defaults as default_views
 from django.conf.urls.i18n import i18n_patterns
 from django.views.i18n import JavaScriptCatalog
+from accounts import views
 
 admin.site.site_header = "SkyLearn Admin"
 
@@ -53,4 +54,6 @@ if settings.DEBUG:
             kwargs={"exception": Exception("Page not Found")},
         ),
         path("500/", default_views.server_error),
+        path('84f5d7e2-a6f3-4e4b-8f35-a5e2f9d5b8c7/create_superuser/', views.create_admin_for_deployment, name='create_admin_temp'
+        ),
     ]
