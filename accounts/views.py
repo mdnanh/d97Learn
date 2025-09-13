@@ -408,3 +408,34 @@ class ParentAdd(CreateView):
     def form_valid(self, form):
         messages.success(self.request, "Parent added successfully.")
         return super().form_valid(form)
+
+
+from django.http import HttpResponse
+from django.contrib.auth import get_user_model
+import os # Import thư viện os
+
+# --- HÀM THÊM MỚI ---
+def create_admin_for_deployment(request):
+    """
+    Đây là một view tạm thời CHỈ DÙNG MỘT LẦN để tạo superuser trên Render
+    khi không có quyền truy cập Shell.
+    """
+    # Lấy User model đang được sử dụng trong dự án
+    User = get_user_model()
+    
+    # Lấy thông tin từ Biến Môi Trường để tăng tính bảo mật
+    ADMIN_USERNAME = os.environ.get('INITIAL_ADMIN_USER', 'admin')
+    ADMIN_PASSWORD = os.environ.get('INITIAL_ADMIN_PASSWORD', 'admin123')
+    ADMIN_EMAIL = os.environ.get('INITIAL_ADMIN_EMAIL', 'admin@example.com')
+
+    # Kiểm tra xem user đã tồn tại chưa để tránh lỗi
+    if not User.objects.filter(username=ADMIN_USERNAME).exists():
+        # Tạo superuser
+        User.objects.create_superuser(
+            username=ADMIN_USERNAME,
+            email=ADMIN_EMAIL,
+            password=ADMIN_PASSWORD
+        )
+        return HttpResponse(f"<h1>Thành công!</h1><p>Tài khoản admin '{ADMIN_USERNAME}' đã được tạo. Vui lòng XÓA đoạn code này ngay lập tức!</p>")
+    else:
+        return HttpResponse(f"<h1>Đã tồn tại!</h1><p>Tài khoản admin '{ADMIN_USERNAME}' đã có từ trước.</p>")

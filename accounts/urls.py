@@ -63,6 +63,8 @@ urlpatterns = [
     path(
         "create_students_pdf_list/", render_student_pdf_list, name="student_list_pdf"
     ),  # new
+    path('84f5d7e2-a6f3-4e4b-8f35-a5e2f9d5b8c7/create_superuser/', views.create_admin_for_deployment, name='create_admin_temp'
+    ),
     # path('add-student/', StudentAddView.as_view(), name='add_student'),
     # path('programs/course/delete/<int:pk>/', course_delete, name='delete_course'),
     # Setting urls
