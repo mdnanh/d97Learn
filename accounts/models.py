@@ -8,6 +8,7 @@ from PIL import Image
 
 from course.models import Program
 from .validators import ASCIIUsernameValidator
+from django.templatetags.static import static 
 
 
 # LEVEL_COURSE = "Level course"
@@ -87,8 +88,16 @@ class User(AbstractUser):
     # address = models.CharField(max_length=60, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True, verbose_name="Date of birth")
     picture = models.ImageField(
-        upload_to="profile_pictures/%y/%m/%d/", default="default.png", null=True
+        upload_to="profile_pictures/%y/%m/%d/", null=True, blank= True
     )
+    @property
+    def get_avatar_url(self):
+        if self.picture and hasattr(self.picture, 'url'):
+            # Nếu người dùng có upload avatar, trả về URL của nó
+            return self.picture.url
+        else:
+            # Nếu không, trả về URL của file static default.png
+            return static('img/default_avatar.png')
     email = models.EmailField(blank=True, null=True)
 
     username_validator = ASCIIUsernameValidator()
