@@ -30,6 +30,11 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 
 ALLOWED_HOSTS = ["127.0.0.1", "adilmohak1.pythonanywhere.com"]
 
+# Dòng code "thần kỳ" để tự động thêm tên miền của Render vào danh sách
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
 
