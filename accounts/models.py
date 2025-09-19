@@ -97,7 +97,7 @@ class User(AbstractUser):
             return self.picture.url
         else:
             # Nếu không, trả về URL của file static default.png
-            return static('img/default_avatar.png')
+            return static('/img/default_avatar.png')
     email = models.EmailField(blank=True, null=True)
 
     username_validator = ASCIIUsernameValidator()

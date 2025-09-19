@@ -164,28 +164,6 @@ class StudentAddForm(UserCreationForm):
         label= _("Username"),
         required=False,
     )
-    # address = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Address"),
-    # )
-
-    # phone = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Mobile No."),
-    # )
-
     first_name = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
@@ -218,6 +196,11 @@ class StudentAddForm(UserCreationForm):
         ),
         label= _("Gender"),
     )
+
+    date_of_birth = forms.DateField(
+        widget=forms.DateInput(
+            attrs={'type': 'date'}), 
+        required=True, label="Ngày/tháng/năm sinh")
 
     level = forms.CharField(
         widget=forms.Select(
@@ -286,6 +269,7 @@ class StudentAddForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
+        fields = ['first_name', 'last_name', 'email', 'date_of_birth', 'level', 'classes']
 
     @transaction.atomic()
     def save(self, commit=True):
@@ -294,16 +278,26 @@ class StudentAddForm(UserCreationForm):
         user.first_name = self.cleaned_data.get("first_name")
         user.last_name = self.cleaned_data.get("last_name")
         user.gender = self.cleaned_data.get("gender")
-        # user.address = self.cleaned_data.get("address")
-        # user.phone = self.cleaned_data.get("phone")
-        # user.address = self.cleaned_data.get("address")
         user.email = self.cleaned_data.get("email")
-
+        user.dob = self.cleaned_data.get("date_of_birth")
+        # --- ÁP DỤNG QUY TẮC CỦA EM ---
+        
+        # 1. Tạo Tên đăng nhập từ Họ và Tên
+        # Ví dụ: "Nguyễn Văn" + " " + "A" -> "Nguyễn Văn A"
+        user.generated_username = f"{user.first_name}{user.last_name}"
+        
+        # 2. Tạo Mật khẩu từ Ngày sinh
+        # Ví dụ: date(2001, 1, 12) -> "12012001"
+        user.generated_password = user.dob.strftime('%d%m%Y')
+        
+        # --- KẾT THÚC ÁP DỤNG QUY TẮC ---
 
         if commit:
             user.save()
             User.objects.create(
                 user=user,
+                username=user.generated_username,
+                password=user.generated_password,
                 level=self.cleaned_data.get("level"),
                 program=self.cleaned_data.get("program"),
                 classes=self.cleaned_data.get("classes"),
