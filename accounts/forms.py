@@ -269,7 +269,6 @@ class StudentAddForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ['first_name', 'last_name', 'email', 'date_of_birth', 'level', 'classes']
 
     @transaction.atomic()
     def save(self, commit=True):
