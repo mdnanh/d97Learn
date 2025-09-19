@@ -156,14 +156,6 @@ class StaffAddForm(UserCreationForm):
 
 
 class StudentAddForm(forms.ModelForm):
-    # username = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={"type": "text", "class": "form-control", "id": "username_id"}
-    #     ),
-    #     label= _("Username"),
-    #     required=False,
-    # )
     first_name = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
@@ -202,7 +194,7 @@ class StudentAddForm(forms.ModelForm):
             attrs={'type': 'date'}), 
         required=True, label="Ngày/tháng/năm sinh")
 
-    level = forms.CharField(
+    level = forms.ChoiceField(
         widget=forms.Select(
             choices=LEVEL,
             attrs={
@@ -211,7 +203,7 @@ class StudentAddForm(forms.ModelForm):
         ),
         label= _("Level"),
     )
-    classes = forms.CharField(
+    classes = forms.ChoiceField(
         widget=forms.Select(
             choices=CLASSES,
             attrs={
@@ -238,43 +230,13 @@ class StudentAddForm(forms.ModelForm):
         label= _("Email Address"),
     )
 
-    # password1 = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "password",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Password"),
-    #     required=False,
-    # )
-
-    # password2 = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "password",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Password Confirmation"),
-    #     required=False,
-    # )
-
-    # def validate_email(self):
-    #     email = self.cleaned_data['email']
-    #     if User.objects.filter(email__iexact=email, is_active=True).exists():
-    #         raise forms.ValidationError("Email has taken, try another email address. ")
-
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'date_of_birth', 'level', 'classes']
+        fields = ['first_name', 'last_name', 'email', 'date_of_birth']
 
     @transaction.atomic()
     def save(self, commit=True):
         # user = super().save(commit=False)
-        raise ValueError("CHUNG TA DA DEN DUOC DAY! FORM DANG CHAY LA STUDENTADDFORM CUA MODELFORM!")
         first_name = self.cleaned_data.get("first_name")
         last_name = self.cleaned_data.get("last_name")
         dob = self.cleaned_data.get("date_of_birth")
