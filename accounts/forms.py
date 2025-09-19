@@ -297,7 +297,7 @@ class StudentAddForm(UserCreationForm):
 
         if commit:
             user.save()
-            User.objects.create(
+            Student.objects.create(
                 student=user,  # Liên kết với đối tượng user vừa được lưu
                 level=self.cleaned_data.get("level"),
                 program=self.cleaned_data.get("program"),
