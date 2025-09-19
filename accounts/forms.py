@@ -155,15 +155,15 @@ class StaffAddForm(UserCreationForm):
         return user
 
 
-class StudentAddForm(UserCreationForm):
-    username = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={"type": "text", "class": "form-control", "id": "username_id"}
-        ),
-        label= _("Username"),
-        required=False,
-    )
+class StudentAddForm(forms.ModelForm):
+    # username = forms.CharField(
+    #     max_length=30,
+    #     widget=forms.TextInput(
+    #         attrs={"type": "text", "class": "form-control", "id": "username_id"}
+    #     ),
+    #     label= _("Username"),
+    #     required=False,
+    # )
     first_name = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
@@ -238,70 +238,75 @@ class StudentAddForm(UserCreationForm):
         label= _("Email Address"),
     )
 
-    password1 = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                "type": "password",
-                "class": "form-control",
-            }
-        ),
-        label= _("Password"),
-        required=False,
-    )
+    # password1 = forms.CharField(
+    #     max_length=30,
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "type": "password",
+    #             "class": "form-control",
+    #         }
+    #     ),
+    #     label= _("Password"),
+    #     required=False,
+    # )
 
-    password2 = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                "type": "password",
-                "class": "form-control",
-            }
-        ),
-        label= _("Password Confirmation"),
-        required=False,
-    )
+    # password2 = forms.CharField(
+    #     max_length=30,
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "type": "password",
+    #             "class": "form-control",
+    #         }
+    #     ),
+    #     label= _("Password Confirmation"),
+    #     required=False,
+    # )
 
     # def validate_email(self):
     #     email = self.cleaned_data['email']
     #     if User.objects.filter(email__iexact=email, is_active=True).exists():
     #         raise forms.ValidationError("Email has taken, try another email address. ")
 
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
+        fields = ['first_name', 'last_name', 'email', 'date_of_birth', 'level', 'classes']
 
     @transaction.atomic()
     def save(self, commit=True):
-        user = super().save(commit=False)
+        # user = super().save(commit=False)
         first_name = self.cleaned_data.get("first_name")
         last_name = self.cleaned_data.get("last_name")
         dob = self.cleaned_data.get("date_of_birth")
+        email= self.cleaned_data.get("email")
+        classes = self.cleaned_data.get("classes")
+        level = self.cleaned_data.get("level")
+        program = self.cleaned_data.get("program")
         # --- ÁP DỤNG QUY TẮC CỦA EM ---
         
         # 1. Tạo Tên đăng nhập từ Họ và Tên
         # Ví dụ: "Nguyễn Văn" + " " + "A" -> "Nguyễn Văn A"
-        user.username = f"{first_name} {last_name}"
+        generated_username  = f"{first_name} {last_name}"
         
         # Tạo và ghi đè mật khẩu (dùng set_password để mã hóa)
-        generated_password = dob.strftime('%d%m%Y')
-        user.set_password(generated_password)
-        
+        generated_password = dob.strftime('%d%m%Y')        
         # --- KẾT THÚC ÁP DỤNG QUY TẮC ---
 
-        # Gán các thuộc tính còn lại cho User
-        user.is_student = True
-        user.first_name = first_name
-        user.last_name = last_name
-        user.date_of_birth = dob # Gán cả dob vào model User nếu có trường này
-        user.email = self.cleaned_data.get("email")
-
         if commit:
-            user.save()
+            # Dùng User.objects.create_user để tạo user và mã hóa mật khẩu
+            user = User.objects.create_user(
+                username=generated_username,
+                password=generated_password,
+                email=email,
+                first_name=first_name,
+                last_name=last_name,
+                date_of_birth=dob,
+                is_student=True
+            )
+            # Tạo đối tượng Student liên quan
             Student.objects.create(
-                student=user,  # Liên kết với đối tượng user vừa được lưu
-                level=self.cleaned_data.get("level"),
-                program=self.cleaned_data.get("program"),
-                classes=self.cleaned_data.get("classes"),
+                student=user,
+                level=level,
+                classes=classes
             )
 
         return user
