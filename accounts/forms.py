@@ -274,6 +274,7 @@ class StudentAddForm(forms.ModelForm):
     @transaction.atomic()
     def save(self, commit=True):
         # user = super().save(commit=False)
+        raise ValueError("CHUNG TA DA DEN DUOC DAY! FORM DANG CHAY LA STUDENTADDFORM CUA MODELFORM!")
         first_name = self.cleaned_data.get("first_name")
         last_name = self.cleaned_data.get("last_name")
         dob = self.cleaned_data.get("date_of_birth")
