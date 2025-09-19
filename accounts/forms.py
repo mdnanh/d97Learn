@@ -145,8 +145,8 @@ class StaffAddForm(UserCreationForm):
 
         if commit:
             user.save()
-            Student.objects.create(
-                student=user,
+            User.objects.create(
+                user=user,
                 level=self.cleaned_data.get("level"),
                 program=self.cleaned_data.get("program"),
                 classes=self.cleaned_data.get("classes"),
@@ -306,7 +306,8 @@ class StudentAddForm(forms.ModelForm):
             Student.objects.create(
                 student=user,
                 level=level,
-                classes=classes
+                classes=classes,
+                program=program
             )
 
         return user
