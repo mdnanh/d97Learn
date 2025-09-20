@@ -152,8 +152,6 @@ class User(AbstractUser):
             pass
 
     def delete(self, *args, **kwargs):
-        if self.picture.url != settings.MEDIA_URL + "default.png":
-            self.picture.delete()
         super().delete(*args, **kwargs)
 
 
@@ -182,7 +180,7 @@ class Student(models.Model):
         null=True,      # Cho phép nó là NULL trong DB
         verbose_name="ID No."
     )
-    
+
     class Meta:
         ordering = ("-student__date_joined",)
 
