@@ -194,7 +194,7 @@ class StudentAddForm(forms.ModelForm):
             attrs={'type': 'date'}), 
         required=True, label="Ngày/tháng/năm sinh")
 
-    level = forms.ChoiceField(
+    level = forms.CharField(
         widget=forms.Select(
             choices=LEVEL,
             attrs={
@@ -203,7 +203,7 @@ class StudentAddForm(forms.ModelForm):
         ),
         label= _("Level"),
     )
-    classes = forms.ChoiceField(
+    classes = forms.CharField(
         widget=forms.Select(
             choices=CLASSES,
             attrs={
@@ -232,7 +232,7 @@ class StudentAddForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'date_of_birth']
+        fields = ['first_name', 'last_name', 'email', 'date_of_birth', 'level', 'classes']
 
     @transaction.atomic()
     def save(self, commit=True):
