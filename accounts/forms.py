@@ -248,7 +248,7 @@ class StudentAddForm(forms.ModelForm):
         
         # 1. Tạo Tên đăng nhập từ Họ và Tên
         # Ví dụ: "Nguyễn Văn" + " " + "A" -> "Nguyễn Văn A"
-        generated_username  = f"{last_name} {first_name}"
+        # generated_username  = f"{last_name} {first_name}"
         
         # Tạo và ghi đè mật khẩu (dùng set_password để mã hóa)
         generated_password = dob.strftime('%d%m%Y')        
@@ -282,6 +282,7 @@ class StudentAddForm(forms.ModelForm):
         # 3. Tạo ID No. hoàn chỉnh
         # Dùng :02d để đảm bảo số thứ tự luôn có 2 chữ số (01, 02, ..., 10)
         generated_id_number = f"{id_prefix}_{new_sequence:02d}"
+        generated_username  = generated_id_number
         if commit:
             # Dùng User.objects.create_user để tạo user và mã hóa mật khẩu
             user = User.objects.create_user(
