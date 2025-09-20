@@ -175,7 +175,14 @@ class Student(models.Model):
     program = models.ForeignKey(Program, on_delete=models.CASCADE, null=True)
     classes= models.CharField(max_length=25, choices=CLASSES, null=True)
     objects = StudentManager()
-
+    id_number = models.CharField(
+        max_length=50, 
+        unique=True,    # Bắt buộc mỗi người phải có một mã duy nhất
+        blank=True,     # Cho phép nó trống tạm thời
+        null=True,      # Cho phép nó là NULL trong DB
+        verbose_name="ID No."
+    )
+    
     class Meta:
         ordering = ("-student__date_joined",)
 

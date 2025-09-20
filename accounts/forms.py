@@ -248,12 +248,40 @@ class StudentAddForm(forms.ModelForm):
         
         # 1. Tạo Tên đăng nhập từ Họ và Tên
         # Ví dụ: "Nguyễn Văn" + " " + "A" -> "Nguyễn Văn A"
-        generated_username  = f"{first_name} {last_name}"
+        generated_username  = f"{last_name} {first_name}"
         
         # Tạo và ghi đè mật khẩu (dùng set_password để mã hóa)
         generated_password = dob.strftime('%d%m%Y')        
         # --- KẾT THÚC ÁP DỤNG QUY TẮC ---
+        level_map = {
+            'Sĩ quan': 'SQ',
+            'Quân nhân chuyên nghiệp': 'CN',  
+            'Chiến sĩ': 'CS',  
+        }
+        classes_map = {
+            'TS-GN Sóng ngắn': 'TSGNSN',
+            'TS-GN Sóng cực ngắn': 'TSGNSCN',
+            'TS-GN ĐK&NTNB': 'TSGNĐK&NTNB',
+            'Trạm Sửa chữa': 'TSC',
+        }
+        level_prefix = level_map.get(level, level.upper()) # Lấy từ map, nếu không có thì viết hoa
 
+        # Ví dụ: 'tsgnscn' -> 'TSGNSCN'
+        classes_prefix = classes_map.get(classes, classes.upper())
+
+        # 2. Tìm số thứ tự tiếp theo
+        # Tạo ra phần đầu của ID để tìm kiếm, ví dụ: "TSGNSCN_CN"
+        id_prefix = f"{classes_prefix}_{level_prefix}"
+        
+        # Đếm xem đã có bao nhiêu sinh viên có ID bắt đầu bằng tiền tố này
+        sequence_count = Student.objects.filter(id_number__startswith=id_prefix).count()
+        
+        # Số thứ tự mới sẽ là số lượng hiện tại + 1
+        new_sequence = sequence_count + 1
+        
+        # 3. Tạo ID No. hoàn chỉnh
+        # Dùng :02d để đảm bảo số thứ tự luôn có 2 chữ số (01, 02, ..., 10)
+        generated_id_number = f"{id_prefix}_{new_sequence:02d}"
         if commit:
             # Dùng User.objects.create_user để tạo user và mã hóa mật khẩu
             user = User.objects.create_user(
@@ -269,6 +297,7 @@ class StudentAddForm(forms.ModelForm):
             Student.objects.create(
                 student=user,
                 level=level,
+                id_number=generated_id_number,
                 classes=classes,
                 program=program
             )
