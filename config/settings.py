@@ -112,21 +112,22 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Lấy URL từ biến môi trường 'DATABASE_URL' do Render cung cấp.
-        # Nếu không tìm thấy biến này (khi chạy ở máy local),
-        # nó sẽ dùng giá trị mặc định (default) ở dưới.
-        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",
-        
-        # Luôn giữ kết nối mở trong 600 giây để tăng hiệu năng.
-        conn_max_age=600,
-        
-        # Bắt buộc kết nối đến database của Render phải dùng mã hóa SSL.
-        # Dòng này sẽ được bỏ qua khi dùng SQLite.
-        ssl_require=True
-    )
-}
+if 'DATABASE_URL' in os.environ:
+    # Nếu đang chạy trên Render...
+    DATABASES = {
+        'default': dj_database_url.config(
+            conn_max_age=600,
+            ssl_require=True,
+        )
+    }
+else:
+    # Nếu đang chạy ở máy local...
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
