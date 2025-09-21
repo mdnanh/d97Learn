@@ -44,11 +44,13 @@ TSGNSN = "TSGNSN"
 TSGNSCN = "TSGNSCN"
 TSGNDKNTNB= "TSGNĐK&NTNB"
 TSC= "TSC"
+BCHd= "BCHd"
 CLASSES= (
     (TSGNSN, "TS-GN Sóng ngắn"),
     (TSGNSCN, "TS-GN Sóng cực ngắn"),
     (TSGNDKNTNB, "TS-GN ĐK&NTNB"),
     (TSC, "Trạm Sửa chữa"),
+    (BCHd, "Ban chỉ huy Tiểu đoàn" )
 ) 
 class CustomUserManager(UserManager):
     def search(self, query=None):
@@ -165,6 +167,15 @@ class StudentManager(models.Manager):
             ).distinct()  # distinct() is often necessary with Q lookups
         return qs
 
+class StaffManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = Q(level__icontains=query) | Q(program__icontains=query)
+            qs = qs.filter(
+                or_lookup
+            ).distinct()  # distinct() is often necessary with Q lookups
+        return qs
 
 class Student(models.Model):
     student = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -199,6 +210,39 @@ class Student(models.Model):
 
     def delete(self, *args, **kwargs):
         self.student.delete()
+        super().delete(*args, **kwargs)
+
+class Staff(models.Model):
+    staff = models.OneToOneField(User, on_delete=models.CASCADE)
+    level = models.CharField(max_length=25, choices=LEVEL, null=True)
+    classes= models.CharField(max_length=25, choices=CLASSES, null=True)
+    objects = StaffManager()
+    id_number = models.CharField(
+        max_length=50, 
+        unique=True,    # Bắt buộc mỗi người phải có một mã duy nhất
+        blank=True,     # Cho phép nó trống tạm thời
+        null=True,      # Cho phép nó là NULL trong DB
+        verbose_name="ID No."
+    )
+
+    class Meta:
+        ordering = ("-staff__date_joined",)
+
+    def __str__(self):
+        return self.staff.get_full_name
+
+    @classmethod
+    def get_gender_count(cls):
+        males_count = Staff.objects.filter(staff__gender="M").count()
+        females_count = Staff.objects.filter(staff__gender="F").count()
+
+        return {"M": males_count, "F": females_count}
+
+    def get_absolute_url(self):
+        return reverse("profile_single", kwargs={"user_id": self.id})
+
+    def delete(self, *args, **kwargs):
+        self.staff.delete()
         super().delete(*args, **kwargs)
 
 

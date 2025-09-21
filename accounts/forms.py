@@ -6,23 +6,11 @@ from django.contrib.auth.forms import (
 )
 from django.contrib.auth.forms import PasswordResetForm
 from course.models import Program
-from .models import User, Student, Parent, RELATION_SHIP, LEVEL, GENDERS, CLASSES
+from .models import User, Student, Staff, Parent, RELATION_SHIP, LEVEL, GENDERS, CLASSES
 from django.utils.translation import gettext_lazy as _
 
 
-class StaffAddForm(UserCreationForm):
-    username = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                "type": "text",
-                "class": "form-control",
-            }
-        ),
-        label= _("Username"),
-        required=False,
-    )
-
+class StaffAddForm(forms.ModelForm):
     first_name = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
@@ -73,27 +61,6 @@ class StaffAddForm(UserCreationForm):
     ),
         label= _("Classes")
     )
-    # address = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Address"),
-    # )
-
-    # phone = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Mobile No."),
-    # )
 
     email = forms.CharField(
         max_length=30,
@@ -106,50 +73,71 @@ class StaffAddForm(UserCreationForm):
         label="Email",
     )
 
-    password1 = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                "type": "password",
-                "class": "form-control",
-            }
-        ),
-        label= _("Password"),
-        required=False,
-    )
+    date_of_birth = forms.DateField(
+        widget=forms.DateInput(
+            attrs={'type': 'date'}), 
+        required=True, label="Ngày/tháng/năm sinh")
 
-    password2 = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                "type": "password",
-                "class": "form-control",
-            }
-        ),
-        label= _("Password Confirmation"),
-        required=False,
-    )
-
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
+        fields = ['first_name', 'last_name', 'email', 'level', 'classes', 'gender']
 
     @transaction.atomic()
     def save(self, commit=True):
-        user = super().save(commit=False)
-        user.is_lecturer = True
-        user.first_name = self.cleaned_data.get("first_name")
-        user.last_name = self.cleaned_data.get("last_name")
-        # user.phone = self.cleaned_data.get("phone")
-        # user.address = self.cleaned_data.get("address")
-        user.email = self.cleaned_data.get("email")
+        # user = super().save(commit=False)
+        first_name = self.cleaned_data.get("first_name")
+        last_name = self.cleaned_data.get("last_name")
+        dob = self.cleaned_data.get("date_of_birth")
+        email= self.cleaned_data.get("email")
+        classes = self.cleaned_data.get("classes")
+        # level = self.cleaned_data.get("level")
+        # --- ÁP DỤNG QUY TẮC ---
+        
+        # Tạo và ghi đè mật khẩu (dùng set_password để mã hóa)
+        generated_password = dob.strftime('%d%m%Y')        
+        # --- KẾT THÚC ÁP DỤNG QUY TẮC ---
+        classes_map = {
+            'TS-GN Sóng ngắn': 'TSGNSN',
+            'TS-GN Sóng cực ngắn': 'TSGNSCN',
+            'TS-GN ĐK&NTNB': 'TSGNĐK&NTNB',
+            'Trạm Sửa chữa': 'TSC',
+            'Ban chỉ huy Tiểu đoàn': 'BCHd',
+        }
+        # level_prefix = level_map.get(level, level.upper()) # Lấy từ map, nếu không có thì viết hoa
 
+        # Ví dụ: 'tsgnscn' -> 'TSGNSCN'
+        classes_prefix = classes_map.get(classes, classes.upper())
+
+        # 2. Tìm số thứ tự tiếp theo
+        # Tạo ra phần đầu của ID để tìm kiếm, ví dụ: "TSGNSCN_CN"
+        id_prefix = f"{classes_prefix}_GV"
+        
+        # Đếm xem đã có bao nhiêu sinh viên có ID bắt đầu bằng tiền tố này
+        sequence_count = Staff.objects.filter(id_number__startswith=id_prefix).count()
+        
+        # Số thứ tự mới sẽ là số lượng hiện tại + 1
+        new_sequence = sequence_count + 1
+        
+        # 3. Tạo ID No. hoàn chỉnh
+        # Dùng :02d để đảm bảo số thứ tự luôn có 2 chữ số (01, 02, ..., 10)
+        generated_id_number = f"{id_prefix}_{new_sequence:02d}"
+        generated_username  = generated_id_number
         if commit:
-            user.save()
-            User.objects.create(
-                user=user,
-                level=self.cleaned_data.get("level"),
-                program=self.cleaned_data.get("program"),
-                classes=self.cleaned_data.get("classes"),
+            # Dùng User.objects.create_user để tạo user và mã hóa mật khẩu
+            user = User.objects.create_user(
+                username=generated_username,
+                password=generated_password,
+                email=email,
+                first_name=first_name,
+                last_name=last_name,
+                date_of_birth=dob,
+                is_lecturer =True
+            )
+            # Tạo đối tượng Student liên quan
+            Staff.objects.create(
+                student=user,
+                id_number=generated_id_number,
+                classes=classes
             )
 
         return user
