@@ -133,9 +133,9 @@ class StaffAddForm(forms.ModelForm):
                 date_of_birth=dob,
                 is_lecturer =True
             )
-            # Tạo đối tượng Student liên quan
+            # Tạo đối tượng staff liên quan
             Staff.objects.create(
-                student=user,
+                staff=user,
                 id_number=generated_id_number,
                 classes=classes
             )
