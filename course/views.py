@@ -390,78 +390,66 @@ def handle_video_delete(request, slug, video_slug):
 @login_required
 @student_required
 def course_registration(request):
+    """
+    Handles course registration for a student.
+    - GET: Displays available courses to register and currently registered courses.
+    - POST: Registers the student for selected courses.
+    """
+    # Lấy profile của student một cách an toàn
+    try:
+        student = request.user.student
+    except Student.DoesNotExist:
+        messages.error(request, "Student profile not found.")
+        return redirect("profile") # Hoặc một trang lỗi nào đó
+
+    # --- XỬ LÝ KHI NGƯỜI DÙNG BẤM NÚT "REGISTER" (POST request) ---
     if request.method == "POST":
-        student = Student.objects.get(student__pk=request.user.id)
-        ids = ()
-        data = request.POST.copy()
-        data.pop("csrfmiddlewaretoken", None)  # remove csrf_token
-        for key in data.keys():
-            ids = ids + (str(key),)
-        for s in range(0, len(ids)):
-            course = Course.objects.get(pk=ids[s])
-            obj = TakenCourse.objects.create(student=student, course=course)
-            obj.save()
-        messages.success(request, "Courses registered successfully!")
+        # Lấy danh sách ID của các khóa học được tích chọn
+        course_ids = request.POST.getlist('course_ids')
+
+        if not course_ids:
+            messages.warning(request, "You didn't select any courses to register.")
+        else:
+            # Tạo các bản ghi TakenCourse một cách hiệu quả
+            courses_to_create = [
+                TakenCourse(student=student, course_id=course_id)
+                for course_id in course_ids
+            ]
+            # bulk_create hiệu quả hơn nhiều so với việc tạo trong vòng lặp
+            # ignore_conflicts=True để tránh lỗi nếu cố tình đăng ký lại môn đã có
+            TakenCourse.objects.bulk_create(courses_to_create, ignore_conflicts=True)
+
+            messages.success(request, f"{len(course_ids)} courses registered successfully!")
+        
         return redirect("course_registration")
+
+    # --- HIỂN THỊ TRANG ĐĂNG KÝ (GET request) ---
     else:
-        # current_semester = Semester.objects.filter(is_current_semester=True).first()
-        # if not current_semester:
-        #     messages.error(request, "No active semester found.")
-        #     return render(request, "course/course_registration.html")
+        # 1. Lấy danh sách ID các khóa học sinh viên đã đăng ký
+        registered_course_ids = TakenCourse.objects.filter(student=student).values_list('course_id', flat=True)
 
-        student = Student.objects.get(student__pk=request.user.id)
-        student = get_object_or_404(Student, student__id=request.user.id)
-        taken_courses = TakenCourse.objects.filter(student__student__id=request.user.id)
-        t = ()
-        for i in taken_courses:
-            t += (i.course.pk,)
+        # 2. Lấy tất cả các khóa học thuộc chương trình của sinh viên
+        all_program_courses = Course.objects.filter(program=student.program, level=student.level)
 
-        courses = (
-            Course.objects.filter(
-                program__pk=student.program.id,
-                level=student.level,
-                # semester=current_semester,
-            )
-            .exclude(id__in=t)
-            # .order_by("year")
-        )
-        all_courses = Course.objects.filter(
-            level=student.level, program__pk=student.program.id
-        )
+        # 3. Lấy ra các khóa học CHƯA ĐĂNG KÝ
+        courses_to_register = all_program_courses.exclude(id__in=registered_course_ids)
 
-        no_course_is_registered = False  # Check if no course is registered
-        all_courses_are_registered = False
+        # 4. Lấy ra các khóa học ĐÃ ĐĂNG KÝ
+        registered_courses = all_program_courses.filter(id__in=registered_course_ids)
 
-        registered_courses = Course.objects.filter(level=student.level).filter(id__in=t)
-        if (
-            registered_courses.count() == 0
-        ):  # Check if number of registered courses is 0
-            no_course_is_registered = True
+        # 5. Tính tổng số tín chỉ đã đăng ký một cách hiệu quả
+        total_registered_credit = registered_courses.aggregate(
+            total_credits=Sum('credit')
+        )['total_credits'] or 0 # Dùng or 0 để tránh lỗi nếu kết quả là None
 
-        if registered_courses.count() == all_courses.count():
-            all_courses_are_registered = True
-
-        # total_first_semester_credit = 0
-        # total_sec_semester_credit = 0
-        total_registered_credit = 0
-        # for i in courses:
-        #     if i.semester == "First":
-        #         total_first_semester_credit += int(i.credit)
-        #     if i.semester == "Second":
-        #         total_sec_semester_credit += int(i.credit)
-        for i in registered_courses:
-            total_registered_credit += int(i.credit)
+        # 6. Chuẩn bị context để gửi đến template
         context = {
-            "is_calender_on": True,
-            "all_courses_are_registered": all_courses_are_registered,
-            "no_course_is_registered": no_course_is_registered,
-            # "current_semester": current_semester,
-            "courses": courses,
-            # "total_first_semester_credit": total_first_semester_credit,
-            # "total_sec_semester_credit": total_sec_semester_credit,
+            "student": student,
+            "courses": courses_to_register,
             "registered_courses": registered_courses,
             "total_registered_credit": total_registered_credit,
-            "student": student,
+            "no_course_is_registered": not registered_courses.exists(),
+            "all_courses_are_registered": not courses_to_register.exists(),
         }
         return render(request, "course/course_registration.html", context)
 
