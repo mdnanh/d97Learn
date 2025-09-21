@@ -30,7 +30,6 @@
                 <th>#</th>
                 <th> {% trans 'ID No.' %}' </th>
                 <th> {% trans 'Full Name' %} </th>
-                <th> {% trans 'Level' %} </th>
                 <th> {% trans 'Classes' %} </th>
                 <!-- <th> {% trans 'Email' %} </th> -->
                 <!-- <th> {% trans 'Mob No.' %} </th> -->
@@ -47,7 +46,6 @@
                 <td> {{ forloop.counter }}.</td>
                 <td>{{ lecturer.username }}</td>
                 <td><a href="{% url 'profile_single' lecturer.id %}">{{ lecturer.get_full_name }}</a></td>
-                <td> {{ lecturer.staff.get_level_display }}</td>
                 <td> {{ lecturer.staff.get_classes_display}}</td>
                 <!-- <td>{{ lecturer.email }}</td> -->
                 <!-- <td>{{ lecturer.phone }}</td> -->

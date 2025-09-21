@@ -81,7 +81,6 @@ class StaffAddForm(forms.ModelForm):
         dob = self.cleaned_data.get("date_of_birth")
         email= self.cleaned_data.get("email")
         classes = self.cleaned_data.get("classes")
-        # level = self.cleaned_data.get("level")
         # --- ÁP DỤNG QUY TẮC ---
         
         # Tạo và ghi đè mật khẩu (dùng set_password để mã hóa)
@@ -94,8 +93,6 @@ class StaffAddForm(forms.ModelForm):
             'Trạm Sửa chữa': 'TSC',
             'Ban chỉ huy Tiểu đoàn': 'BCHd',
         }
-        # level_prefix = level_map.get(level, level.upper()) # Lấy từ map, nếu không có thì viết hoa
-
         # Ví dụ: 'tsgnscn' -> 'TSGNSCN'
         classes_prefix = classes_map.get(classes, classes.upper())
 
@@ -419,27 +416,6 @@ class ParentAddForm(UserCreationForm):
         ),
         label= _("Username"),
     )
-    # address = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Address"),
-    # )
-
-    # phone = forms.CharField(
-    #     max_length=30,
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Mobile No."),
-    # )
 
     first_name = forms.CharField(
         max_length=30,
