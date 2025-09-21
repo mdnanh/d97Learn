@@ -438,16 +438,16 @@ def course_registration(request):
         registered_courses = all_program_courses.filter(id__in=registered_course_ids)
 
         # 5. Tính tổng số tín chỉ đã đăng ký một cách hiệu quả
-        total_registered_credit = registered_courses.aggregate(
-            total_credits=Sum('credit')
-        )['total_credits'] or 0 # Dùng or 0 để tránh lỗi nếu kết quả là None
+        # total_registered_credit = registered_courses.aggregate(
+        #     total_credits=Sum('credit')
+        # )['total_credits'] or 0 # Dùng or 0 để tránh lỗi nếu kết quả là None
 
         # 6. Chuẩn bị context để gửi đến template
         context = {
             "student": student,
             "courses": courses_to_register,
             "registered_courses": registered_courses,
-            "total_registered_credit": total_registered_credit,
+            # "total_registered_credit": total_registered_credit,
             "no_course_is_registered": not registered_courses.exists(),
             "all_courses_are_registered": not courses_to_register.exists(),
         }
