@@ -221,10 +221,11 @@ def staff_add_view(request):
                 f"An email with account credentials will be sent to {email} within a minute.",
             )
             return redirect("lecturer_list")
+        else:
+            print("================ FORM ERRORS ================")
+            print(form.errors.as_json())
+            print("============================================")
     else:
-        print("================ FORM ERRORS ================")
-        print(form.errors.as_json())
-        print("============================================")
         form = StaffAddForm()
     return render(
         request, "accounts/add_staff.html", {"title": "Add Lecturer", "form": form}
