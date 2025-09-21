@@ -409,7 +409,7 @@ def course_registration(request):
         #     messages.error(request, "No active semester found.")
         #     return render(request, "course/course_registration.html")
 
-        # student = Student.objects.get(student__pk=request.user.id)
+        student = Student.objects.get(student__pk=request.user.id)
         student = get_object_or_404(Student, student__id=request.user.id)
         taken_courses = TakenCourse.objects.filter(student__student__id=request.user.id)
         t = ()

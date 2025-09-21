@@ -143,8 +143,8 @@ def profile_single(request, user_id):
     elif user.is_student:
         student = get_object_or_404(Student, student__pk=user_id)
         courses = TakenCourse.objects.filter(
-            student__student__id=user_id, course__level=student.level
-        )
+            student__student__id=user_id        
+            )
         context.update(
             {
                 "user_type": "Student",
