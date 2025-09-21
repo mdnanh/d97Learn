@@ -47,7 +47,6 @@
                 <td> {{ forloop.counter }}.</td>
                 <td>{{ lecturer.username }}</td>
                 <td><a href="{% url 'profile_single' lecturer.id %}">{{ lecturer.get_full_name }}</a></td>
-                <td> {{ lecturer.get_level_display}}</td>
                 <td> {{ lecturer.get_classes_display}}</td>
                 <!-- <td>{{ lecturer.email }}</td> -->
                 <!-- <td>{{ lecturer.phone }}</td> -->

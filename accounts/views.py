@@ -222,6 +222,9 @@ def staff_add_view(request):
             )
             return redirect("lecturer_list")
     else:
+        print("================ FORM ERRORS ================")
+        print(form.errors.as_json())
+        print("============================================")
         form = StaffAddForm()
     return render(
         request, "accounts/add_staff.html", {"title": "Add Lecturer", "form": form}
