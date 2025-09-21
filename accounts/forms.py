@@ -135,7 +135,7 @@ class StaffAddForm(forms.ModelForm):
             )
             # Tạo đối tượng staff liên quan
             Staff.objects.create(
-                user=user,
+                staff=user,
                 id_number=generated_id_number,
                 classes=classes
             )
