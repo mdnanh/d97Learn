@@ -19,7 +19,7 @@ from accounts.forms import (
     StaffAddForm,
     StudentAddForm,
 )
-from accounts.models import Parent, Student, User
+from accounts.models import Parent, Student, User, Staff
 # from core.models import Semester, Session
 from course.models import Course
 from result.models import TakenCourse
@@ -106,8 +106,8 @@ def profile(request):
         return render(request, "accounts/profile.html", context)
 
     # For superuser or other staff
-    staff = User.objects.filter(is_lecturer=True)
-    context["staff"] = staff
+    # staff = User.objects.filter(is_lecturer=True)
+    # context["staff"] = staff
     return render(request, "accounts/profile.html", context)
 
 
@@ -284,7 +284,6 @@ def delete_staff(request, pk):
     lecturer.delete()
     messages.success(request, f"Lecturer {full_name} has been deleted.")
     return redirect("lecturer_list")
-
 
 # ########################################################
 # Student Views
