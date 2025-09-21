@@ -43,15 +43,6 @@ class StaffAddForm(forms.ModelForm):
         ),
         label= _("Gender")
     )
-    level = forms.CharField(
-        widget=forms.Select(
-            choices=LEVEL,
-            attrs={
-                "class": "browser-default custom-select form-control",
-            },
-        ),
-        label= _("Level"),
-    )
     classes = forms.CharField(
         widget=forms.Select(
             choices=CLASSES,
@@ -80,7 +71,7 @@ class StaffAddForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'level', 'classes', 'gender']
+        fields = ['first_name', 'last_name', 'email', 'classes', 'gender']
 
     @transaction.atomic()
     def save(self, commit=True):
@@ -345,15 +336,16 @@ class ProfileUpdateForm(UserChangeForm):
     #     ),
     #     label= _("Phone No."),
     # )
-    level = forms.CharField(
-        widget=forms.Select(
-            choices=LEVEL,
-            attrs={
-                "class": "browser-default custom-select form-control",
-            },
-        ),
-        label= _("Level"),
-    )
+    if User.is_student:
+        level = forms.CharField(
+            widget=forms.Select(
+                choices=LEVEL,
+                attrs={
+                    "class": "browser-default custom-select form-control",
+                },
+            ),
+            label= _("Level"),
+        )
     classes = forms.CharField(
         widget=forms.Select(
             choices=CLASSES,
@@ -363,15 +355,6 @@ class ProfileUpdateForm(UserChangeForm):
     ),
         label= _("Classes")
     )
-    # address = forms.CharField(
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             "type": "text",
-    #             "class": "form-control",
-    #         }
-    #     ),
-    #     label= _("Address / city"),
-    # )
 
     class Meta:
         model = User
