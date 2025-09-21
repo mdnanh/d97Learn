@@ -19,7 +19,7 @@
 {% include 'snippets/messages.html' %}
 
 <form action="" method="POST">{% csrf_token %}
-    {{ form|crispy }}
+    <!-- {{ form|crispy }}
     {% if form.errors %}
         <div class="alert alert-danger">
             <p>Vui lòng sửa các lỗi dưới đây:</p>
@@ -32,7 +32,7 @@
             {% endfor %}
             </ul>
         </div>
-    {% endif %}
+    {% endif %} -->
     <div class="row mb-3">
         
         <div class="col-md-6">

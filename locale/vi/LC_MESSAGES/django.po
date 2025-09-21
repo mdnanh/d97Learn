@@ -1407,7 +1407,7 @@ msgstr "Tải video mới lên"
 
 #: .\templates\course\course_single.html:40
 msgid "Take a Quiz"
-msgstr "Tạo bài trắc nghiệm"
+msgstr "Bài thi trắc nghiệm"
 
 #: .\templates\course\course_single.html:55
 msgid "Video Tutorials"
