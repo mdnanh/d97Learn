@@ -22,7 +22,7 @@ from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT, TA_CENTER, TA_RIGHT
 from reportlab.lib.units import inch
 from reportlab.lib import colors
 
-from core.models import Session#, Semester
+# from core.models import Session#, Semester
 from course.models import Course
 from accounts.models import Student
 from accounts.decorators import lecturer_required, student_required
