@@ -214,7 +214,6 @@ class Student(models.Model):
 
 class Staff(models.Model):
     staff = models.OneToOneField(User, on_delete=models.CASCADE)
-    level = models.CharField(max_length=25, choices=LEVEL, null=True)
     classes= models.CharField(max_length=25, choices=CLASSES, null=True)
     objects = StaffManager()
     id_number = models.CharField(

@@ -19,20 +19,6 @@
 {% include 'snippets/messages.html' %}
 
 <form action="" method="POST">{% csrf_token %}
-    {{ form|crispy }}
-    {% if form.errors %}
-        <div class="alert alert-danger">
-            <p>Vui lòng sửa các lỗi dưới đây:</p>
-            {{ form.non_field_errors }} {# Lỗi chung của cả form #}
-            <ul>
-            {% for field in form %}
-                {% if field.errors %}
-                    <li>{{ field.label }}: {{ field.errors|striptags }}</li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
     <div class="row mb-3">
         
         <div class="col-md-6">
