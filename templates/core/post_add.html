@@ -20,7 +20,7 @@
         <div class="card">
             <p class="form-title">{% trans 'Post Form' %}</p>
             <div class="card-body">
-                <form action="" method="POST">{% csrf_token %}
+                <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
                     {{ form|crispy }}
                     {% if news.attachment %}
                     <div class="attachment-section mt-4">
