@@ -8,10 +8,10 @@ from .models import NewsAndEvents
 @admin.register(NewsAndEvents) # Cách đăng ký hiện đại và gọn gàng hơn
 class NewsAndEventsAdmin(TranslationAdmin):
     # 1. Tùy chỉnh các cột hiển thị trên trang danh sách
-    list_display = ('title', 'posted_as', 'upload_date', 'display_attachment_link')
+    list_display = ('title', 'posted_as', 'upload_time', 'display_attachment_link')
     
     # 2. Thêm bộ lọc ở thanh bên phải
-    list_filter = ('posted_as', 'upload_date')
+    list_filter = ('posted_as', 'upload_time')
     
     # 3. Thêm một ô tìm kiếm
     search_fields = ('title', 'summary')
