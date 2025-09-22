@@ -10,17 +10,20 @@ class NewsAndEventsForm(forms.ModelForm):
             "title",
             "summary",
             "posted_as",
+            "attachment",
         )
         labels = {
                 "title": _("Title"),
                 "summary": _("Summary"),
                 "posted_as": _("Post as"),
+                "attachment": _("Attachment"),
             }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["title"].widget.attrs.update({"class": "form-control"})
         self.fields["summary"].widget.attrs.update({"class": "form-control"})
         self.fields["posted_as"].widget.attrs.update({"class": "form-control"})
+        self.fields["attachment"].widget.attrs.update({"class": "form-control"})
 
 
 # class SessionForm(forms.ModelForm):
