@@ -58,7 +58,16 @@
                 </div>
 
                 <div class="p-2 my-2" style="min-height: 120px;">{{ item.summary }}</div>
-
+                <!-- =================== PHẦN THÊM MỚI =================== -->
+                {% if news.attachment %}
+                <div class="attachment-indicator mt-3">
+                    <a href="{{ news.attachment.url }}" target="_blank" download>
+                        <i class="fas fa-paperclip"></i> <!-- Biểu tượng kẹp giấy -->
+                        Tệp đính kèm
+                    </a>
+                </div>
+                {% endif %}
+                <!-- ================= KẾT THÚC PHẦN THÊM MỚI =============== -->
                 <div class="bg-light p-1 small text-secondary text-end pe-3">
                     <i class="fa fa-calendar small unstyled"></i>
                     {{ item.updated_date|timesince }} {% trans 'ago' %}
