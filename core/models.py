@@ -58,6 +58,8 @@ class NewsAndEvents(models.Model):
     updated_date = models.DateTimeField(auto_now=True, auto_now_add=False, null=True)
     upload_time = models.DateTimeField(auto_now=False, auto_now_add=True, null=True)
 
+    attachment = models.FileField(upload_to='news_attachments/%Y/%m/%d/', blank=True, null=True, verbose_name="Attachment")
+
     objects = NewsAndEventsManager()
 
     def __str__(self):
