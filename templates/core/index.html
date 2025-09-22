@@ -59,9 +59,9 @@
 
                 <div class="p-2 my-2" style="min-height: 120px;">{{ item.summary }}</div>
                 <!-- =================== PHẦN THÊM MỚI =================== -->
-                {% if news.attachment %}
+                {% if item.attachment %}
                 <div class="attachment-indicator mt-3">
-                    <a href="{{ news.attachment.url }}" target="_blank" download>
+                    <a href="{{ item.attachment.url }}" target="_blank" download>
                         <i class="fas fa-paperclip"></i> <!-- Biểu tượng kẹp giấy -->
                         Tệp đính kèm
                     </a>
