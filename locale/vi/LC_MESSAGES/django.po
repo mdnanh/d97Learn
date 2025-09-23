@@ -306,7 +306,7 @@ msgstr "Năm"
 #: .\course\forms.py:96 .\templates\course\course_allocation_view.html:33
 #: .\templates\setting\admin_panel.html:59
 msgid "Courses"
-msgstr "Khóa học"
+msgstr "Nội dung"
 
 #: .\course\forms.py:61 .\course\forms.py:88
 msgid "lecturer"
@@ -328,7 +328,7 @@ msgstr "Tự chọn"
 #: .\templates\quiz\sitting_list.html:34 .\templates\search\search_view.html:30
 #: .\templates\search\search_view.html:88
 msgid "Course"
-msgstr "Khóa học"
+msgstr "Nội dung"
 
 #: .\course\models.py:129
 msgid "Valid Files: pdf, docx, doc, xls, xlsx, ppt, pptx, zip, rar, 7zip"
@@ -915,7 +915,7 @@ msgstr "Nội dung của tôi"
 #: .\templates\accounts\profile_single.html:83
 #: .\templates\pdf\profile_single.html:33
 msgid "No courses assigned!"
-msgstr "Không có khóa học nào được đăng kỹ!!"
+msgstr "Không có nội dung nào được đăng kỹ!!"
 
 #: .\templates\accounts\profile.html:77 .\templates\pdf\profile_single.html:40
 msgid "First Name:"
@@ -1197,15 +1197,15 @@ msgstr "Thêm niên khóa và cập nhật biểu mẫu"
 #: .\templates\upload\upload_video_form.html:11
 #: .\templates\upload\video_single.html:11
 msgid "Programs"
-msgstr "Chương trình"
+msgstr "Nội dung"
 
 #: .\templates\course\course_add.html:13 .\templates\course\course_add.html:17
 msgid "Course Form"
-msgstr "Mẫu khóa học"
+msgstr "Mẫu nội dung"
 
 #: .\templates\course\course_add.html:27
 msgid "Course Detail"
-msgstr "Thông tin khóa học"
+msgstr "Thông tin nội dung"
 
 #: .\templates\course\course_add.html:37
 msgid "Other Info"
@@ -1215,7 +1215,7 @@ msgstr "Thông tin khác"
 #: .\templates\course\course_allocation_view.html:20
 #: .\templates\setting\admin_panel.html:64
 msgid "Course Allocations"
-msgstr "phân bổ khóa học"
+msgstr "phân bổ người phụ trách nội dung"
 
 #: .\templates\course\course_allocation_form.html:13
 msgid "Allocation Form"
@@ -1223,7 +1223,7 @@ msgstr "Biểu mẫu phân bổ"
 
 #: .\templates\course\course_allocation_form.html:22
 msgid "Course Allocation Form"
-msgstr "Mẫu phân bổ khóa học"
+msgstr "Mẫu phân bổ người phụ trách nội dung "
 
 #: .\templates\course\course_allocation_view.html:10
 msgid "Allocation list"
@@ -1243,7 +1243,7 @@ msgstr "Bỏ phân công"
 
 #: .\templates\course\course_allocation_view.html:65
 msgid "No Course Allocated."
-msgstr "Không có khóa học nào được phân bổ"
+msgstr "Không có nội dung nào được phân bổ"
 
 #: .\templates\course\course_allocation_view.html:69
 msgid "Allocate now"
@@ -1251,13 +1251,13 @@ msgstr "Phân bổ bây giờ"
 
 #: .\templates\course\course_registration.html:13
 msgid "Course Registration"
-msgstr "Đăng ký khóa học"
+msgstr "Đăng ký nội dung"
 
 #: .\templates\course\course_registration.html:17
 #: .\templates\course\course_registration.html:35
 #: .\templates\setting\admin_panel.html:47
 msgid "Course Add"
-msgstr "Thêm khóa học"
+msgstr "Thêm nội dung"
 
 #: .\templates\course\course_registration.html:17
 #: .\templates\setting\admin_panel.html:47
@@ -1303,7 +1303,7 @@ msgstr "Đánh dấu"
 #: .\templates\result\grade_results.html:26
 #: .\templates\result\grade_results.html:91
 msgid "Course Code"
-msgstr "Mã khóa học"
+msgstr "Mã nội dung"
 
 #: .\templates\course\course_registration.html:49
 #: .\templates\course\course_registration.html:112
@@ -1313,7 +1313,7 @@ msgstr "Mã khóa học"
 #: .\templates\result\grade_results.html:25
 #: .\templates\result\grade_results.html:90
 msgid "Course Title"
-msgstr "Tiêu đề khóa học"
+msgstr "Tiêu đề nội dung"
 
 #: .\templates\course\course_registration.html:50
 #: .\templates\course\course_registration.html:113
@@ -1351,7 +1351,7 @@ msgstr "Chính"
 #: .\templates\course\course_registration.html:145
 #: .\templates\course\course_registration.html:235
 msgid "No Course."
-msgstr "Số khóa học."
+msgstr "Nội dung số."
 
 #: .\templates\course\course_registration.html:96
 msgid "First semester Credit(s):"
@@ -1378,7 +1378,7 @@ msgstr "Tổng số tín chỉ:"
 
 #: .\templates\course\course_registration.html:186
 msgid "Course Drop"
-msgstr "Bỏ khóa học"
+msgstr "Bỏ nội dung"
 
 #: .\templates\course\course_registration.html:193
 msgid "Drop Selected"
@@ -1390,7 +1390,7 @@ msgstr "In mẫu đã đăng ký"
 
 #: .\templates\course\course_registration.html:261
 msgid "Print Registerd Courses"
-msgstr "In khóa học đã đăng ký"
+msgstr "In nội dung đã đăng ký"
 
 #: .\templates\course\course_single.html:12
 #: .\templates\course\program_single.html:12 .\templates\quiz\quiz_list.html:13
@@ -1399,7 +1399,7 @@ msgstr "Nội dung của tôi"
 
 #: .\templates\course\course_single.html:26
 msgid "Edit course"
-msgstr "Chỉnh sửa khóa học"
+msgstr "Chỉnh sửa nội dung"
 
 #: .\templates\course\course_single.html:31
 msgid "Upload new file"
@@ -1473,7 +1473,7 @@ msgstr "Giáo viên"
 
 #: .\templates\course\course_single.html:236
 msgid "No lecturer assigned for this course"
-msgstr "Không có giáo viên nào được đăng ký cho khóa học"
+msgstr "Không có giáo viên nào được đăng ký cho nội dung này"
 
 #: .\templates\course\program_add.html:13
 msgid "Program Form"
@@ -1505,7 +1505,7 @@ msgstr "Thêm nội dung bây giờ."
 
 #: .\templates\course\program_single.html:22
 msgid "Add Course"
-msgstr "Thêm khóa học"
+msgstr "Thêm nội dung"
 
 #: .\templates\course\program_single.html:43
 #: .\templates\course\user_course_list.html:36
@@ -1529,7 +1529,7 @@ msgstr "Học kỳ hiện tại"
 
 #: .\templates\course\program_single.html:96
 msgid "No course for this progrm."
-msgstr "Không có khóa học nào cho nội dung này."
+msgstr "Không có nội dung nào cho nội dung này."
 
 #: .\templates\course\program_single.html:100
 msgid "Add one now."
@@ -1537,7 +1537,7 @@ msgstr "Thêm một ngay lập tức."
 
 #: .\templates\course\user_course_list.html:30
 msgid "Taken Courses:"
-msgstr "Khóa học đã tham gia:"
+msgstr "Nội dung đã tham gia:"
 
 #: .\templates\course\user_course_list.html:42
 #: .\templates\course\user_course_list.html:63
@@ -1546,7 +1546,7 @@ msgstr "Đã tham gia"
 
 #: .\templates\course\user_course_list.html:74
 msgid "All Courses:"
-msgstr "Tất cả khóa học:"
+msgstr "Tất cả nội dung:"
 
 #: .\templates\invoice_detail.html:2 .\templates\invoices.html:1
 msgid "Invoices"
@@ -1557,8 +1557,8 @@ msgid "Pay now"
 msgstr ""
 
 #: .\templates\navbar.html:12
-msgid "Search All... #course, #program, #Quiz, #News, #Events"
-msgstr "Tìm kiếm tất cả... #Khóa học, #Nội dung, #Quiz, #Tin tức, #Sự kiện"
+msgid "Search All... #program, #Quiz, #News, #Events"
+msgstr "Tìm kiếm tất cả... #Nội dung, #Quiz, #Tin tức, #Sự kiện"
 
 #: .\templates\navbar.html:38 .\templates\setting\admin_panel.html:12
 #: .\templates\setting\admin_panel.html:16 .\templates\sidebar.html:49
@@ -2007,16 +2007,16 @@ msgstr "Quản lý điểm số"
 
 #: .\templates\result\add_score.html:29
 msgid "Select Your Course Here"
-msgstr "Chọn khóa học của bạn tại đây"
+msgstr "Chọn nội dung của bạn tại đây"
 
 #: .\templates\result\add_score.html:35
 #: .\templates\result\add_score_for.html:24
 msgid "No course."
-msgstr "Không có khóa học nào."
+msgstr "Không có nội dung nào."
 
 #: .\templates\result\add_score.html:39
 msgid "To manage scores, please select the course using the button above."
-msgstr "Để quản lý các điểm số, hãy chọn khóa học bằng nút ở trên"
+msgstr "Để quản lý các điểm số, hãy chọn nội dung bằng nút ở trên"
 
 #: .\templates\result\add_score_for.html:30
 msgid "Students result form"
@@ -2152,7 +2152,7 @@ msgstr "bài trắc nhiệm"
 
 #: .\templates\search\search_view.html:47
 msgid "Course:"
-msgstr "Khóa học:"
+msgstr "Nội dung:"
 
 #: .\templates\search\search_view.html:85
 msgid "Search by:"
@@ -2206,7 +2206,7 @@ msgstr "Nội dung"
 
 #: .\templates\setting\admin_panel.html:65
 msgid "course allocations"
-msgstr "phân bổ khóa học"
+msgstr "phân bổ nội dung"
 
 #: .\templates\setting\password_change.html:12
 msgid "Password Change"
@@ -2235,7 +2235,7 @@ msgstr "Nội dung học tập"
 
 #: .\templates\sidebar.html:82
 msgid "Course Allocation"
-msgstr "Phân bổ khóa học"
+msgstr "Phân bổ nội dung"
 
 #: .\templates\sidebar.html:85
 msgid "Manage Session"
@@ -2247,7 +2247,7 @@ msgstr "Quản lý học kỳ"
 
 #: .\templates\sidebar.html:109
 msgid "Drop Course"
-msgstr "Bỏ khóa học"
+msgstr "Bỏ nội dung"
 
 #: .\templates\sidebar.html:115
 msgid "Account Setting"
