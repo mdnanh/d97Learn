@@ -165,7 +165,10 @@ def course_edit(request, slug):
     # --- LỚP KIỂM TRA AN NINH ---
     # Kiểm tra xem người dùng đang đăng nhập có phải là giảng viên của khóa học này không.
     # Superuser thì luôn có quyền.
-    if course.lecturer != request.user and not request.user.is_superuser:
+    is_allocated_lecturer = CourseAllocation.objects.filter(
+        course=course, lecturer=request.user
+    ).exists()
+    if not is_allocated_lecturer and not request.user.is_superuser:
         messages.error(request, "Bạn không có quyền chỉnh sửa khóa học này.")
         return redirect('lecturer_course_list') # Chuyển hướng về trang an toàn
     # --- KẾT THÚC LỚP KIỂM TRA ---
@@ -492,8 +495,12 @@ def user_course_list(request):
     context = {}
     
     if request.user.is_lecturer:
-        # Logic mới: Truy vấn trực tiếp, đơn giản và hiệu quả
-        courses_to_display = Course.objects.filter(lecturer=request.user)
+        # LOGIC ĐÚNG: Tìm các Khóa học mà có một bản ghi AllocatedCourse
+        # liên kết đến giảng viên hiện tại.
+        # Dùng .distinct() để đảm bảo mỗi khóa học chỉ xuất hiện 1 lần.
+        courses_to_display = Course.objects.filter(
+            allocated_course__lecturer=request.user
+        ).distinct()
         
     if request.user.is_student:
         try:

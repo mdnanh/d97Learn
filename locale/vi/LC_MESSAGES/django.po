@@ -251,8 +251,12 @@ msgstr "Niên khóa hiện tại?"
 #: .\templates\accounts\profile_single.html:117
 #: .\templates\core\semester_list.html:29
 #: .\templates\course\program_single.html:48
-#: .\templates\course\user_course_list.html:40
-#: .\templates\course\user_course_list.html:84
+#: .\templates\course\user_course_list.html:38
+msgid "Status"
+msgstr "Trạng thái"
+#: .\templates\course\user_course_list.html:51
+msgid "Enrolled"
+msgstr "Đã đăng ký"
 #: .\templates\pdf\profile_single.html:67 .\templates\result\add_score.html:24
 #: .\templates\result\add_score_for.html:46
 #: .\templates\setting\admin_panel.html:41
@@ -981,7 +985,7 @@ msgstr "Chức vụ"
 
 #: .\templates\accounts\profile_single.html:43
 msgid "Change Program"
-msgstr "Thay đổi chương trình"
+msgstr "Thay đổi nội dung"
 
 #: .\templates\accounts\profile_single.html:98
 msgid "School"
@@ -1473,23 +1477,23 @@ msgstr "Không có giáo viên nào được đăng ký cho khóa học"
 
 #: .\templates\course\program_add.html:13
 msgid "Program Form"
-msgstr "Biểu mẫu chương trình"
+msgstr "Biểu mẫu nội dung"
 
 #: .\templates\course\program_add.html:22
 msgid "Program Add Form"
-msgstr "Mẫu thêm chương trình"
+msgstr "Biểu mẫu thêm nội dung"
 
 #: .\templates\course\program_list.html:16
 msgid "Add Program"
-msgstr "Thêm chương trình"
+msgstr "Thêm nội dung"
 
 #: .\templates\course\program_list.html:20
 msgid "Program List"
-msgstr "Danh sách chương trình"
+msgstr "Danh sách Nội dung"
 
 #: .\templates\course\program_list.html:32
 msgid "Program Name"
-msgstr "Tên chương trình"
+msgstr "Tên nội dung"
 
 #: .\templates\course\program_list.html:69
 msgid "No program."
@@ -1554,7 +1558,7 @@ msgstr ""
 
 #: .\templates\navbar.html:12
 msgid "Search All... #course, #program, #Quiz, #News, #Events"
-msgstr "Tìm kiếm tất cả... #Khóa học, #Chương trình, #Quiz, #Tin tức, #Sự kiện"
+msgstr "Tìm kiếm tất cả... #Khóa học, #Nội dung, #Quiz, #Tin tức, #Sự kiện"
 
 #: .\templates\navbar.html:38 .\templates\setting\admin_panel.html:12
 #: .\templates\setting\admin_panel.html:16 .\templates\sidebar.html:49
