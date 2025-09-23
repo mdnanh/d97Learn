@@ -1501,7 +1501,7 @@ msgstr "Chương trinh số."
 
 #: .\templates\course\program_list.html:73
 msgid "Add program now."
-msgstr "Thêm chương trình bây giờ."
+msgstr "Thêm nội dung bây giờ."
 
 #: .\templates\course\program_single.html:22
 msgid "Add Course"
@@ -1511,7 +1511,7 @@ msgstr "Thêm khóa học"
 #: .\templates\course\user_course_list.html:36
 #: .\templates\course\user_course_list.html:80
 msgid "Course Name"
-msgstr "Tên khóa học"
+msgstr "Nội dung"
 
 #: .\templates\course\program_single.html:45
 #: .\templates\course\user_course_list.html:38
@@ -1529,7 +1529,7 @@ msgstr "Học kỳ hiện tại"
 
 #: .\templates\course\program_single.html:96
 msgid "No course for this progrm."
-msgstr "Không có khóa học nào cho chương trình này."
+msgstr "Không có khóa học nào cho nội dung này."
 
 #: .\templates\course\program_single.html:100
 msgid "Add one now."
@@ -2135,7 +2135,7 @@ msgstr "kết quả"
 
 #: .\templates\search\search_view.html:31
 msgid "Program of"
-msgstr "Chương trình của"
+msgstr "Nội dung của"
 
 #: .\templates\search\search_view.html:38
 #: .\templates\search\search_view.html:89
@@ -2202,7 +2202,7 @@ msgstr "Chuyển đổi"
 
 #: .\templates\setting\admin_panel.html:60
 msgid "programs"
-msgstr "chương trình"
+msgstr "Nội dung"
 
 #: .\templates\setting\admin_panel.html:65
 msgid "course allocations"

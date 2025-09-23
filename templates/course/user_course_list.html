@@ -33,7 +33,7 @@
                 <tr>
                     <th>#</th>
                     <th> {% trans 'Course Name' %} </th>
-                    <th> {% trans 'Course Code' %} </th>
+         {%comment%}<th> {% trans 'Course Code' %} </th>{% endcomment %}
                     {% if request.user.is_student %}
                         <th> {% trans 'Status' %} </th>
                     {% endif %}
