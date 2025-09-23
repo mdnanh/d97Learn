@@ -28,9 +28,9 @@
           <button type="submit" class="btn btn-primary" id="login-btn"><i class="fas fa-sign-in-alt"></i><small>{% trans 'SIGN IN' %}</small></button>
         </form>
         <br>
-        <div class="login-bottom">
+  {%comment%}<div class="login-bottom">
           <a href="{% url 'password_reset' %}" class="link">{% trans 'Forgot password ?' %}</a>
-        </div>
+        </div>{% endcomment %} 
       </div>
   </div>
 </div>
