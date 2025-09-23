@@ -31,6 +31,7 @@
 			<tr>
 				<th>#</th>
 				<th>{% trans "User" %}</th>
+				<th>{% trans "Level" %}</th>
 				<th>{% trans "Course" %}</th>
 				<th>{% trans "Quiz" %}</th>
 				<th>{% trans "Completed" %}</th>
@@ -43,6 +44,7 @@
 		<tr>
 			<td>{{ forloop.counter }}</td>
 			<td>{{ sitting.user }}</td>
+			<td>{{ sitting.quiz.level }}</td>
 			<td>{{ sitting.quiz.course }}</td>
 			<td>{{ sitting.quiz }}</td>
 			<td>{{ sitting.end|date }}</td>
