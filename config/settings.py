@@ -162,9 +162,9 @@ def gettext(s):
 LANGUAGES = (
     ("vi", _("Vietnamese")),
     ("en", _("English")),
-    ("fr", _("French")),
-    ("es", _("Spanish")),
-    ("ru", _("Russia")),
+    # ("fr", _("French")),
+    # ("es", _("Spanish")),
+    # ("ru", _("Russia")),
 )
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
