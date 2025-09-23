@@ -2227,7 +2227,7 @@ msgstr "Cập nhật thông tin cá nhân"
 
 #: .\templates\sidebar.html:67
 msgid "Programs & Courses"
-msgstr "Chương trình và khóa học"
+msgstr "Nội dung học tập"
 
 #: .\templates\sidebar.html:82
 msgid "Course Allocation"

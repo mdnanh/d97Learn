@@ -162,6 +162,13 @@ def course_add(request, pk):
 @lecturer_required
 def course_edit(request, slug):
     course = get_object_or_404(Course, slug=slug)
+    # --- LỚP KIỂM TRA AN NINH ---
+    # Kiểm tra xem người dùng đang đăng nhập có phải là giảng viên của khóa học này không.
+    # Superuser thì luôn có quyền.
+    if course.lecturer != request.user and not request.user.is_superuser:
+        messages.error(request, "Bạn không có quyền chỉnh sửa khóa học này.")
+        return redirect('lecturer_course_list') # Chuyển hướng về trang an toàn
+    # --- KẾT THÚC LỚP KIỂM TRA ---
     if request.method == "POST":
         form = CourseAddForm(request.POST, instance=course)
         if form.is_valid():
@@ -182,6 +189,9 @@ def course_edit(request, slug):
 @lecturer_required
 def course_delete(request, slug):
     course = get_object_or_404(Course, slug=slug)
+    if course.lecturer != request.user and not request.user.is_superuser:
+        messages.error(request, "Bạn không có quyền chỉnh sửa khóa học này.")
+        return redirect('lecturer_course_list') # Chuyển hướng về trang an toàn
     title = course.title
     program_id = course.program.id
     course.delete()
