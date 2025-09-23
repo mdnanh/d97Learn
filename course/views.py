@@ -189,9 +189,11 @@ def course_edit(request, slug):
 @lecturer_required
 def course_delete(request, slug):
     course = get_object_or_404(Course, slug=slug)
+    # --- LỚP KIỂM TRA "CHÌA KHÓA CĂN HỘ" ---
     if course.lecturer != request.user and not request.user.is_superuser:
-        messages.error(request, "Bạn không có quyền chỉnh sửa khóa học này.")
-        return redirect('lecturer_course_list') # Chuyển hướng về trang an toàn
+        messages.error(request, "Bạn không có quyền xóa khóa học này.")
+        return redirect('lecturer_course_list')
+    # --- KẾT THÚC LỚP KIỂM TRA ---
     title = course.title
     program_id = course.program.id
     course.delete()

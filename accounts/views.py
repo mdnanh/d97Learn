@@ -92,17 +92,25 @@ def profile(request):
         return render(request, "accounts/profile.html", context)
 
     if request.user.is_student:
-        student = get_object_or_404(Student, student__pk=request.user.id)
-        parent = Parent.objects.filter(student=student).first()
-        courses = TakenCourse.objects.filter(
-            student__student__id=request.user.id, course__level=student.level
-        )
-        context.update(
-            {
+        try:
+            # Lấy đối tượng Student liên quan đến user đang đăng nhập.
+            # request.user.student là cách truy cập ngược OneToOneField.
+            student_profile = request.user.student 
+            
+            parent = Parent.objects.filter(student=student_profile).first()
+            
+            # --- LOGIC MỚI, ĐƠN GIẢN VÀ CHÍNH XÁC ---
+            # Lấy tất cả các bản ghi TakenCourse liên quan trực tiếp đến hồ sơ sinh viên này.
+            # Signal đã đảm bảo rằng đây là các khóa học đúng level.
+            courses_taken_by_student = TakenCourse.objects.filter(student=student_profile)
+            
+            context.update({
                 "parent": parent,
-                "courses": courses
-            }
-        )
+                "courses": courses_taken_by_student, # Gửi danh sách này ra template
+            })
+        except Student.DoesNotExist:
+            # Xử lý trường hợp user được đánh dấu is_student nhưng chưa có hồ sơ Student
+            context['courses'] = [] # Gửi danh sách rỗng
         return render(request, "accounts/profile.html", context)
 
     # For superuser or other staff
