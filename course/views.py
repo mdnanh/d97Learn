@@ -192,17 +192,27 @@ def course_edit(request, slug):
 @lecturer_required
 def course_delete(request, slug):
     course = get_object_or_404(Course, slug=slug)
-    # --- LỚP KIỂM TRA "CHÌA KHÓA CĂN HỘ" ---
-    if course.lecturer != request.user and not request.user.is_superuser:
+    
+    # --- LỚP KIỂM TRA AN NINH (PHIÊN BẢN ĐÚNG) ---
+    # Kiểm tra xem có tồn tại một bản ghi AllocatedCourse
+    # nối khóa học này VÀ giảng viên này hay không.
+    is_allocated_lecturer = CourseAllocation.objects.filter(
+        course=course, lecturer=request.user
+    ).exists()
+
+    if not is_allocated_lecturer and not request.user.is_superuser:
         messages.error(request, "Bạn không có quyền xóa khóa học này.")
         return redirect('lecturer_course_list')
     # --- KẾT THÚC LỚP KIỂM TRA ---
+
+    # Lấy thông tin cần thiết TRƯỚC KHI xóa
     title = course.title
     program_id = course.program.id
+    
     course.delete()
-    messages.success(request, f"Course {title} has been deleted.")
+    
+    messages.success(request, f"Course '{title}' has been deleted.")
     return redirect("program_detail", pk=program_id)
-
 
 # ########################################################
 # Course Allocation Views

@@ -1557,7 +1557,7 @@ msgid "Pay now"
 msgstr ""
 
 #: .\templates\navbar.html:12
-msgid "Search All... #program, #Quiz, #News, #Events"
+msgid "Search All... #course, #program, #Quiz, #News, #Events"
 msgstr "Tìm kiếm tất cả... #Nội dung, #Quiz, #Tin tức, #Sự kiện"
 
 #: .\templates\navbar.html:38 .\templates\setting\admin_panel.html:12
@@ -2219,7 +2219,7 @@ msgstr "Thay đổi mật khẩu"
 
 #: .\templates\setting\profile_info_change.html:12
 msgid "Account setting"
-msgstr ""
+msgstr "Cài đặt tài khoản"
 
 #: .\templates\setting\profile_info_change.html:16
 msgid "Account Settings"
