@@ -56,7 +56,7 @@ def register(request):
         form = StudentAddForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Account created successfully.")
+            messages.success(request, "Tài khoản đã được tạo thành công.")
             return redirect("login")
         messages.error(
             request, "Something is not correct, please fill all fields correctly."
@@ -186,7 +186,7 @@ def profile_update(request):
         form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your profile has been updated successfully.")
+            messages.success(request, "Thông tin tài khoản của bạn đã được cập nhật thành công.")
             return redirect("profile")
         messages.error(request, "Please correct the error(s) below.")
     else:
@@ -201,7 +201,7 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, "Your password was successfully updated!")
+            messages.success(request, "Mật khẩu của bạn đã được cập nhật thành công!")
             return redirect("profile")
         messages.error(request, "Please correct the error(s) below.")
     else:
@@ -225,8 +225,7 @@ def staff_add_view(request):
             email = lecturer.email
             messages.success(
                 request,
-                f"Account for lecturer {full_name} has been created. "
-                f"An email with account credentials will be sent to {email} within a minute.",
+                f"Tài khoản cho giáo viên {full_name} đã được tạo. "
             )
             return redirect("lecturer_list")
         else:
@@ -249,7 +248,7 @@ def edit_staff(request, pk):
         if form.is_valid():
             form.save()
             full_name = lecturer.get_full_name
-            messages.success(request, f"Lecturer {full_name} has been updated.")
+            messages.success(request, f"Giáo viên {full_name} đã được cập nhật.")
             return redirect("lecturer_list")
         messages.error(request, "Please correct the error below.")
     else:
@@ -294,7 +293,7 @@ def delete_staff(request, pk):
     lecturer = get_object_or_404(User, is_lecturer=True, pk=pk)
     full_name = lecturer.get_full_name
     lecturer.delete()
-    messages.success(request, f"Lecturer {full_name} has been deleted.")
+    messages.success(request, f"Giáo viên {full_name} đã được xóa.")
     return redirect("lecturer_list")
 
 # ########################################################
@@ -313,8 +312,7 @@ def student_add_view(request):
             email = student.email
             messages.success(
                 request,
-                f"Account for {full_name} has been created. "
-                f"An email with account credentials will be sent to {email} within a minute.",
+                f"Tài khoản cho {full_name} đã được tạo. "
             )
             return redirect("student_list")
         messages.error(request, "Correct the error(s) below.")
@@ -334,7 +332,7 @@ def edit_student(request, pk):
         if form.is_valid():
             form.save()
             full_name = student_user.get_full_name
-            messages.success(request, f"Student {full_name} has been updated.")
+            messages.success(request, f"Học viên {full_name} đã được tạo.")
             return redirect("student_list")
         messages.error(request, "Please correct the error below.")
     else:
@@ -379,7 +377,7 @@ def delete_student(request, pk):
     student = get_object_or_404(Student, pk=pk)
     full_name = student.student.get_full_name
     student.delete()
-    messages.success(request, f"Student {full_name} has been deleted.")
+    messages.success(request, f"Học viên {full_name} đã được xóa.")
     return redirect("student_list")
 
 

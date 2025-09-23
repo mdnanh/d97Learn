@@ -44,7 +44,7 @@ def post_add(request):
         title = form.cleaned_data.get("title", "Post") if form.is_valid() else None
         if form.is_valid():
             form.save()
-            messages.success(request, f"{title} has been uploaded.")
+            messages.success(request, f"{title} đã được tải lên.")
             return redirect("home")
         messages.error(request, "Please correct the error(s) below.")
     else:
@@ -61,7 +61,7 @@ def edit_post(request, pk):
         title = form.cleaned_data.get("title", "Post") if form.is_valid() else None
         if form.is_valid():
             form.save()
-            messages.success(request, f"{title} has been updated.")
+            messages.success(request, f"{title} đã được cập nhật.")
             return redirect("home")
         messages.error(request, "Please correct the error(s) below.")
     else:
@@ -75,7 +75,7 @@ def delete_post(request, pk):
     post = get_object_or_404(NewsAndEvents, pk=pk)
     post_title = post.title
     post.delete()
-    messages.success(request, f"{post_title} has been deleted.")
+    messages.success(request, f"{post_title} đã được xóa.")
     return redirect("home")
 
 

@@ -87,7 +87,7 @@ class QuizUpdateView(UpdateView):
 def quiz_delete(request, slug, pk):
     quiz = get_object_or_404(Quiz, pk=pk)
     quiz.delete()
-    messages.success(request, "Quiz successfully deleted.")
+    messages.success(request, "Bài trắc nghiệm đã được tạo thành công.")
     return redirect("quiz_index", slug=slug)
 
 
@@ -234,7 +234,7 @@ class QuizTake(FormView):
         self.quiz = get_object_or_404(Quiz, slug=self.kwargs["slug"])
         self.course = get_object_or_404(Course, pk=self.kwargs["pk"])
         if not Question.objects.filter(quiz=self.quiz).exists():
-            messages.warning(request, "This quiz has no questions available.")
+            messages.warning(request, "Không có câu hỏi khả dụng cho bài trắc nghiệm này.")
             return redirect("quiz_index", slug=self.course.slug)
 
         self.sitting = Sitting.objects.user_sitting(
@@ -243,7 +243,7 @@ class QuizTake(FormView):
         if not self.sitting:
             messages.info(
                 request,
-                "You have already completed this quiz. Only one attempt is permitted.",
+                "Bạn đã hoàn thành bài kiểm tra này. Chỉ được phép làm lại một lần.",
             )
             return redirect("quiz_index", slug=self.course.slug)
 
