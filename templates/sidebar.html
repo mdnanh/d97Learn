@@ -63,7 +63,7 @@
 			</li>
 			{% endif %}
 
-			{% if request.user.is_superuser or request.user.is_lecturer %}
+			{% if request.user.is_superuser %}
 			<li class="{% if request.path == pro %}active{% endif %}">
 				<a href="{% url 'programs' %}"><i class="fas fa-book-open"></i>{% trans 'Programs & Courses' %}</a>
 			</li>
@@ -100,9 +100,9 @@
 			<!-- <li class="{% if request.path == ar %}active{% endif %}">
 				<a href="{% url 'ass_results' %}"><i class="fa fa-list-ol"></i> {% trans 'Assesment Results' %}</a>
 			</li> -->
-			<li class="{% if request.path == cr %}active{% endif %}">
+			<!-- <li class="{% if request.path == cr %}active{% endif %}">
 				<a href="{% url 'course_registration' %}"><i class="fas fa-plus"></i>{% trans 'Add' %} &amp; {% trans 'Drop Course' %}</a>
-			</li>
+			</li> -->
 			{% endif %}
 			<br />
 			<p class="ms-3 text-secondary">&RightArrow; {% trans 'Others' %}</p>
