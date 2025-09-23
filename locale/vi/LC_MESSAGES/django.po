@@ -909,7 +909,7 @@ msgstr "Thay đổi mật khẩu"
 #: .\templates\course\user_course_list.html:23 .\templates\navbar.html:34
 #: .\templates\pdf\profile_single.html:25 .\templates\sidebar.html:61
 msgid "My Courses"
-msgstr "Khóa học của tôi"
+msgstr "Nội dung của tôi"
 
 #: .\templates\accounts\profile.html:70
 #: .\templates\accounts\profile_single.html:83
@@ -1395,7 +1395,7 @@ msgstr "In khóa học đã đăng ký"
 #: .\templates\course\course_single.html:12
 #: .\templates\course\program_single.html:12 .\templates\quiz\quiz_list.html:13
 msgid "My courses"
-msgstr "Khóa học của tôi"
+msgstr "Nội dung của tôi"
 
 #: .\templates\course\course_single.html:26
 msgid "Edit course"
