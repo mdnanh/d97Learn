@@ -945,7 +945,7 @@ msgstr ""
 
 #: .\templates\accounts\profile.html:86 .\templates\pdf\profile_single.html:50
 msgid "Level:"
-msgstr "Chức vụ"
+msgstr "Chức vụ:"
 
 #: .\templates\accounts\profile.html:91
 #: .\templates\accounts\profile_single.html:105
@@ -977,7 +977,7 @@ msgstr "Niên khóa"
 
 #: .\templates\accounts\profile.html:105 .\templates\pdf\profile_single.html:69
 msgid "Registered Date:"
-msgstr "Ngày đăng ký"
+msgstr "Ngày đăng ký:"
 
 #: .\templates\accounts\profile_single.html:30
 msgid "Role"
