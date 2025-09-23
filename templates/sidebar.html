@@ -74,7 +74,10 @@
 				<a href="{% url 'quiz_marking' %}"><i class="fas fa-check-double"></i>{% trans 'Complete Exams' %}</a>
 			</li>
 			{% endif %}
-
+			{% if request.user.is_student %}
+			<li class="{% if request.path == qpr %}active{% endif %}">
+				<a href="{% url 'quiz_progress' %}"><i class="fas fa-record-vinyl"></i>{% trans 'Quiz Progress Rec' %}</a>
+			</li>
 			<!-- {% if request.user.is_superuser %}
 			<li class="{% if request.path == qpr %}active{% endif %}">
 				<a href="{% url 'quiz_progress' %}"><i class="fas fa-record-vinyl"></i>{% trans 'Quiz Progress Rec' %}</a>
@@ -89,11 +92,6 @@
 				<a href="{% url 'add_score' %}"><i class="fas fa-table"></i>{% trans 'Manage Score' %}</a>
 			</li> -->
 			{% endif %}
-
-			{% if request.user.is_student %}
-			<li class="{% if request.path == qpr %}active{% endif %}">
-				<a href="{% url 'quiz_progress' %}"><i class="fas fa-record-vinyl"></i>{% trans 'Quiz Progress Rec' %}</a>
-			</li>
 			<!-- <li class="{% if request.path == vr %}active{% endif %}">
 				<a href="{% url 'grade_results' %}"><i class="fa fa-spell-check"></i>{% trans 'Grade Results' %}</a>
 			</li> -->
