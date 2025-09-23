@@ -677,7 +677,7 @@ msgstr "Hãy thử lại sau"
 #: .\templates\upload\upload_video_form.html:3
 #: .\templates\upload\video_single.html:3
 msgid "Learning management system"
-msgstr "Phần mềm quản lý học tập"
+msgstr "Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\accounts\add_staff.html:11
 #: .\templates\accounts\add_student.html:12
@@ -1901,7 +1901,7 @@ msgstr "Chưa có bài kiểm tra nào đã hoàn thành"
 
 #: .\templates\registration\login.html:3
 msgid "Dj Learning Management System - Login"
-msgstr "Phần mềm quản lý học tập - Đăng nhập"
+msgstr "Phần mềm quản lý học tập dTCĐT97 - Đăng nhập"
 
 #: .\templates\registration\login.html:11
 msgid "Sign in"
@@ -1926,7 +1926,7 @@ msgstr "Quân mật khẩu ?"
 
 #: .\templates\registration\password_reset.html:3
 msgid "Password Reset | Learning management system"
-msgstr "Cài lại mật khẩu | Phần mềm quản lý học tập"
+msgstr "Cài lại mật khẩu | Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\registration\password_reset.html:7
 msgid "Password Reset"
@@ -1938,7 +1938,7 @@ msgstr "Yêu cầu cài đặt lại mật khẩu"
 
 #: .\templates\registration\password_reset_complete.html:3
 msgid "Password Reset Complete | Learning management system"
-msgstr "Mật khẩu đã được cài đặt lại | Phần mềm quản lý học tập"
+msgstr "Mật khẩu đã được cài đặt lại | Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\registration\password_reset_complete.html:8
 msgid "Password Reset Complete"
@@ -1954,7 +1954,7 @@ msgstr "Đăng nhập tại đây"
 
 #: .\templates\registration\password_reset_confirm.html:3
 msgid "New Password | Learning management system"
-msgstr "Mật khẩu mới | Phần mềm quản lý học tập"
+msgstr "Mật khẩu mới | Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\registration\password_reset_confirm.html:10
 msgid "Confirm New Password"
@@ -1966,7 +1966,7 @@ msgstr "Cài lại mật khẩu"
 
 #: .\templates\registration\password_reset_done.html:3
 msgid "Email Sent | Learning management system"
-msgstr "Email đã gửi | Phần mềm quản lý học tập"
+msgstr "Email đã gửi | Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\registration\password_reset_done.html:8
 msgid "Email sent"
@@ -1978,7 +1978,7 @@ msgstr "Quay lại để đăng nhập"
 
 #: .\templates\registration\register.html:3
 msgid "Register | Learning management system"
-msgstr "Đăng ký | Phần mềm quản lý học tập"
+msgstr "Đăng ký | Phần mềm quản lý học tập dTCĐT97"
 
 #: .\templates\registration\register.html:12
 msgid "Create Your Account"
