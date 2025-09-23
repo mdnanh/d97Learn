@@ -74,6 +74,11 @@
 				<a href="{% url 'quiz_marking' %}"><i class="fas fa-check-double"></i>{% trans 'Complete Exams' %}</a>
 			</li>
 			{% endif %}
+
+			{% if request.user.is_superuser %}
+			<!-- <li class="{% if request.path == qpr %}active{% endif %}">
+				<a href="{% url 'quiz_progress' %}"><i class="fas fa-record-vinyl"></i>{% trans 'Quiz Progress Rec' %}</a>
+			</li> -->
 			<li class="{% if request.path == cav %}active{% endif %}">
 				<a href="{% url 'course_allocation_view' %}"><i class="fas fa-tasks"></i>{% trans 'Course Allocation' %}</a>
 			</li>
