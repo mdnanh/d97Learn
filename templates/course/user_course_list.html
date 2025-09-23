@@ -46,7 +46,7 @@
                     
                     {% if request.user.is_student %}
                         <td><a href="{{ item.get_absolute_url }}">{{ item.course.title }}</a></td>
-                        <td>{{ item.course.code }}</td>
+                        {%comment%}<td>{{ item.course.code }}</td>{% endcomment %}
                         <td class="success">
                             <i class="fas fa-check-circle"></i> {% trans 'Enrolled' %}
                         </td>
