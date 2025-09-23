@@ -487,18 +487,24 @@ def course_drop(request):
 
 @login_required
 def user_course_list(request):
+    # Khai báo một danh sách rỗng và một context chung ban đầu
+    courses_to_display = []
+    context = {}
+    
     if request.user.is_lecturer:
-        courses = Course.objects.filter(allocated_course__lecturer__pk=request.user.id)
-        return render(request, "course/user_course_list.html", {"courses": courses})
-
+        # Logic mới: Truy vấn trực tiếp, đơn giản và hiệu quả
+        courses_to_display = Course.objects.filter(lecturer=request.user)
+        
     if request.user.is_student:
-        student = get_object_or_404(Student, student__pk=request.user.id)
-        taken_courses = TakenCourse.objects.filter(student=student)
-        return render(
-            request,
-            "course/user_course_list.html",
-            {"student": student, "taken_courses": taken_courses},
-        )
+        try:
+            student = request.user.student
+            # Lấy các bản ghi TakenCourse, vì chúng ta cần thông tin điểm số từ đây
+            courses_to_display = TakenCourse.objects.filter(student=student)
+            context['student'] = student # Gửi cả thông tin student ra
+        except Student.DoesNotExist:
+            courses_to_display = []
 
-    # For other users
-    return render(request, "course/user_course_list.html")
+    # Luôn gửi ra một danh sách có tên là 'courses'
+    context['courses'] = courses_to_display
+    
+    return render(request, "course/user_course_list.html", context)

@@ -12,22 +12,21 @@
     </ol>
 </nav>
 
+{% comment %} Các thẻ extends, title, nav giữ nguyên {% endcomment %}
+
 {% if request.user.is_student %}
     <div class="title-1">{{ student.program.title }}</div>
     {% if student.program.summary %}
         <p>{{ student.program.summary }}</p>
     {% endif %}
-{% endif %}
-
-{% if request.user.is_lecturer %}
+{% else %}
     <div class="title-1">{% trans 'My Courses' %}</div>
 {% endif %}
 
 {% include 'snippets/messages.html' %}
 
-{% if request.user.is_student %}
+<!-- BẢNG DUY NHẤT CHO TẤT CẢ MỌI NGƯỜI -->
 <div class="table-responsive p-3 mt-3">
-    <h6 class="fw-bold text-primary"><u>{% trans 'Taken Courses:' %}</u></h6>
     <div class="table-shadow">
         <table class="table table-light">
             <thead>
@@ -35,70 +34,30 @@
                     <th>#</th>
                     <th> {% trans 'Course Name' %} </th>
                     <th> {% trans 'Course Code' %} </th>
-                    <!-- <th> {% trans 'Cr.Hr' %} </th> -->
-                    <!-- <th> {% trans 'Taken' %} </th> -->
+                    {% if request.user.is_student %}
+                        <th> {% trans 'Status' %} </th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
-                {% for course in taken_courses %}
+                {% for item in courses %}
                 <tr>
                     <td>{{ forloop.counter }}.</td> 
-                    <td><a href="{{ course.get_absolute_url }}">
-                        {{ course.course.title }}</a></td>
-                    <td>{{ course.course.code }}</td>
-                    <!-- <td>{{ course.course.credit }}</td> -->
-                    <!-- <td>{{ course.course.year }}</td> -->
-                    <!-- <td>{{ course.course.semester }}</td> -->
-                    <th>
-                        <!-- {% if course.course.is_current_semester == False %} -->
-                        <i class="fas fa-times-circle fa-1-5x danger"></i>
-                        {% else %}
-                        <i class="fas fa-check-circle"></i>
-                        {% endif %}
-                    </th>
-                    <td class="success">
-                        <i class="fas fa-check-circle"></i> {% trans 'Taken' %}
-                    </td>
+                    
+                    {% if request.user.is_student %}
+                        <td><a href="{{ item.get_absolute_url }}">{{ item.course.title }}</a></td>
+                        <td>{{ item.course.code }}</td>
+                        <td class="success">
+                            <i class="fas fa-check-circle"></i> {% trans 'Enrolled' %}
+                        </td>
+                    {% else %} {# Dành cho giảng viên #}
+                        <td><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></td>
+                        <td>{{ item.code }}</td>
+                    {% endif %}
                 </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
-{% endif %}
-
-<div class="table-responsive p-3">
-    <h6 class="fw-bold text-primary"><u>{% trans 'All Courses:' %}</u></h6>
-    <div class="table-shadow">
-        <table class="table table-light">
-            <thead>
+                {% empty %}
                 <tr>
-                    <th>#</th>
-                    <th> {% trans 'Course Name' %} </th>
-                    <th> {% trans 'Course Code' %} </th>
-                    <!-- <th> {% trans 'Cr.Hr' %} </th> -->
-                    <!-- <th> {% trans 'Year' %} </th> -->
-                    <!-- <th> {% trans 'Semester' %} </th> -->
-                    <!-- <th> {% trans 'Current Semester' %} </th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {% for course in courses %}
-                <tr>
-                    <td>{{ forloop.counter }}.</td> 
-                    <td><a href="{{ course.get_absolute_url }}">
-                        {{ course.title }}</a></td>
-                    <td>{{ course.code }}</td>
-                    <!-- <td>{{ course.credit }}</td> -->
-                    <!-- <td>{{ course.year }}</td> -->
-                    <!-- <td>{{ course.semester }}</td> -->
-                    <th>
-                        <!-- {% if course.is_current_semester == False %} -->
-                        <i class="fas fa-times-circle fa-1-5x danger"></i>
-                        {% else %}
-                        <i class="fas fa-check-circle"></i>
-                        {% endif %}
-                    </th>
+                    <td colspan="4" class="text-center">{% trans 'No courses to display.' %}</td>
                 </tr>
                 {% endfor %}
             </tbody>
