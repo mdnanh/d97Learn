@@ -16,7 +16,7 @@
 
 <div class="row col-12 justify-content-between">
 	<div class="header-title-md">{% trans "Quiz title" %}: {{ sitting.quiz.title }}</div>
-	<em class="info-text title-danger">{% trans "Category" %}: {{ sitting.quiz.category }}</em>
+	<em class="info-text title-danger">{% trans "Category" %}: {{ sitting.quiz.get_category_display }}</em>
 </div>
 
 <p>{{ sitting.quiz.description }}</p>
@@ -33,8 +33,7 @@
 	<tr>
 	  <th>{% trans "Question" %}</th>
 	  <th>{% trans "User answer" %}</th>
-	  <th></th>
-	  <th></th>
+	  <th>{% trans "Result" %}</th>
 	</tr>
   </thead>
 
@@ -48,7 +47,7 @@
         <div style="max-width: 100px;"><img src="{{ question.figure.url }}" alt="{{ question.figure }}" width="100px"/></div>
         {% endif %}
       </td>
-	  <td>{{ question }}</td>
+	  <td>{{ question.user_answers }}</td>
 	  <td>
 		{% if question.id in sitting.get_incorrect_questions %}
 		  <p>{% trans "incorrect" %}</p>
@@ -56,12 +55,12 @@
 		  <p>{% trans "Correct" %}</p>
 		{% endif %}
 	  </td>
-	  <td>
+	{%comment%}  <td>
 		<form action="" method="POST">{% csrf_token %}
 		  <input type="hidden" name="qid" value="{{ question.id }}">
 		  <button type="submit" class="btn btn-sm btn-secondary">{% trans "Toggle whether correct" %}</button>
 		</form>
-	  </td>
+	  </td> {% endcomment %}
 	</tr>
 
 {% endfor %}
