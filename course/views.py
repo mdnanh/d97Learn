@@ -53,7 +53,7 @@ def program_add(request):
         form = ProgramForm(request.POST)
         if form.is_valid():
             program = form.save()
-            messages.success(request, f"{program.title} program has been created.")
+            messages.success(request, f"nội dung {program.title} đã được tạo.")
             return redirect("programs")
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -91,7 +91,7 @@ def program_edit(request, pk):
         form = ProgramForm(request.POST, instance=program)
         if form.is_valid():
             program = form.save()
-            messages.success(request, f"{program.title} program has been updated.")
+            messages.success(request, f"Nội dung {program.title} đã được cập nhật.")
             return redirect("programs")
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -107,7 +107,7 @@ def program_delete(request, pk):
     program = get_object_or_404(Program, pk=pk)
     title = program.title
     program.delete()
-    messages.success(request, f"Program {title} has been deleted.")
+    messages.success(request, f"Nội dung {title} đã bị xóa.")
     return redirect("programs")
 
 
@@ -145,7 +145,7 @@ def course_add(request, pk):
         if form.is_valid():
             course = form.save()
             messages.success(
-                request, f"{course.title} ({course.code}) has been created."
+                request, f"{course.title} ({course.code}) đã được tạo."
             )
             return redirect("program_detail", pk=program.pk)
         messages.error(request, "Correct the error(s) below.")
@@ -162,14 +162,14 @@ def course_add(request, pk):
 @lecturer_required
 def course_edit(request, slug):
     course = get_object_or_404(Course, slug=slug)
-    # --- LỚP KIỂM TRA AN NINH ---
-    # Kiểm tra xem người dùng đang đăng nhập có phải là giảng viên của khóa học này không.
-    # Superuser thì luôn có quyền.
+    
+    # --- LỚP KIỂM TRA AN NINH (PHIÊN BẢN ĐÚNG) ---
     is_allocated_lecturer = CourseAllocation.objects.filter(
-        course=course, lecturer=request.user
+        courses=course, # <-- SỬA TỪ 'course' THÀNH 'courses'
+        lecturer=request.user
     ).exists()
     if not is_allocated_lecturer and not request.user.is_superuser:
-        messages.error(request, "Bạn không có quyền chỉnh sửa khóa học này.")
+        messages.error(request, "Bạn không có quyền chỉnh sửa nội dung này.")
         return redirect('lecturer_course_list') # Chuyển hướng về trang an toàn
     # --- KẾT THÚC LỚP KIỂM TRA ---
     if request.method == "POST":
@@ -177,7 +177,7 @@ def course_edit(request, slug):
         if form.is_valid():
             course = form.save()
             messages.success(
-                request, f"{course.title} ({course.code}) has been updated."
+                request, f"{course.title} ({course.code}) đã được cập nhật."
             )
             return redirect("program_detail", pk=course.program.pk)
         messages.error(request, "Correct the error(s) below.")
@@ -194,10 +194,9 @@ def course_delete(request, slug):
     course = get_object_or_404(Course, slug=slug)
     
     # --- LỚP KIỂM TRA AN NINH (PHIÊN BẢN ĐÚNG) ---
-    # Kiểm tra xem có tồn tại một bản ghi AllocatedCourse
-    # nối khóa học này VÀ giảng viên này hay không.
     is_allocated_lecturer = CourseAllocation.objects.filter(
-        course=course, lecturer=request.user
+        courses=course,  # <-- SỬA TỪ 'course' THÀNH 'courses'
+        lecturer=request.user
     ).exists()
 
     if not is_allocated_lecturer and not request.user.is_superuser:
@@ -205,12 +204,9 @@ def course_delete(request, slug):
         return redirect('lecturer_course_list')
     # --- KẾT THÚC LỚP KIỂM TRA ---
 
-    # Lấy thông tin cần thiết TRƯỚC KHI xóa
     title = course.title
     program_id = course.program.id
-    
     course.delete()
-    
     messages.success(request, f"Course '{title}' has been deleted.")
     return redirect("program_detail", pk=program_id)
 
@@ -230,7 +226,7 @@ class CourseAllocationFormView(CreateView):
         allocation, created = CourseAllocation.objects.get_or_create(lecturer=lecturer)
         allocation.courses.set(selected_courses)
         messages.success(
-            self.request, f"Courses allocated to {lecturer.get_full_name} successfully."
+            self.request, f"Nội dung đã được phân bổ thành công cho giáo viên {lecturer.get_full_name}."
         )
         return redirect("course_allocation_view")
 
@@ -259,7 +255,7 @@ def edit_allocated_course(request, pk):
         form = EditCourseAllocationForm(request.POST, instance=allocation)
         if form.is_valid():
             form.save()
-            messages.success(request, "Course allocation has been updated.")
+            messages.success(request, "Phân bổ nội dung đã được cập nhật.")
             return redirect("course_allocation_view")
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -276,7 +272,7 @@ def edit_allocated_course(request, pk):
 def deallocate_course(request, pk):
     allocation = get_object_or_404(CourseAllocation, pk=pk)
     allocation.delete()
-    messages.success(request, "Successfully deallocated courses.")
+    messages.success(request, "Đã giải phóng thành công các nội dung.")
     return redirect("course_allocation_view")
 
 
@@ -295,7 +291,7 @@ def handle_file_upload(request, slug):
             upload = form.save(commit=False)
             upload.course = course
             upload.save()
-            messages.success(request, f"{upload.title} has been uploaded.")
+            messages.success(request, f"{upload.title} đã được tải lên.")
             return redirect("course_detail", slug=slug)
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -316,7 +312,7 @@ def handle_file_edit(request, slug, file_id):
         form = UploadFormFile(request.POST, request.FILES, instance=upload)
         if form.is_valid():
             upload = form.save()
-            messages.success(request, f"{upload.title} has been updated.")
+            messages.success(request, f"{upload.title} đã được cập nhật.")
             return redirect("course_detail", slug=slug)
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -334,7 +330,7 @@ def handle_file_delete(request, slug, file_id):
     upload = get_object_or_404(Upload, pk=file_id)
     title = upload.title
     upload.delete()
-    messages.success(request, f"{title} has been deleted.")
+    messages.success(request, f"{title} đã bị xóa.")
     return redirect("course_detail", slug=slug)
 
 
@@ -353,7 +349,7 @@ def handle_video_upload(request, slug):
             video = form.save(commit=False)
             video.course = course
             video.save()
-            messages.success(request, f"{video.title} has been uploaded.")
+            messages.success(request, f"{video.title} đã được tải lên.")
             return redirect("course_detail", slug=slug)
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -385,7 +381,7 @@ def handle_video_edit(request, slug, video_slug):
         form = UploadFormVideo(request.POST, request.FILES, instance=video)
         if form.is_valid():
             video = form.save()
-            messages.success(request, f"{video.title} has been updated.")
+            messages.success(request, f"{video.title} đã được cập nhật.")
             return redirect("course_detail", slug=slug)
         messages.error(request, "Correct the error(s) below.")
     else:
@@ -403,7 +399,7 @@ def handle_video_delete(request, slug, video_slug):
     video = get_object_or_404(UploadVideo, slug=video_slug)
     title = video.title
     video.delete()
-    messages.success(request, f"{title} has been deleted.")
+    messages.success(request, f"{title} đã được xóa.")
     return redirect("course_detail", slug=slug)
 
 
@@ -424,7 +420,7 @@ def course_registration(request):
     try:
         student = request.user.student
     except Student.DoesNotExist:
-        messages.error(request, "Student profile not found.")
+        messages.error(request, "Không tìm thấy thông tin học viên.")
         return redirect("profile") # Hoặc một trang lỗi nào đó
 
     # --- XỬ LÝ KHI NGƯỜI DÙNG BẤM NÚT "REGISTER" (POST request) ---
