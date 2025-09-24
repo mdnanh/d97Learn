@@ -374,11 +374,30 @@ def render_student_pdf_list(request):
 @login_required
 @admin_required
 def delete_student(request, pk):
-    student = get_object_or_404(Student, pk=pk)
-    full_name = student.student.get_full_name
-    student.delete()
-    messages.success(request, f"Học viên {full_name} đã được xóa.")
-    return redirect("student_list")
+    try:
+        # 1. Tìm "Hồ Sơ Học Viên" (Tờ B) để lấy thông tin
+        student_profile = get_object_or_404(Student, pk=pk)
+        
+        # 2. Từ "Tờ B", tìm ra "Thẻ Đăng Nhập" (Tờ A) tương ứng
+        # (Giả sử trường liên kết trong Student model tên là 'student' hoặc 'user')
+        user_account = student_profile.student 
+        full_name = user_account.get_full_name
+        
+        # 3. Xé đi "Tờ A". "Tờ B" sẽ tự động bị xé theo.
+        user_account.delete()
+        
+        messages.success(request,f"Đã xóa hoàn toàn học viên {full_name} và tài khoản đăng nhập.")
+    except Student.DoesNotExist:
+        messages.error(request, "Học viên không tồn tại.")
+    except Exception as e:
+        messages.error(request, f"Đã xảy ra lỗi: {e}")
+        
+    # return redirect('student_list_url')
+    # student = get_object_or_404(Student, pk=pk)
+    # full_name = student.student.get_full_name
+    # student.delete()
+    # messages.success(request, f"Học viên {full_name} đã được xóa.")
+    # return redirect("student_list")
 
 
 @login_required
