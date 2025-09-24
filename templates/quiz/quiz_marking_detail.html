@@ -38,10 +38,6 @@
   </thead>
 
   <tbody>
-	{# 
-	Chúng ta sẽ lặp qua dictionary `questions_with_user_answers`.
-	Dùng `.items` để lấy ra cả Key (câu hỏi) và Value (câu trả lời) cùng lúc.
-	#}
 	{% for question, user_answer in sitting.questions_with_user_answers.items %}
 
 		<tr>
