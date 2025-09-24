@@ -391,6 +391,7 @@ def delete_student(request, pk):
         messages.error(request, "Học viên không tồn tại.")
     except Exception as e:
         messages.error(request, f"Đã xảy ra lỗi: {e}")
+    return redirect("student_list")
         
     # return redirect('student_list_url')
     # student = get_object_or_404(Student, pk=pk)
