@@ -14,8 +14,8 @@
         {% else %}
         <li class="breadcrumb-item"><a href="{% url 'programs' %}">{% trans 'Programs' %}</a></li>
         {% endif %}
-        <li class="breadcrumb-item"><a href="{% url 'program_detail' program.slug %}">{{ program.title }}</a></li>
-        <li class="breadcrumb-item"><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'program_detail' pk=1 %}">{{ course.program }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ course.get_absolute_url }}">{{ course }}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{% trans 'Quizzes' %}</li>
     </ol>
 </nav>
