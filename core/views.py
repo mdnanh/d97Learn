@@ -49,7 +49,7 @@ def post_add(request):
         messages.error(request, "Please correct the error(s) below.")
     else:
         form = NewsAndEventsForm()
-    return render(request, "core/post_add.html", {"title": "Add Post", "form": form})
+    return render(request, "core/post_add.html", {"title": "Thêm bài đăng", "form": form})
 
 
 @login_required
@@ -66,7 +66,7 @@ def edit_post(request, pk):
         messages.error(request, "Please correct the error(s) below.")
     else:
         form = NewsAndEventsForm(instance=instance)
-    return render(request, "core/post_add.html", {"title": "Edit Post", "form": form})
+    return render(request, "core/post_add.html", {"title": "Chỉnh sửa bài đăng", "form": form})
 
 
 @login_required

@@ -172,7 +172,7 @@ def profile_single(request, user_id):
 @login_required
 @admin_required
 def admin_panel(request):
-    return render(request, "setting/admin_panel.html", {"title": "Admin Panel"})
+    return render(request, "setting/admin_panel.html", {"title": "Bảng điều khiển"})
 
 
 # ########################################################
@@ -235,7 +235,7 @@ def staff_add_view(request):
     else:
         form = StaffAddForm()
     return render(
-        request, "accounts/add_staff.html", {"title": "Add Lecturer", "form": form}
+        request, "accounts/add_staff.html", {"title": "Thêm giáo viên", "form": form}
     )
 
 
@@ -254,7 +254,7 @@ def edit_staff(request, pk):
     else:
         form = ProfileUpdateForm(instance=lecturer)
     return render(
-        request, "accounts/edit_lecturer.html", {"title": "Edit Lecturer", "form": form}
+        request, "accounts/edit_lecturer.html", {"title": "Sửa thông tin giáo viên", "form": form}
     )
 
 
@@ -319,7 +319,7 @@ def student_add_view(request):
     else:
         form = StudentAddForm()
     return render(
-        request, "accounts/add_student.html", {"title": "Add Student", "form": form}
+        request, "accounts/add_student.html", {"title": "Thêm học viên", "form": form}
     )
 
 
@@ -338,7 +338,7 @@ def edit_student(request, pk):
     else:
         form = ProfileUpdateForm(instance=student_user)
     return render(
-        request, "accounts/edit_student.html", {"title": "Edit Student", "form": form}
+        request, "accounts/edit_student.html", {"title": "Chỉnh sửa thông tin học viên", "form": form}
     )
 
 
@@ -419,7 +419,7 @@ def edit_student_program(request, pk):
     return render(
         request,
         "accounts/edit_student_program.html",
-        {"title": "Edit Program", "form": form, "student": student},
+        {"title": "Chỉnh sửa nội dung", "form": form, "student": student},
     )
 
 
