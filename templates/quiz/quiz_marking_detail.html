@@ -47,13 +47,17 @@
 			<div style="max-width: 100px;"><img src="{{ question.figure.url }}" alt="{{ question.figure }}" width="100px"/></div>
 			{% endif %}
 		</td>
-
-		{# BÂY GIỜ NÓ SẼ HOẠT ĐỘNG HOÀN HẢO #}
 		<td>
-			{# Hiển thị biến user_answer mà chúng ta đã lấy ra từ vòng lặp #}
-			{{ user_answer }}
+			{% if question.get_choices %} 
+            {% for choice in question.get_choices %}
+                {% if choice.id|stringformat:"s" == user_answer %}
+                    <span class="text-primary fw-bold">{{ choice.content }}</span>
+                {% endif %}
+            {% endfor %}
+			{% else %}
+				{{ user_answer }}
+			{% endif %}
 		</td>
-
 		<td>
 			{% if question.id in sitting.get_incorrect_questions %}
 			<p class="text-danger">{% trans "incorrect" %}</p>
