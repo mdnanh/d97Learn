@@ -1,5 +1,9 @@
 from django.apps import AppConfig
 
-
 class QuizConfig(AppConfig):
-    name = "quiz"
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'quiz'
+
+    def ready(self):
+        # Import file signals để Django đăng ký các receiver
+        import quiz.signals
