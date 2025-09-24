@@ -51,7 +51,7 @@
 			{% if question.get_choices %} 
             {% for choice in question.get_choices %}
                 {% if choice.id|stringformat:"s" == user_answer %}
-                    <span class="text-primary fw-bold">{{ choice.choice_text }}</span>
+                    <span class="text-primary">{{ choice.choice_text }}</span>
                 {% endif %}
             {% endfor %}
 			{% else %}
