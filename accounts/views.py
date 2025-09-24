@@ -267,7 +267,7 @@ class LecturerFilterView(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Lecturers"
+        context["title"] = "Danh sách giáo viên"
         return context
 
 
@@ -351,7 +351,7 @@ class StudentListView(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Students"
+        context["title"] = "Danh sách học viên"
         return context
 
 

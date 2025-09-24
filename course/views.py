@@ -42,7 +42,7 @@ class ProgramFilterView(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Programs"
+        context["title"] = "Nội dung"
         return context
 
 
@@ -59,7 +59,7 @@ def program_add(request):
     else:
         form = ProgramForm()
     return render(
-        request, "course/program_add.html", {"title": "Add Program", "form": form}
+        request, "course/program_add.html", {"title": "Thêm nội dung", "form": form}
     )
 
 
@@ -97,7 +97,7 @@ def program_edit(request, pk):
     else:
         form = ProgramForm(instance=program)
     return render(
-        request, "course/program_add.html", {"title": "Edit Program", "form": form}
+        request, "course/program_add.html", {"title": "Chỉnh sửa nội dung", "form": form}
     )
 
 
@@ -154,7 +154,7 @@ def course_add(request, pk):
     return render(
         request,
         "course/course_add.html",
-        {"title": "Add Course", "form": form, "program": program},
+        {"title": "Thêm nội dung bài học", "form": form, "program": program},
     )
 
 
@@ -184,7 +184,7 @@ def course_edit(request, slug):
     else:
         form = CourseAddForm(instance=course)
     return render(
-        request, "course/course_add.html", {"title": "Edit Course", "form": form}
+        request, "course/course_add.html", {"title": "Chỉnh sửa nội dung bài học", "form": form}
     )
 
 
@@ -207,7 +207,7 @@ def course_delete(request, slug):
     title = course.title
     program_id = course.program.id
     course.delete()
-    messages.success(request, f"Course '{title}' has been deleted.")
+    messages.success(request, f"Nội dung bài học '{title}' đã được xóa.")
     return redirect("program_detail", pk=program_id)
 
 # ########################################################
@@ -232,7 +232,7 @@ class CourseAllocationFormView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Assign Course"
+        context["title"] = "Chỉ định nội dung"
         return context
 
 
@@ -243,7 +243,7 @@ class CourseAllocationFilterView(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Course Allocations"
+        context["title"] = "Phân bổ giáo viên"
         return context
 
 
@@ -263,7 +263,7 @@ def edit_allocated_course(request, pk):
     return render(
         request,
         "course/course_allocation_form.html",
-        {"title": "Edit Course Allocation", "form": form},
+        {"title": "Điều chỉnh việc phân công nội dung", "form": form},
     )
 
 
@@ -299,7 +299,7 @@ def handle_file_upload(request, slug):
     return render(
         request,
         "upload/upload_file_form.html",
-        {"title": "File Upload", "form": form, "course": course},
+        {"title": "tải tệp", "form": form, "course": course},
     )
 
 
@@ -320,7 +320,7 @@ def handle_file_edit(request, slug, file_id):
     return render(
         request,
         "upload/upload_file_form.html",
-        {"title": "Edit File", "form": form, "course": course},
+        {"title": "Chỉnh sửa tệp", "form": form, "course": course},
     )
 
 
@@ -357,7 +357,7 @@ def handle_video_upload(request, slug):
     return render(
         request,
         "upload/upload_video_form.html",
-        {"title": "Video Upload", "form": form, "course": course},
+        {"title": "Đăng tải video", "form": form, "course": course},
     )
 
 
@@ -389,7 +389,7 @@ def handle_video_edit(request, slug, video_slug):
     return render(
         request,
         "upload/upload_video_form.html",
-        {"title": "Edit Video", "form": form, "course": course},
+        {"title": "Chỉnh sửa video", "form": form, "course": course},
     )
 
 
