@@ -94,9 +94,10 @@ def quiz_delete(request, slug, pk):
 @login_required
 def quiz_list(request, slug):
     course = get_object_or_404(Course, slug=slug)
+    program = course.program
     quizzes = Quiz.objects.filter(course=course).order_by("-timestamp")
     return render(
-        request, "quiz/quiz_list.html", {"quizzes": quizzes, "course": course}
+        request, "quiz/quiz_list.html", {"quizzes": quizzes, "course": course, "program": program}
     )
 
 

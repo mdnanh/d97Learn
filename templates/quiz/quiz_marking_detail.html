@@ -38,34 +38,37 @@
   </thead>
 
   <tbody>
-{% for question in questions %}
+	{# 
+	Chúng ta sẽ lặp qua dictionary `questions_with_user_answers`.
+	Dùng `.items` để lấy ra cả Key (câu hỏi) và Value (câu trả lời) cùng lúc.
+	#}
+	{% for question, user_answer in sitting.questions_with_user_answers.items %}
 
-	<tr>
-      <td>
-        {{ question.content }}
-        {% if question.figure %}
-        <div style="max-width: 100px;"><img src="{{ question.figure.url }}" alt="{{ question.figure }}" width="100px"/></div>
-        {% endif %}
-      </td>
-	  <td>{{ question.user_answers }}</td>
-	  <td>
-		{% if question.id in sitting.get_incorrect_questions %}
-		  <p>{% trans "incorrect" %}</p>
-		{% else %}
-		  <p>{% trans "Correct" %}</p>
-		{% endif %}
-	  </td>
-	{%comment%}  <td>
-		<form action="" method="POST">{% csrf_token %}
-		  <input type="hidden" name="qid" value="{{ question.id }}">
-		  <button type="submit" class="btn btn-sm btn-secondary">{% trans "Toggle whether correct" %}</button>
-		</form>
-	  </td> {% endcomment %}
-	</tr>
+		<tr>
+		<td>
+			{{ question.content }}
+			{% if question.figure %}
+			<div style="max-width: 100px;"><img src="{{ question.figure.url }}" alt="{{ question.figure }}" width="100px"/></div>
+			{% endif %}
+		</td>
 
-{% endfor %}
+		{# BÂY GIỜ NÓ SẼ HOẠT ĐỘNG HOÀN HẢO #}
+		<td>
+			{# Hiển thị biến user_answer mà chúng ta đã lấy ra từ vòng lặp #}
+			{{ user_answer }}
+		</td>
 
-  </tbody>
+		<td>
+			{% if question.id in sitting.get_incorrect_questions %}
+			<p class="text-danger">{% trans "incorrect" %}</p>
+			{% else %}
+			<p class="text-success">{% trans "Correct" %}</p>
+			{% endif %}
+		</td>
+		</tr>
+
+	{% endfor %}
+	</tbody>
 
 </table>
 {% endblock %}
