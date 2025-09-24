@@ -326,11 +326,11 @@ class QuizTake(FormView):
             results["questions"] = self.sitting.get_questions(with_answers=True)
             results["incorrect_questions"] = self.sitting.get_incorrect_questions
 
-        if (
-            not self.quiz.exam_paper
-            or self.request.user.is_superuser
-            or self.request.user.is_lecturer
-        ):
-            self.sitting.delete()
+        # if (
+        #     not self.quiz.exam_paper
+        #     or self.request.user.is_superuser
+        #     or self.request.user.is_lecturer
+        # ):
+        #     self.sitting.delete()
 
         return render(self.request, self.result_template_name, results)
