@@ -45,12 +45,14 @@ TSGNSCN = "TSGNSCN"
 TSGNDKNTNB= "TSGNĐK&NTNB"
 TSC= "TSC"
 BCHd= "BCHd"
+NQ= "NQ"
 CLASSES= (
     (TSGNSN, "TS-GN Sóng ngắn"),
     (TSGNSCN, "TS-GN Sóng cực ngắn"),
     (TSGNDKNTNB, "TS-GN ĐK&NTNB"),
     (TSC, "Trạm Sửa chữa"),
-    (BCHd, "Ban chỉ huy Tiểu đoàn" )
+    (BCHd, "Ban chỉ huy Tiểu đoàn" ),
+    (NQ, "Nuôi quân"),
 ) 
 class CustomUserManager(UserManager):
     def search(self, query=None):
