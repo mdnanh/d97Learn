@@ -1,0 +1,74 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>{% trans 'Students' %}</title>
+<style>
+/* Nhúng font chữ mà View đã cung cấp đường dẫn */
+@font-face {
+    font-family: 'NotoSans';
+    /* Đây là "chỗ giữ chỗ". View sẽ đặt đường dẫn thật vào đây. */
+    src: url({{ font_path }});
+}
+/* Áp dụng font và các quy tắc CSS siêu đơn giản */
+    body {
+        font-family: 'NotoSans', sans-serif;
+        font-size: 10pt;
+    }
+    
+    .title-1 {
+        font-size: 16pt;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: left;
+    }
+
+    thead {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+code
+Code
+<p class="title-1">{% trans 'Students' %}</p>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>{% trans 'ID No.' %}</th>
+        <th>{% trans 'Full Name' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ student.student.username }}</td>
+        <td>{{ student.student.get_full_name }}</td>
+
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <span>{% trans 'No student(s).' %}</span>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

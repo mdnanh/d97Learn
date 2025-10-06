@@ -354,13 +354,19 @@ class StudentListView(FilterView):
         context["title"] = "Danh sách học viên"
         return context
 
-
+from django.contrib.staticfiles import finders
 @login_required
 @admin_required
 def render_student_pdf_list(request):
     students = Student.objects.all()
-    template_path = "pdf/student_list.html"
-    context = {"students": students}
+    template_path = "pdf/student_list_for_pdf.html"
+    font_path = finders.find('fonts/NotoSans-Regular.ttf')
+    if not font_path:
+        return HttpResponse("Lỗi nghiêm trọng: Không tìm thấy file font NotoSans-Regular.ttf trong các thư mục static.", status=500)
+    context = {
+        "students": students,
+        "font_path": font_path, # Gửi đường dẫn font cho template
+    }
     response = HttpResponse(content_type="application/pdf")
     response["Content-Disposition"] = 'filename="students_list.pdf"'
     template = get_template(template_path)
