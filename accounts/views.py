@@ -446,7 +446,6 @@ class ParentAdd(CreateView):
 
 
 @login_required
-@user_passes_test(lambda u: u.is_superuser)
 def repair_student_profiles_view(request):
     users_without_profile = User.objects.filter(is_student=True, student__isnull=True)
     count = users_without_profile.count()
