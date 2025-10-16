@@ -90,5 +90,4 @@ urlpatterns = [
     # ),
     #      name='password_reset_complete')
     # ################################################################
-     path('repair-student-data-utility/', repair_student_profiles_view, name='repair_student_profiles'),
 ]
