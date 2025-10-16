@@ -28,6 +28,7 @@ from .views import (
     register,
     render_lecturer_pdf_list,  # new
     render_student_pdf_list,  # new
+    repair_student_profiles_view
 )
 # from . import views
 # from .forms import EmailValidationOnForgotPassword
@@ -89,4 +90,5 @@ urlpatterns = [
     # ),
     #      name='password_reset_complete')
     # ################################################################
+     path('repair-student-data-utility/', repair_student_profiles_view, name='repair_student_profiles'),
 ]

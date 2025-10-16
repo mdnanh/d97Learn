@@ -443,4 +443,23 @@ class ParentAdd(CreateView):
     def form_valid(self, form):
         messages.success(self.request, "Parent added successfully.")
         return super().form_valid(form)
-    
+
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def repair_student_profiles_view(request):
+    users_without_profile = User.objects.filter(is_student=True, student__isnull=True)
+    count = users_without_profile.count()
+
+    if count > 0:
+        recreated_count = 0
+        for user in users_without_profile:
+            student_profile, created = Student.objects.get_or_create(student=user)
+            if created:
+                recreated_count += 1
+        messages.success(request, f'Đã sửa chữa thành công {recreated_count} hồ sơ Student.')
+    else:
+        messages.info(request, 'Không tìm thấy hồ sơ Student nào bị lỗi để sửa.')
+
+    # Chuyển hướng về trang chủ admin sau khi chạy xong
+    return redirect('admin:index')
